@@ -25,7 +25,7 @@ include(../build.pri)
 
 !contains(XCONFIG, machwidget) {
     XCONFIG += machwidget
-    include(../../_mylibs/FormatWidgets/MACH/machwidget.pri)
+    include(../FormatWidgets/MACH/machwidget.pri)
 }
 
 win32 {
