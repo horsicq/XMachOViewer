@@ -16,3 +16,9 @@
 [submodule "Formats"]
 	path = Formats
 	url = https://github.com/horsicq/Formats.git
+[submodule "QHexView"]
+	path = QHexView
+	url = https://github.com/horsicq/QHexView.git
+[submodule "Controls"]
+	path = Controls
+	url = https://github.com/horsicq/Controls.git
