@@ -1,0 +1,18 @@
+[submodule "gui_source/Formats"]
+	path = Formats
+	url = https://github.com/horsicq/Formats.git
+[submodule "gui_source/FormatDialogs"]
+	path = FormatDialogs
+	url = https://github.com/horsicq/FormatDialogs.git
+[submodule "gui_source/FormatWidgets"]
+	path = FormatWidgets
+	url = https://github.com/horsicq/FormatWidgets.git
+[submodule "FormatWidgets"]
+	path = FormatWidgets
+	url = https://github.com/horsicq/FormatWidgets.git
+[submodule "FormatDialogs"]
+	path = FormatDialogs
+	url = https://github.com/horsicq/FormatDialogs.git
+[submodule "Formats"]
+	path = Formats
+	url = https://github.com/horsicq/Formats.git
