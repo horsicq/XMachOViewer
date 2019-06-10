@@ -13,6 +13,3 @@
 [submodule "Controls"]
 	path = Controls
 	url = https://github.com/horsicq/Controls.git
-[submodule "SpecAbstract"]
-	path = SpecAbstract
-	url = https://github.com/horsicq/SpecAbstract.git
