@@ -45,7 +45,7 @@ DialogOptions::~DialogOptions()
 
 void DialogOptions::loadOptions(XMACHOVIEWER::OPTIONS *pOptions)
 {
-    QSettings settings(QApplication::applicationDirPath()+QDir::separator()+"xvdg.ini",QSettings::IniFormat);
+    QSettings settings(QApplication::applicationDirPath()+QDir::separator()+"xmachoviewer.ini",QSettings::IniFormat);
 
     pOptions->bScanAfterOpen=settings.value("ScanAfterOpen",true).toBool();
     pOptions->bScanOverlay=settings.value("ScanOverlay",true).toBool();
@@ -64,7 +64,7 @@ void DialogOptions::loadOptions(XMACHOVIEWER::OPTIONS *pOptions)
 
 void DialogOptions::saveOptions(XMACHOVIEWER::OPTIONS *pOptions)
 {
-    QSettings settings(QApplication::applicationDirPath()+QDir::separator()+"xvdg.ini",QSettings::IniFormat);
+    QSettings settings(QApplication::applicationDirPath()+QDir::separator()+"xmachoviewer.ini",QSettings::IniFormat);
 
     settings.setValue("ScanAfterOpen",pOptions->bScanAfterOpen);
     settings.setValue("ScanOverlay",pOptions->bScanOverlay);

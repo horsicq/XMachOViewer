@@ -41,7 +41,7 @@ GuiMainWindow::GuiMainWindow(QWidget *parent) :
     {
         QString sFileName=QCoreApplication::arguments().at(1);
 
-        processFile(sFileName);
+        processFile(sFileName,true);
     }
 }
 
@@ -64,10 +64,7 @@ void GuiMainWindow::on_actionOpen_triggered()
 
     if(!sFileName.isEmpty())
     {
-        if(xOptions.bScanAfterOpen)
-        {
-            processFile(sFileName);
-        }
+        processFile(sFileName,xOptions.bScanAfterOpen);
     }
 }
 
@@ -111,7 +108,7 @@ void GuiMainWindow::adjust()
     show();
 }
 
-void GuiMainWindow::processFile(QString sFileName)
+void GuiMainWindow::processFile(QString sFileName,bool bReload)
 {
     if((sFileName!="")&&(QFileInfo(sFileName).isFile()))
     {
@@ -141,9 +138,14 @@ void GuiMainWindow::processFile(QString sFileName)
             {
                 ui->stackedWidgetMain->setCurrentIndex(1);
                 formatOptions.bIsImage=false;
-                formatOptions.nImageAddress=-1;
+                formatOptions.nImageBase=-1;
                 formatOptions.sBackupFileName=XBinary::getBackupName(pFile);
                 ui->widgetViewer->setData(pFile,&formatOptions);
+
+                if(bReload)
+                {
+                    ui->widgetViewer->reload();
+                }
             }
             else
             {
@@ -193,10 +195,7 @@ void GuiMainWindow::dropEvent(QDropEvent *event)
 
             sFileName=XBinary::convertFileName(sFileName);
 
-            if(xOptions.bScanAfterOpen)
-            {
-                processFile(sFileName);
-            }
+            processFile(sFileName,xOptions.bScanAfterOpen);
         }
     }
 }

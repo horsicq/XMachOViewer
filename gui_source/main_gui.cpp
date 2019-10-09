@@ -20,23 +20,25 @@
 //
 #include "guimainwindow.h"
 #include <QApplication>
+#include <QStyleFactory>
 
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-
 #ifdef Q_OS_MAC
 #ifndef QT_DEBUG
    QCoreApplication::setLibraryPaths(QStringList(QString(argv[0]).remove("MacOS/xmachoviewer")+"PlugIns"));
 #endif
 #endif
-
     QCoreApplication::setOrganizationName(X_ORGANIZATIONNAME);
     QCoreApplication::setOrganizationDomain(X_ORGANIZATIONDOMAIN);
     QCoreApplication::setApplicationName(X_APPLICATIONNAME);
     QCoreApplication::setApplicationVersion(X_APPLICATIONVERSION);
 
     QApplication a(argc, argv);
+
+    QApplication::setStyle(QStyleFactory::create("Fusion"));
+
     GuiMainWindow w;
     w.show();
 

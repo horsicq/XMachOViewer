@@ -51,8 +51,9 @@ private slots:
     void on_actionOptions_triggered();
     void on_actionAbout_triggered();
     void adjust();
-    void processFile(QString sFileName);
+    void processFile(QString sFileName, bool bReload);
     void closeCurrentFile();
+
 protected:
     void dragEnterEvent(QDragEnterEvent *event) override;
     void dragMoveEvent(QDragMoveEvent *event) override;
