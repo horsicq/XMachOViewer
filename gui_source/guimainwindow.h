@@ -62,7 +62,7 @@ protected:
 private:
     Ui::GuiMainWindow *ui;
     XMACHOVIEWER::OPTIONS xOptions;
-    FormatWidget::OPTIONS formatOptions;
+    FW_DEF::OPTIONS formatOptions;
 
     QFile *pFile;
 };
