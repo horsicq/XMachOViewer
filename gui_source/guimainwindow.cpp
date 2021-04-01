@@ -1,4 +1,4 @@
-// Copyright (c) 2019-2020 hors<horsicq@gmail.com>
+// Copyright (c) 2019-2021 hors<horsicq@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -27,15 +27,38 @@ GuiMainWindow::GuiMainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    pFile=nullptr;
+    g_pFile=nullptr;
 
     setWindowTitle(QString("%1 v%2").arg(X_APPLICATIONNAME).arg(X_APPLICATIONVERSION));
 
     setAcceptDrops(true);
 
-    DialogOptions::loadOptions(&xOptions);
-    adjust();
+    g_xOptions.setName(X_OPTIONSFILE);
 
+    QList<XOptions::ID> listIDs;
+
+    listIDs.append(XOptions::ID_STYLE);
+    listIDs.append(XOptions::ID_QSS);
+    listIDs.append(XOptions::ID_LANG);
+    listIDs.append(XOptions::ID_STAYONTOP);
+    listIDs.append(XOptions::ID_SCANAFTEROPEN);
+    listIDs.append(XOptions::ID_SAVELASTDIRECTORY);
+    listIDs.append(XOptions::ID_SAVEBACKUP);
+    listIDs.append(XOptions::ID_SEARCHSIGNATURESPATH);
+
+    g_xOptions.setValueIDs(listIDs);
+    g_xOptions.load();
+
+    g_xShortcuts.setName(X_SHORTCUTSFILE);
+
+    g_xShortcuts.addGroup(XShortcuts::ID_STRINGS);
+    g_xShortcuts.addGroup(XShortcuts::ID_SIGNATURES);
+    g_xShortcuts.addGroup(XShortcuts::ID_HEX);
+    g_xShortcuts.addGroup(XShortcuts::ID_DISASM);
+
+    g_xShortcuts.load();
+
+    adjust();
 
     if(QCoreApplication::arguments().count()>1)
     {
@@ -48,23 +71,21 @@ GuiMainWindow::GuiMainWindow(QWidget *parent) :
 GuiMainWindow::~GuiMainWindow()
 {
     closeCurrentFile();
-    DialogOptions::saveOptions(&xOptions);
+    g_xOptions.save();
+    g_xShortcuts.save();
+
     delete ui;
 }
 
 void GuiMainWindow::on_actionOpen_triggered()
 {
-    QString sDirectory;
-    if(xOptions.bSaveLastDirectory&&QDir().exists(xOptions.sLastDirectory))
-    {
-        sDirectory=xOptions.sLastDirectory;
-    }
+    QString sDirectory=g_xOptions.getLastDirectory();
 
-    QString sFileName=QFileDialog::getOpenFileName(this,tr("Open file..."),sDirectory,tr("All files (*)"));
+    QString sFileName=QFileDialog::getOpenFileName(this,tr("Open file")+QString("..."),sDirectory,tr("All files")+QString(" (*)"));
 
     if(!sFileName.isEmpty())
     {
-        processFile(sFileName,xOptions.bScanAfterOpen);
+        processFile(sFileName,g_xOptions.getValue(XOptions::ID_SCANAFTEROPEN).toBool());
     }
 }
 
@@ -80,7 +101,7 @@ void GuiMainWindow::on_actionExit_triggered()
 
 void GuiMainWindow::on_actionOptions_triggered()
 {
-    DialogOptions dialogOptions(this,&xOptions);
+    DialogOptions dialogOptions(this,&g_xOptions);
     dialogOptions.exec();
 
     adjust();
@@ -94,69 +115,62 @@ void GuiMainWindow::on_actionAbout_triggered()
 
 void GuiMainWindow::adjust()
 {
-    Qt::WindowFlags wf=windowFlags();
-    if(xOptions.bStayOnTop)
-    {
-        wf|=Qt::WindowStaysOnTopHint;
-    }
-    else
-    {
-        wf&=~(Qt::WindowStaysOnTopHint);
-    }
-    setWindowFlags(wf);
+    g_xOptions.adjustStayOnTop(this);
 
-    show();
+    g_formatOptions.bSaveBackup=g_xOptions.isSaveBackup();
+
+    ui->widgetViewer->setShortcuts(&g_xShortcuts);
 }
 
-void GuiMainWindow::processFile(QString sFileName,bool bReload)
+void GuiMainWindow::processFile(QString sFileName, bool bReload)
 {
     if((sFileName!="")&&(QFileInfo(sFileName).isFile()))
     {
-        if(xOptions.bSaveLastDirectory)
-        {
-            QFileInfo fi(sFileName);
-            xOptions.sLastDirectory=fi.absolutePath();
-        }
+        g_xOptions.setLastDirectory(QFileInfo(sFileName).absolutePath());
+
         closeCurrentFile();
 
-        pFile=new QFile;
+        g_pFile=new QFile;
 
-        pFile->setFileName(sFileName);
+        g_pFile->setFileName(sFileName);
 
-        if(!pFile->open(QIODevice::ReadWrite))
+        if(!g_pFile->open(QIODevice::ReadWrite))
         {
-            if(!pFile->open(QIODevice::ReadOnly))
+            if(!g_pFile->open(QIODevice::ReadOnly))
             {
                 closeCurrentFile();
             }
         }
 
-        if(pFile)
+        if(g_pFile)
         {
-            XMACH mach(pFile);
+            XMACH mach(g_pFile);
             if(mach.isValid())
             {
                 ui->stackedWidgetMain->setCurrentIndex(1);
-                formatOptions.bIsImage=false;
-                formatOptions.nImageBase=-1;
-                formatOptions.sBackupFileName=XBinary::getBackupName(pFile);
-                ui->widgetViewer->setData(pFile,&formatOptions,0,0,0);
+                g_formatOptions.bIsImage=false;
+                g_formatOptions.nImageBase=-1;
+                g_formatOptions.nStartType=SMACH::TYPE_HEURISTICSCAN;
+                g_formatOptions.sSearchSignaturesPath=g_xOptions.getSearchSignaturesPath();
+                ui->widgetViewer->setData(g_pFile,g_formatOptions,0,0,0);
 
                 if(bReload)
                 {
                     ui->widgetViewer->reload();
                 }
 
+                adjust();
+
                 setWindowTitle(sFileName);
             }
             else
             {
-                QMessageBox::critical(this,tr("Error"),tr("It is not a valid Mach-O file!"));
+                QMessageBox::critical(this,tr("Error"),tr("It is not a valid file"));
             }
         }
         else
         {
-            QMessageBox::critical(this,tr("Error"),tr("Cannot open the file!"));
+            QMessageBox::critical(this,tr("Error"),tr("Cannot open file"));
         }
     }
 }
@@ -165,11 +179,11 @@ void GuiMainWindow::closeCurrentFile()
 {
     ui->stackedWidgetMain->setCurrentIndex(0);
 
-    if(pFile)
+    if(g_pFile)
     {
-        pFile->close();
-        delete pFile;
-        pFile=nullptr;
+        g_pFile->close();
+        delete g_pFile;
+        g_pFile=nullptr;
     }
 
     setWindowTitle(QString("%1 v%2").arg(X_APPLICATIONNAME).arg(X_APPLICATIONVERSION));
@@ -199,7 +213,25 @@ void GuiMainWindow::dropEvent(QDropEvent *event)
 
             sFileName=XBinary::convertFileName(sFileName);
 
-            processFile(sFileName,xOptions.bScanAfterOpen);
+            processFile(sFileName,g_xOptions.getValue(XOptions::ID_SCANAFTEROPEN).toBool());
         }
     }
+}
+
+void GuiMainWindow::on_actionShortcuts_triggered()
+{
+    DialogShortcuts dialogShortcuts(this);
+
+    dialogShortcuts.setData(&g_xShortcuts);
+
+    dialogShortcuts.exec();
+
+    adjust();
+}
+
+void GuiMainWindow::on_actionDemangle_triggered()
+{
+    DialogDemangle dialogDemangle(this);
+
+    dialogDemangle.exec();
 }

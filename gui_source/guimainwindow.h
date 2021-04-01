@@ -1,4 +1,4 @@
-// Copyright (c) 2019-2020 hors<horsicq@gmail.com>
+// Copyright (c) 2019-2021 hors<horsicq@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -30,6 +30,7 @@
 #include <QMimeData>
 #include "dialogoptions.h"
 #include "dialogabout.h"
+#include "dialogshortcuts.h"
 #include "machwidget.h"
 
 namespace Ui {
@@ -48,10 +49,12 @@ private slots:
     void on_actionOpen_triggered();
     void on_actionClose_triggered();
     void on_actionExit_triggered();
+    void on_actionDemangle_triggered();
+    void on_actionShortcuts_triggered();
     void on_actionOptions_triggered();
     void on_actionAbout_triggered();
     void adjust();
-    void processFile(QString sFileName, bool bReload);
+    void processFile(QString sFileName,bool bReload);
     void closeCurrentFile();
 
 protected:
@@ -61,10 +64,10 @@ protected:
 
 private:
     Ui::GuiMainWindow *ui;
-    XMACHOVIEWER::OPTIONS xOptions;
-    FW_DEF::OPTIONS formatOptions;
-
-    QFile *pFile;
+    XOptions g_xOptions;
+    XShortcuts g_xShortcuts;
+    FW_DEF::OPTIONS g_formatOptions;
+    QFile *g_pFile;
 };
 
 #endif // GUIMAINWINDOW_H

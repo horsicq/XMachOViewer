@@ -23,9 +23,17 @@ FORMS += \
 
 include(../build.pri)
 
+XCONFIG += use_disasm
+XCONFIG += use_extrabuttons
+
 !contains(XCONFIG, machwidget) {
     XCONFIG += machwidget
     include(../FormatWidgets/MACH/machwidget.pri)
+}
+
+!contains(XCONFIG, xoptions) {
+    XCONFIG += xoptions
+    include(../../_mylibs/XOptions/xoptions.pri)
 }
 
 win32 {

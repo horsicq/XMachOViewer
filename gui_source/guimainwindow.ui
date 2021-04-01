@@ -77,6 +77,8 @@
     <property name="title">
      <string>Tools</string>
     </property>
+    <addaction name="actionDemangle"/>
+    <addaction name="actionShortcuts"/>
     <addaction name="actionOptions"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
@@ -93,24 +95,15 @@
    <property name="text">
     <string>Open</string>
    </property>
-   <property name="shortcut">
-    <string>Ctrl+O</string>
-   </property>
   </action>
   <action name="actionClose">
    <property name="text">
     <string>Close</string>
    </property>
-   <property name="shortcut">
-    <string>Ctrl+W</string>
-   </property>
   </action>
   <action name="actionExit">
    <property name="text">
     <string>Exit</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+Q</string>
    </property>
   </action>
   <action name="actionOptions">
@@ -121,6 +114,16 @@
   <action name="actionAbout">
    <property name="text">
     <string>About</string>
+   </property>
+  </action>
+  <action name="actionShortcuts">
+   <property name="text">
+    <string>Shortcuts</string>
+   </property>
+  </action>
+  <action name="actionDemangle">
+   <property name="text">
+    <string>Demangle</string>
    </property>
   </action>
  </widget>

@@ -1,4 +1,4 @@
-// Copyright (c) 2019-2020 hors<horsicq@gmail.com>
+// Copyright (c) 2019-2021 hors<horsicq@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,19 +21,28 @@
 #include "dialogoptions.h"
 #include "ui_dialogoptions.h"
 
-DialogOptions::DialogOptions(QWidget *parent, XMACHOVIEWER::OPTIONS *pOptions) :
+DialogOptions::DialogOptions(QWidget *parent, XOptions *pOptions) :
     QDialog(parent),
     ui(new Ui::DialogOptions)
 {
     ui->setupUi(this);
 
-    this->pOptions=pOptions;
+    this->x_pOptions=pOptions;
 
-    ui->checkBoxScanAfterOpen->setChecked(pOptions->bScanAfterOpen);
-    ui->checkBoxSaveLastDirectory->setChecked(pOptions->bSaveLastDirectory);
+    pOptions->setCheckBox(ui->checkBoxScanAfterOpen,XOptions::ID_SCANAFTEROPEN);
+    pOptions->setCheckBox(ui->checkBoxSaveLastDirectory,XOptions::ID_SAVELASTDIRECTORY);
+    pOptions->setCheckBox(ui->checkBoxStayOnTop,XOptions::ID_STAYONTOP);
+    pOptions->setCheckBox(ui->checkBoxSaveBackup,XOptions::ID_SAVEBACKUP);
+    pOptions->setComboBox(ui->comboBoxStyle,XOptions::ID_STYLE);
+    pOptions->setComboBox(ui->comboBoxQss,XOptions::ID_QSS);
+    pOptions->setComboBox(ui->comboBoxLanguage,XOptions::ID_LANG);
+    pOptions->setLineEdit(ui->lineEditSearchSignatures,XOptions::ID_SEARCHSIGNATURESPATH);
 
-    ui->checkBoxStayOnTop->setChecked(pOptions->bStayOnTop);
-    ui->checkBoxSaveBackup->setChecked(pOptions->bSaveBackup);
+#ifdef WIN32
+    ui->checkBoxContext->setChecked(pOptions->checkContext(X_APPLICATIONNAME,"*"));
+#else
+    ui->checkBoxContext->hide();
+#endif
 }
 
 DialogOptions::~DialogOptions()
@@ -41,47 +50,54 @@ DialogOptions::~DialogOptions()
     delete ui;
 }
 
-void DialogOptions::loadOptions(XMACHOVIEWER::OPTIONS *pOptions)
-{
-    QSettings settings(QApplication::applicationDirPath()+QDir::separator()+"xmachoviewer.ini",QSettings::IniFormat);
-
-    pOptions->bScanAfterOpen=settings.value("ScanAfterOpen",true).toBool();
-    pOptions->bSaveLastDirectory=settings.value("SaveLastDirectory",true).toBool();
-    pOptions->sLastDirectory=settings.value("LastDirectory","").toString();
-
-    pOptions->bStayOnTop=settings.value("StayOnTop",false).toBool();
-    pOptions->bSaveBackup=settings.value("SaveBackup",true).toBool();
-
-    if(!QDir(pOptions->sLastDirectory).exists())
-    {
-        pOptions->sLastDirectory="";
-    }
-}
-
-void DialogOptions::saveOptions(XMACHOVIEWER::OPTIONS *pOptions)
-{
-    QSettings settings(QApplication::applicationDirPath()+QDir::separator()+"xmachoviewer.ini",QSettings::IniFormat);
-
-    settings.setValue("ScanAfterOpen",pOptions->bScanAfterOpen);
-    settings.setValue("SaveLastDirectory",pOptions->bSaveLastDirectory);
-    settings.setValue("LastDirectory",pOptions->sLastDirectory);
-
-    settings.setValue("StayOnTop",pOptions->bStayOnTop);
-    settings.setValue("SaveBackup",pOptions->bSaveBackup);
-}
 
 void DialogOptions::on_pushButtonOK_clicked()
 {
-    pOptions->bScanAfterOpen=ui->checkBoxScanAfterOpen->isChecked();
-    pOptions->bSaveLastDirectory=ui->checkBoxSaveLastDirectory->isChecked();
-    pOptions->bStayOnTop=ui->checkBoxStayOnTop->isChecked();
-    pOptions->bSaveBackup=ui->checkBoxSaveBackup->isChecked();
+    x_pOptions->getCheckBox(ui->checkBoxScanAfterOpen,XOptions::ID_SCANAFTEROPEN);
+    x_pOptions->getCheckBox(ui->checkBoxSaveLastDirectory,XOptions::ID_SAVELASTDIRECTORY);
+    x_pOptions->getCheckBox(ui->checkBoxStayOnTop,XOptions::ID_STAYONTOP);
+    x_pOptions->getCheckBox(ui->checkBoxSaveBackup,XOptions::ID_SAVEBACKUP);
+    x_pOptions->getComboBox(ui->comboBoxStyle,XOptions::ID_STYLE);
+    x_pOptions->getComboBox(ui->comboBoxQss,XOptions::ID_QSS);
+    x_pOptions->getComboBox(ui->comboBoxLanguage,XOptions::ID_LANG);
+    x_pOptions->getLineEdit(ui->lineEditSearchSignatures,XOptions::ID_SEARCHSIGNATURESPATH);
 
-    saveOptions(pOptions);
+#ifdef WIN32
+    if(x_pOptions->checkContext(X_APPLICATIONNAME,"*")!=ui->checkBoxContext->isChecked())
+    {
+        if(ui->checkBoxContext->isChecked())
+        {
+            x_pOptions->registerContext(X_APPLICATIONNAME,"*",qApp->applicationFilePath());
+        }
+        else
+        {
+            x_pOptions->clearContext(X_APPLICATIONNAME,"*");
+        }
+    }
+#endif
+
+    if(x_pOptions->isRestartNeeded())
+    {
+        QMessageBox::information(this,tr("Information"),tr("Please restart the application"));
+    }
+
     this->close();
 }
 
 void DialogOptions::on_pushButtonCancel_clicked()
 {
     this->close();
+}
+
+void DialogOptions::on_toolButtonSearchSignatures_clicked()
+{
+    QString sText=ui->lineEditSearchSignatures->text();
+    QString sInitDirectory=XBinary::convertPathName(sText);
+
+    QString sDirectoryName=QFileDialog::getExistingDirectory(this,tr("Open directory")+QString("..."),sInitDirectory,QFileDialog::ShowDirsOnly);
+
+    if(!sDirectoryName.isEmpty())
+    {
+        ui->lineEditSearchSignatures->setText(sDirectoryName);
+    }
 }
