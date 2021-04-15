@@ -55,6 +55,7 @@ GuiMainWindow::GuiMainWindow(QWidget *parent) :
     g_xShortcuts.addGroup(XShortcuts::ID_SIGNATURES);
     g_xShortcuts.addGroup(XShortcuts::ID_HEX);
     g_xShortcuts.addGroup(XShortcuts::ID_DISASM);
+    g_xShortcuts.addGroup(XShortcuts::ID_ARCHIVE);
 
     g_xShortcuts.load();
 
