@@ -50,6 +50,7 @@ GuiMainWindow::GuiMainWindow(QWidget *parent) :
     g_xOptions.load();
 
     g_xShortcuts.setName(X_SHORTCUTSFILE);
+    g_xShortcuts.setNative(g_xOptions.isNative());
 
     g_xShortcuts.addGroup(XShortcuts::ID_STRINGS);
     g_xShortcuts.addGroup(XShortcuts::ID_SIGNATURES);
