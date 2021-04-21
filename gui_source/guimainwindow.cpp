@@ -144,9 +144,57 @@ void GuiMainWindow::processFile(QString sFileName, bool bReload)
             }
         }
 
-        if(g_pFile)
+        QIODevice *pOpenDevice=g_pFile;
+
+        QSet<XBinary::FT> ftArchiveAvailable;
+
+        ftArchiveAvailable.insert(XBinary::FT_ZIP);
+
+        if(XArchives::isArchiveOpenValid(g_pFile,ftArchiveAvailable))
         {
-            XMACH mach(g_pFile);
+            bool bError=false;
+
+            QSet<XBinary::FT> ftOpenAvailable;
+
+            ftOpenAvailable.insert(XBinary::FT_MACHO);
+
+            FW_DEF::OPTIONS options={};
+            options.sTitle=sFileName;
+
+            DialogArchive dialogArchive(this);
+            dialogArchive.setData(g_pFile,options,ftOpenAvailable);
+
+            if(dialogArchive.exec()==QDialog::Accepted)
+            {
+                QString sRecordName="ARM-9";
+
+                QTemporaryFile *pTempFile=new QTemporaryFile;
+                pTempFile->open();
+
+                if(XArchives::decompressToFile(XBinary::getDeviceFileName(g_pFile),sRecordName,pTempFile->fileName()))
+                {
+                    pOpenDevice=pTempFile;
+                }
+                else
+                {
+                    bError=true;
+                }
+            }
+            else
+            {
+                bError=true;
+            }
+
+            if(bError)
+            {
+                close();
+                return;
+            }
+        }
+
+        if(pOpenDevice)
+        {
+            XMACH mach(pOpenDevice); // TODO MACHOFAT TODO isValid(pDevice)
             if(mach.isValid())
             {
                 ui->stackedWidgetMain->setCurrentIndex(1);
@@ -154,7 +202,7 @@ void GuiMainWindow::processFile(QString sFileName, bool bReload)
                 g_formatOptions.nImageBase=-1;
                 g_formatOptions.nStartType=SMACH::TYPE_HEURISTICSCAN;
                 g_formatOptions.sSearchSignaturesPath=g_xOptions.getSearchSignaturesPath();
-                ui->widgetViewer->setData(g_pFile,g_formatOptions,0,0,0);
+                ui->widgetViewer->setData(pOpenDevice,g_formatOptions,0,0,0);
 
                 if(bReload)
                 {

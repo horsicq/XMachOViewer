@@ -32,6 +32,7 @@
 #include "dialogabout.h"
 #include "dialogshortcuts.h"
 #include "machwidget.h"
+#include "dialogarchive.h"
 
 namespace Ui {
 class GuiMainWindow;
