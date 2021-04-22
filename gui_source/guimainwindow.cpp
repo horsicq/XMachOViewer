@@ -28,8 +28,9 @@ GuiMainWindow::GuiMainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     g_pFile=nullptr;
+    g_pTempFile=nullptr;
 
-    setWindowTitle(QString("%1 v%2").arg(X_APPLICATIONNAME).arg(X_APPLICATIONVERSION));
+    setWindowTitle(QString("%1 v%2").arg(X_APPLICATIONDISPLAYNAME).arg(X_APPLICATIONVERSION));
 
     setAcceptDrops(true);
 
@@ -41,7 +42,6 @@ GuiMainWindow::GuiMainWindow(QWidget *parent) :
     listIDs.append(XOptions::ID_QSS);
     listIDs.append(XOptions::ID_LANG);
     listIDs.append(XOptions::ID_STAYONTOP);
-    listIDs.append(XOptions::ID_SCANAFTEROPEN);
     listIDs.append(XOptions::ID_SAVELASTDIRECTORY);
     listIDs.append(XOptions::ID_SAVEBACKUP);
     listIDs.append(XOptions::ID_SEARCHSIGNATURESPATH);
@@ -66,7 +66,7 @@ GuiMainWindow::GuiMainWindow(QWidget *parent) :
     {
         QString sFileName=QCoreApplication::arguments().at(1);
 
-        processFile(sFileName,true);
+        processFile(sFileName);
     }
 }
 
@@ -87,7 +87,7 @@ void GuiMainWindow::on_actionOpen_triggered()
 
     if(!sFileName.isEmpty())
     {
-        processFile(sFileName,g_xOptions.getValue(XOptions::ID_SCANAFTEROPEN).toBool());
+        processFile(sFileName);
     }
 }
 
@@ -124,7 +124,7 @@ void GuiMainWindow::adjust()
     ui->widgetViewer->setShortcuts(&g_xShortcuts);
 }
 
-void GuiMainWindow::processFile(QString sFileName, bool bReload)
+void GuiMainWindow::processFile(QString sFileName)
 {
     if((sFileName!="")&&(QFileInfo(sFileName).isFile()))
     {
@@ -157,23 +157,29 @@ void GuiMainWindow::processFile(QString sFileName, bool bReload)
             QSet<XBinary::FT> ftOpenAvailable;
 
             ftOpenAvailable.insert(XBinary::FT_MACHO);
+            ftOpenAvailable.insert(XBinary::FT_MACHO32);
+            ftOpenAvailable.insert(XBinary::FT_MACHO64);
+            ftOpenAvailable.insert(XBinary::FT_MACHOFAT);
 
             FW_DEF::OPTIONS options={};
             options.sTitle=sFileName;
+            options.bFilter=true;
+            options.bNoWindowOpen=true;
 
             DialogArchive dialogArchive(this);
+            dialogArchive.setShortcuts(&g_xShortcuts);
             dialogArchive.setData(g_pFile,options,ftOpenAvailable);
 
             if(dialogArchive.exec()==QDialog::Accepted)
             {
-                QString sRecordName="ARM-9";
+                QString sRecordName=dialogArchive.getCurrentRecordFileName();
 
-                QTemporaryFile *pTempFile=new QTemporaryFile;
-                pTempFile->open();
+                g_pTempFile=new QTemporaryFile;
+                g_pTempFile->open();
 
-                if(XArchives::decompressToFile(XBinary::getDeviceFileName(g_pFile),sRecordName,pTempFile->fileName()))
+                if(XArchives::decompressToFile(XBinary::getDeviceFileName(g_pFile),sRecordName,g_pTempFile->fileName()))
                 {
-                    pOpenDevice=pTempFile;
+                    pOpenDevice=g_pTempFile;
                 }
                 else
                 {
@@ -194,8 +200,7 @@ void GuiMainWindow::processFile(QString sFileName, bool bReload)
 
         if(pOpenDevice)
         {
-            XMACH mach(pOpenDevice); // TODO MACHOFAT TODO isValid(pDevice)
-            if(mach.isValid())
+            if(XMACH::isValid(pOpenDevice)||XMACHOFat::isValid(pOpenDevice))
             {
                 ui->stackedWidgetMain->setCurrentIndex(1);
                 g_formatOptions.bIsImage=false;
@@ -204,10 +209,7 @@ void GuiMainWindow::processFile(QString sFileName, bool bReload)
                 g_formatOptions.sSearchSignaturesPath=g_xOptions.getSearchSignaturesPath();
                 ui->widgetViewer->setData(pOpenDevice,g_formatOptions,0,0,0);
 
-                if(bReload)
-                {
-                    ui->widgetViewer->reload();
-                }
+//                ui->widgetViewer->reload();
 
                 adjust();
 
@@ -236,7 +238,14 @@ void GuiMainWindow::closeCurrentFile()
         g_pFile=nullptr;
     }
 
-    setWindowTitle(QString("%1 v%2").arg(X_APPLICATIONNAME).arg(X_APPLICATIONVERSION));
+    if(g_pTempFile)
+    {
+        g_pTempFile->close();
+        delete g_pTempFile;
+        g_pTempFile=nullptr;
+    }
+
+    setWindowTitle(QString("%1 v%2").arg(X_APPLICATIONDISPLAYNAME).arg(X_APPLICATIONVERSION));
 }
 
 void GuiMainWindow::dragEnterEvent(QDragEnterEvent *event)
@@ -263,7 +272,7 @@ void GuiMainWindow::dropEvent(QDropEvent *event)
 
             sFileName=XBinary::convertFileName(sFileName);
 
-            processFile(sFileName,g_xOptions.getValue(XOptions::ID_SCANAFTEROPEN).toBool());
+            processFile(sFileName);
         }
     }
 }

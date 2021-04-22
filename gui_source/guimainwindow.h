@@ -55,7 +55,7 @@ private slots:
     void on_actionOptions_triggered();
     void on_actionAbout_triggered();
     void adjust();
-    void processFile(QString sFileName,bool bReload);
+    void processFile(QString sFileName);
     void closeCurrentFile();
 
 protected:
@@ -69,6 +69,7 @@ private:
     XShortcuts g_xShortcuts;
     FW_DEF::OPTIONS g_formatOptions;
     QFile *g_pFile;
+    QTemporaryFile *g_pTempFile;
 };
 
 #endif // GUIMAINWINDOW_H

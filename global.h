@@ -23,8 +23,8 @@
 
 #include <QString>
 
-#define X_APPLICATIONNAME "XMACHViewer"
-#define X_APPLICATIONFILENAME "xmachviewer"
+#define X_APPLICATIONDISPLAYNAME "XMACHViewer"
+#define X_APPLICATIONNAME "xmachviewer"
 #define X_APPLICATIONVERSION "0.01"
 #define X_ORGANIZATIONNAME "NTInfo"
 #define X_ORGANIZATIONDOMAIN "ntinfo.biz"
