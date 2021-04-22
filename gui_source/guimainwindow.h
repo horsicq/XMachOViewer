@@ -32,6 +32,7 @@
 #include "dialogabout.h"
 #include "dialogshortcuts.h"
 #include "machwidget.h"
+#include "machofatwidget.h"
 #include "dialogarchive.h"
 
 namespace Ui {

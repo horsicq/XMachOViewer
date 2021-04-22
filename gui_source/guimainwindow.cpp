@@ -121,7 +121,11 @@ void GuiMainWindow::adjust()
 
     g_formatOptions.bSaveBackup=g_xOptions.isSaveBackup();
 
-    ui->widgetViewer->setShortcuts(&g_xShortcuts);
+    ui->widgetMACHO->setOptions(g_formatOptions);
+    ui->widgetMACHO->setShortcuts(&g_xShortcuts);
+
+    ui->widgetMACHOFAT->setOptions(g_formatOptions);
+    ui->widgetMACHOFAT->setShortcuts(&g_xShortcuts);
 }
 
 void GuiMainWindow::processFile(QString sFileName)
@@ -200,16 +204,31 @@ void GuiMainWindow::processFile(QString sFileName)
 
         if(pOpenDevice)
         {
-            if(XMACH::isValid(pOpenDevice)||XMACHOFat::isValid(pOpenDevice))
+            if(XMACH::isValid(pOpenDevice))
             {
                 ui->stackedWidgetMain->setCurrentIndex(1);
                 g_formatOptions.bIsImage=false;
                 g_formatOptions.nImageBase=-1;
                 g_formatOptions.nStartType=SMACH::TYPE_HEURISTICSCAN;
                 g_formatOptions.sSearchSignaturesPath=g_xOptions.getSearchSignaturesPath();
-                ui->widgetViewer->setData(pOpenDevice,g_formatOptions,0,0,0);
+                ui->widgetMACHO->setData(pOpenDevice,g_formatOptions,0,0,0);
 
-//                ui->widgetViewer->reload();
+                ui->widgetMACHO->reload();
+
+                adjust();
+
+                setWindowTitle(sFileName);
+            }
+            else if(XMACHOFat::isValid(pOpenDevice))
+            {
+                ui->stackedWidgetMain->setCurrentIndex(2);
+                g_formatOptions.bIsImage=false;
+                g_formatOptions.nImageBase=-1;
+                g_formatOptions.nStartType=SMACH::TYPE_HEURISTICSCAN;
+                g_formatOptions.sSearchSignaturesPath=g_xOptions.getSearchSignaturesPath();
+                ui->widgetMACHOFAT->setData(pOpenDevice,g_formatOptions,0,0,0);
+
+                ui->widgetMACHOFAT->reload();
 
                 adjust();
 

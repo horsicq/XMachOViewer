@@ -15,43 +15,11 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
-    <property name="spacing">
-     <number>0</number>
-    </property>
-    <property name="leftMargin">
-     <number>0</number>
-    </property>
-    <property name="topMargin">
-     <number>0</number>
-    </property>
-    <property name="rightMargin">
-     <number>0</number>
-    </property>
-    <property name="bottomMargin">
-     <number>0</number>
-    </property>
     <item>
      <widget class="QStackedWidget" name="stackedWidgetMain">
-      <widget class="QWidget" name="pageEmpty"/>
-      <widget class="QWidget" name="pageViewer">
-       <layout class="QVBoxLayout" name="verticalLayout_2">
-        <property name="leftMargin">
-         <number>0</number>
-        </property>
-        <property name="topMargin">
-         <number>0</number>
-        </property>
-        <property name="rightMargin">
-         <number>0</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="MACHWidget" name="widgetViewer" native="true"/>
-        </item>
-       </layout>
-      </widget>
+      <widget class="QWidget" name="widgetEmpty"/>
+      <widget class="MACHWidget" name="widgetMACHO"/>
+      <widget class="MACHOFATWidget" name="widgetMACHOFAT"/>
      </widget>
     </item>
    </layout>
@@ -131,7 +99,13 @@
   <customwidget>
    <class>MACHWidget</class>
    <extends>QWidget</extends>
-   <header>machwidget.h</header>
+   <header location="global">machwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MACHOFATWidget</class>
+   <extends>QWidget</extends>
+   <header>machofatwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
