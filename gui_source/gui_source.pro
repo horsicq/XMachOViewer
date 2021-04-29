@@ -21,26 +21,26 @@ FORMS += \
         dialogabout.ui \
         guimainwindow.ui
 
-include(../build.pri)
+include($$PWD/../build.pri)
 
 XCONFIG += use_disasm
 XCONFIG += use_extrabuttons
 
 !contains(XCONFIG, archive_widget) {
     XCONFIG += archive_widget
-    include(../archive_widget/archive_widget.pri)
+    include($$PWD/../../_mylibs/archive_widget/archive_widget.pri)
 }
 
 !contains(XCONFIG, xoptions) {
     XCONFIG += xoptions
-    include(../XOptions/xoptions.pri)
+    include($$PWD/../../_mylibs/XOptions/xoptions.pri)
 }
 
 win32 {
-    RC_ICONS = ../icons/main.ico
+    RC_ICONS = $$PWD/../icons/main.ico
 }
 macx {
-    ICON = ../icons/main.icns
+    ICON = $$PWD/../icons/main.icns
 }
 
 RESOURCES += \
