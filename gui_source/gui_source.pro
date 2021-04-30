@@ -28,12 +28,12 @@ XCONFIG += use_extrabuttons
 
 !contains(XCONFIG, archive_widget) {
     XCONFIG += archive_widget
-    include($$PWD/../../_mylibs/archive_widget/archive_widget.pri)
+    include(../archive_widget/archive_widget.pri)
 }
 
 !contains(XCONFIG, xoptions) {
     XCONFIG += xoptions
-    include($$PWD/../../_mylibs/XOptions/xoptions.pri)
+    include(../XOptions/xoptions.pri)
 }
 
 win32 {
