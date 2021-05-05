@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=0.01
+Type=Application
+Name=XMachOViewer
+Comment=MachO file viewer/editor
+TryExec=xmachoviewer
+Exec=xmachoviewer %F
+Icon=xmachoviewer
+Terminal=false
+Categories=Development
+MimeType=application/octet-stream
