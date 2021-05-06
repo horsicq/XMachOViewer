@@ -76,3 +76,9 @@
 [submodule "XLLVMDemangler"]
 	path = XLLVMDemangler
 	url = https://github.com/horsicq/XLLVMDemangler.git
+[submodule "archive_widget"]
+	path = archive_widget
+	url = https://github.com/horsicq/archive_widget.git
+[submodule "nfd_widget"]
+	path = nfd_widget
+	url = https://github.com/horsicq/nfd_widget.git
