@@ -9,7 +9,7 @@ TRANSLATIONS = \
         translation/xmachoviewer_ko.ts \
         translation/xmachoviewer_pl.ts \
         translation/xmachoviewer_pt_BR.ts \
-        translation/xmachoviewer_pt.ts \
+        translation/xmachoviewer_pt_PT.ts \
         translation/xmachoviewer_ru.ts \
         translation/xmachoviewer_tr.ts\
         translation/xmachoviewer_vi.ts \
