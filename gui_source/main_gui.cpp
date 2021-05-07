@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 
     QApplication a(argc, argv);
 
-    QApplication::setStyle(QStyleFactory::create("Fusion"));
+    XOptions::adjustApplicationView(X_OPTIONSFILE,X_APPLICATIONNAME);
 
     GuiMainWindow w;
     w.show();

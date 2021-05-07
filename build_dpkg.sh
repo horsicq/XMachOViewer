@@ -37,6 +37,7 @@ makeproject gui_source
 
 cd $SOURCE_PATH/gui_source
 lupdate gui_source_tr.pro
+lrelease gui_source_tr.pro
 cd $SOURCE_PATH
 
 mkdir -p $SOURCE_PATH/release
@@ -62,21 +63,7 @@ cp -Rf $SOURCE_PATH/XStyles/qss/ $SOURCE_PATH/release/$BUILD_NAME/usr/lib/xmacho
 
 cp -Rf $SOURCE_PATH/DEBIAN/hicolor/ $SOURCE_PATH/release/$BUILD_NAME/usr/share/icons/
 
-lrelease  $SOURCE_PATH/gui_source/translation/xmachoviewer_de.ts -qm  $SOURCE_PATH/release/$BUILD_NAME/usr/lib/xmachoviewer/lang/xmachoviewer_de.qm
-lrelease  $SOURCE_PATH/gui_source/translation/xmachoviewer_es.ts -qm $SOURCE_PATH/release/$BUILD_NAME/usr/lib/xmachoviewer/lang/xmachoviewer_es.qm
-lrelease  $SOURCE_PATH/gui_source/translation/xmachoviewer_fr.ts -qm  $SOURCE_PATH/release/$BUILD_NAME/usr/lib/xmachoviewer/lang/xmachoviewer_fr.qm
-lrelease  $SOURCE_PATH/gui_source/translation/xmachoviewer_he.ts -qm $SOURCE_PATH/release/$BUILD_NAME/usr/lib/xmachoviewer/lang/xmachoviewer_he.qm
-lrelease  $SOURCE_PATH/gui_source/translation/xmachoviewer_it.ts -qm $SOURCE_PATH/release/$BUILD_NAME/usr/lib/xmachoviewer/lang/xmachoviewer_it.qm
-lrelease  $SOURCE_PATH/gui_source/translation/xmachoviewer_ja.ts -qm  $SOURCE_PATH/release/$BUILD_NAME/usr/lib/xmachoviewer/lang/xmachoviewer_ja.qm
-lrelease  $SOURCE_PATH/gui_source/translation/xmachoviewer_ko.ts -qm $SOURCE_PATH/release/$BUILD_NAME/usr/lib/xmachoviewer/lang/xmachoviewer_ko.qm
-lrelease  $SOURCE_PATH/gui_source/translation/xmachoviewer_pl.ts -qm  $SOURCE_PATH/release/$BUILD_NAME/usr/lib/xmachoviewer/lang/xmachoviewer_pl.qm
-lrelease  $SOURCE_PATH/gui_source/translation/xmachoviewer_pt_BR.ts -qm  $SOURCE_PATH/release/$BUILD_NAME/usr/lib/xmachoviewer/lang/xmachoviewer_pt_BR.qm
-lrelease  $SOURCE_PATH/gui_source/translation/xmachoviewer_pt.ts -qm  $SOURCE_PATH/release/$BUILD_NAME/usr/lib/xmachoviewer/lang/xmachoviewer_pt.qm
-lrelease  $SOURCE_PATH/gui_source/translation/xmachoviewer_ru.ts -qm  $SOURCE_PATH/release/$BUILD_NAME/usr/lib/xmachoviewer/lang/xmachoviewer_ru.qm
-lrelease  $SOURCE_PATH/gui_source/translation/xmachoviewer_tr.ts -qm $SOURCE_PATH/release/$BUILD_NAME/usr/lib/xmachoviewer/lang/xmachoviewer_tr.qm
-lrelease  $SOURCE_PATH/gui_source/translation/xmachoviewer_vi.ts -qm  $SOURCE_PATH/release/$BUILD_NAME/usr/lib/xmachoviewer/lang/xmachoviewer_vi.qm
-lrelease  $SOURCE_PATH/gui_source/translation/xmachoviewer_zh.ts -qm  $SOURCE_PATH/release/$BUILD_NAME/usr/lib/xmachoviewer/lang/xmachoviewer_zh.qm
-lrelease  $SOURCE_PATH/gui_source/translation/xmachoviewer_zh_TW.ts -qm  $SOURCE_PATH/release/$BUILD_NAME/usr/lib/xmachoviewer/lang/xmachoviewer_zh_TW.qm
+mv $SOURCE_PATH/gui_source/translation/*.qm  $SOURCE_PATH/release/$BUILD_NAME/base/lang/
 
 cp -f $SOURCE_PATH/signatures/crypto.db                     		$SOURCE_PATH/release/$BUILD_NAME/usr/lib/xmachoviewer/signatures/
 
