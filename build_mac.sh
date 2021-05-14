@@ -27,6 +27,7 @@ function makeproject
     cd $SOURCE_PATH
 }
 
+makeproject build_libs
 makeproject gui_source
 
 cd $SOURCE_PATH/gui_source
