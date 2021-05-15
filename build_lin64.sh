@@ -42,7 +42,7 @@ mkdir -p $SOURCE_PATH/release/$BUILD_NAME/base/lang
 
 cp -R $QT_PATH/plugins/platforms/libqxcb.so                     $SOURCE_PATH/release/$BUILD_NAME/base/platforms/
 
-cp -R $SOURCE_PATH/build/release/xmachoviewer                     $SOURCE_PATH/release/$BUILD_NAME/base/
+cp -R $SOURCE_PATH/build/release/xmachoviewer                   $SOURCE_PATH/release/$BUILD_NAME/base/
 
 cp -R $QT_PATH/lib/libQt5Core.so.5.15.2                         $SOURCE_PATH/release/$BUILD_NAME/base/
 cp -R $QT_PATH/lib/libQt5Svg.so.5.15.2                          $SOURCE_PATH/release/$BUILD_NAME/base/

@@ -56,23 +56,16 @@ mkdir -p $SOURCE_PATH/release/$BUILD_NAME/usr/share/icons
 
 cp -f $SOURCE_PATH/build/release/xmachoviewer                     		$SOURCE_PATH/release/$BUILD_NAME/usr/bin/
 
-cp -f $SOURCE_PATH/DEBIAN/control                     		    $SOURCE_PATH/release/$BUILD_NAME/DEBIAN/
+cp -f $SOURCE_PATH/DEBIAN/control                     		            $SOURCE_PATH/release/$BUILD_NAME/DEBIAN/
 cp -f $SOURCE_PATH/DEBIAN/xmachoviewer.desktop                     	    $SOURCE_PATH/release/$BUILD_NAME/usr/share/applications/
-cp -f $SOURCE_PATH/LICENSE                     		            $SOURCE_PATH/release/$BUILD_NAME/
-cp -Rf $SOURCE_PATH/XStyles/qss/ $SOURCE_PATH/release/$BUILD_NAME/usr/lib/xmachoviewer/
+cp -f $SOURCE_PATH/LICENSE                     		                    $SOURCE_PATH/release/$BUILD_NAME/
+cp -Rf $SOURCE_PATH/XStyles/qss/                                        $SOURCE_PATH/release/$BUILD_NAME/usr/lib/xmachoviewer/
 
 cp -Rf $SOURCE_PATH/DEBIAN/hicolor/ $SOURCE_PATH/release/$BUILD_NAME/usr/share/icons/
 
 mv $SOURCE_PATH/gui_source/translation/*.qm  $SOURCE_PATH/release/$BUILD_NAME/base/lang/
 
 cp -f $SOURCE_PATH/signatures/crypto.db                     		$SOURCE_PATH/release/$BUILD_NAME/usr/lib/xmachoviewer/signatures/
-
-#sudo chown root:root -R $SOURCE_PATH/release/$BUILD_NAME
-#sudo chmod 0755 $SOURCE_PATH/release/$BUILD_NAME/usr/bin/xmachoviewer
-#sudo chmod 0755 $SOURCE_PATH/release/$BUILD_NAME/usr/bin/xmachoviewerc
-#sudo dpkg -b $SOURCE_PATH/release/$BUILD_NAME
-#sudo rm -rf $SOURCE_PATH/release/$BUILD_NAME
-#sudo chmod -R 777 $SOURCE_PATH/release/
 
 dpkg -b $SOURCE_PATH/release/$BUILD_NAME
 rm -rf $SOURCE_PATH/release/$BUILD_NAME
