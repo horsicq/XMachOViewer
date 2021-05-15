@@ -82,3 +82,6 @@
 [submodule "nfd_widget"]
 	path = nfd_widget
 	url = https://github.com/horsicq/nfd_widget.git
+[submodule "build_tools"]
+	path = build_tools
+	url = https://github.com/horsicq/build_tools
