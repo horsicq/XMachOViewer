@@ -1,113 +1,45 @@
 #!/bin/sh -x
-QT_PATH=$HOME/Qt/5.15.2/clang_64
-RELEASE_VERSION=$(cat "release_version.txt")
-echo $RELEASE_VERSION
-SOURCE_PATH=$PWD
+export QMAKE_PATH=$HOME/Qt/5.15.2/clang_64/bin/qmake
 
-BUILD_NAME=xmachoviewer_mac_portable
-GUIEXE=xmachoviewer
+export X_SOURCE_PATH=$PWD
+export X_BUILD_NAME=xmachoviewer_mac_portable
+export X_RELEASE_VERSION=$(cat "release_version.txt")
 
-cd $SOURCE_PATH
+source build_tools/mac.sh
 
-rm -rf build
+check_file $QMAKE_PATH
 
-function makeproject
-{
-    cd $SOURCE_PATH/$1
-    
-    $QT_PATH/bin/qmake $1.pro -spec macx-clang CONFIG+=x86_64
-    make -f Makefile clean
-    make -f Makefile
+if [ -z "$X_ERROR" ]; then
+    init
+    make_build "$X_SOURCE_PATH/xmachoviewer_source.pro"
+    cd "$X_SOURCE_PATH/gui_source"
+    make_translate "gui_source_tr.pro" xmachoviewer
+    cd "$X_SOURCE_PATH"
 
-    rm -rf Makefile
-    rm -rf Makefile.Release
-    rm -rf Makefile.Debug
-    rm -rf object_script.*     
+    check_file "$X_SOURCE_PATH/build/release/xmachoviewer.app/Contents/MacOS/xmachoviewer"
+    if [ -z "$X_ERROR" ]; then
+        cp -R "$X_SOURCE_PATH/build/release/xmachoviewer.app" "$X_SOURCE_PATH/release/$X_BUILD_NAME"
 
-    cd $SOURCE_PATH
-}
+        mkdir -p $X_SOURCE_PATH/release/$X_BUILD_NAME/xmachoviewer.app/Contents/Resources/signatures
+        cp -R $X_SOURCE_PATH/signatures/crypto.db            $X_SOURCE_PATH/release/$X_BUILD_NAME/xmachoviewer.app/Contents/Resources/signatures
+        cp -R $X_SOURCE_PATH/XStyles/qss/                    $X_SOURCE_PATH/release/$X_BUILD_NAME/xmachoviewer.app/Contents/Resources/qss
 
-makeproject build_libs
-makeproject gui_source
+        fiximport "$X_SOURCE_PATH/build/release/xmachoviewer.app/Contents/MacOS/xmachoviewer"
 
-cd $SOURCE_PATH/gui_source
-$QT_PATH/bin/lupdate gui_source_tr.pro
-$QT_PATH/bin/lrelease gui_source_tr.pro
-cd $SOURCE_PATH
+        deploy_qt_library QtWidgets xmachoviewer
+        deploy_qt_library QtGui xmachoviewer
+        deploy_qt_library QtCore xmachoviewer
+        deploy_qt_library QtDBus xmachoviewer
+        deploy_qt_library QtPrintSupport xmachoviewer
+        deploy_qt_library QtSvg xmachoviewer
+        deploy_qt_library QtOpenGL xmachoviewer
+        deploy_qt_library QtConcurrent xmachoviewer
 
-mkdir -p $SOURCE_PATH/release
-rm -rf $SOURCE_PATH/release/$BUILD_NAME
-mkdir -p $SOURCE_PATH/release/$BUILD_NAME
+        deploy_qt_plugin platforms libqcocoa xmachoviewer
+        deploy_qt_plugin platforms libqminimal xmachoviewer
+        deploy_qt_plugin platforms libqoffscreen xmachoviewer
 
-mkdir -p $SOURCE_PATH/release/$BUILD_NAME/$GUIEXE.app/Contents/Resources/lang
-
-cp -R $SOURCE_PATH/build/release/$GUIEXE.app               $SOURCE_PATH/release/$BUILD_NAME
-mkdir $SOURCE_PATH/release/$BUILD_NAME/$GUIEXE.app/Contents/PlugIns
-
-function fixlibrary
-{
-    install_name_tool -change @rpath/$1.framework/Versions/5/$1 @executable_path/../Frameworks/$1.framework/Versions/5/$1  $2    
-}
-
-function fiximport
-{
-    fixlibrary QtWidgets $1
-    fixlibrary QtGui $1
-    fixlibrary QtCore $1  
-	fixlibrary QtDBus $1
-	fixlibrary QtPrintSupport $1
-	fixlibrary QtSvg $1
-    fixlibrary QtOpenGL $1
-    fixlibrary QtConcurrent $1
-}
-
-function copylibrary
-{
-    mkdir $SOURCE_PATH/release/$BUILD_NAME/$GUIEXE.app/Contents/Frameworks
-    mkdir $SOURCE_PATH/release/$BUILD_NAME/$GUIEXE.app/Contents/Frameworks/$1.framework
-    mkdir $SOURCE_PATH/release/$BUILD_NAME/$GUIEXE.app/Contents/Frameworks/$1.framework/Versions
-    mkdir $SOURCE_PATH/release/$BUILD_NAME/$GUIEXE.app/Contents/Frameworks/$1.framework/Versions/5
-    
-    cp -R $QT_PATH/lib/$1.framework/Versions/5/$1 $SOURCE_PATH/release/$BUILD_NAME/$GUIEXE.app/Contents/Frameworks/$1.framework/Versions/5
-    
-    install_name_tool -id @executable_path/../Frameworks/$1.framework/Versions/5/$1 $SOURCE_PATH/release/$BUILD_NAME/$GUIEXE.app/Contents/Frameworks/$1.framework/Versions/5/$1
-    fiximport $SOURCE_PATH/release/$BUILD_NAME/$GUIEXE.app/Contents/Frameworks/$1.framework/Versions/5/$1
-}
-
-function copyplugin
-{
-    mkdir $SOURCE_PATH/release/$BUILD_NAME/$GUIEXE.app/Contents/PlugIns/$1/
-    cp -R $QT_PATH/plugins/$1/$2.dylib $SOURCE_PATH/release/$BUILD_NAME/$GUIEXE.app/Contents/PlugIns/$1/
-    
-    install_name_tool -id @executable_path/../PlugIns/$1/$2.dylib $SOURCE_PATH/release/$BUILD_NAME/$GUIEXE.app/Contents/PlugIns/$1/$2.dylib
-    fiximport $SOURCE_PATH/release/$BUILD_NAME/$GUIEXE.app/Contents/PlugIns/$1/$2.dylib
-}
-
-fiximport $SOURCE_PATH/release/$BUILD_NAME/$GUIEXE.app/Contents/MacOS/$GUIEXE
-
-copylibrary QtWidgets
-copylibrary QtGui
-copylibrary QtCore
-copylibrary QtDBus
-copylibrary QtPrintSupport
-copylibrary QtSvg
-copylibrary QtOpenGL
-copylibrary QtConcurrent
-
-copyplugin platforms libqcocoa
-copyplugin platforms libqminimal
-copyplugin platforms libqoffscreen
-
-mv $SOURCE_PATH/gui_source/translation/*.qm  $SOURCE_PATH/release/$BUILD_NAME/$GUIEXE.app/Contents/Resources/lang/
-
-mkdir -p $SOURCE_PATH/release/$BUILD_NAME/$GUIEXE.app/Contents/Resources/signatures
-cp -R $SOURCE_PATH/signatures/crypto.db                     		 $SOURCE_PATH/release/$BUILD_NAME/$GUIEXE.app/Contents/Resources/signatures
-
-rm -rf $SOURCE_PATH/release/${BUILD_NAME}_${RELEASE_VERSION}.dmg
-hdiutil create -format UDBZ -quiet -srcfolder $SOURCE_PATH/release/$BUILD_NAME $SOURCE_PATH/release/${BUILD_NAME}_${RELEASE_VERSION}.dmg
-cd $SOURCE_PATH/release/
-zip -r $SOURCE_PATH/release/${BUILD_NAME}_${RELEASE_VERSION}.zip ${BUILD_NAME}
-
-rm -rf $SOURCE_PATH/release/$BUILD_NAME
-
-
+        make_release
+        make_clear
+    fi
+fi

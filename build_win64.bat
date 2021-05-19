@@ -12,11 +12,11 @@ call %X_SOURCE_PATH%\build_tools\windows.cmd check_file %SEVENZIP_PATH%
 
 IF NOT [%X_ERROR%] == [] goto exit
 
-call %X_SOURCE_PATH%\build_tools\windows.cmd init
-call %X_SOURCE_PATH%\build_tools\windows.cmd build %X_SOURCE_PATH%\xmachoviewer_source.pro
+call %X_SOURCE_PATH%\build_tools\windows.cmd make_init
+call %X_SOURCE_PATH%\build_tools\windows.cmd make_build %X_SOURCE_PATH%\xmachoviewer_source.pro
 
 cd %X_SOURCE_PATH%\gui_source
-call %X_SOURCE_PATH%\build_tools\windows.cmd translate gui_source_tr.pro 
+call %X_SOURCE_PATH%\build_tools\windows.cmd make_translate gui_source_tr.pro 
 cd %X_SOURCE_PATH%
 
 call %X_SOURCE_PATH%\build_tools\windows.cmd check_file %X_SOURCE_PATH%\build\release\xmachoviewer.exe
@@ -40,4 +40,4 @@ call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_qt_plugin platforms qwindows
 call %X_SOURCE_PATH%\build_tools\windows.cmd make_release
 
 :exit
-call %X_SOURCE_PATH%\build_tools\windows.cmd clear
+call %X_SOURCE_PATH%\build_tools\windows.cmd make_clear

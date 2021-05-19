@@ -130,31 +130,39 @@ void GuiMainWindow::adjust()
 
 void GuiMainWindow::processFile(QString sFileName)
 {
-    if((sFileName!="")&&(QFileInfo(sFileName).isFile()))
+    bool bIsFile=XBinary::isFileExists(sFileName);
+    bool bIsDirectory=XBinary::isDirectoryExists(sFileName);
+
+    if((sFileName!="")&&(bIsFile||bIsDirectory))
     {
+        QIODevice *pOpenDevice=nullptr;
+
         g_xOptions.setLastDirectory(QFileInfo(sFileName).absolutePath());
 
         closeCurrentFile();
 
-        g_pFile=new QFile;
-
-        g_pFile->setFileName(sFileName);
-
-        if(!g_pFile->open(QIODevice::ReadWrite))
+        if(bIsFile)
         {
-            if(!g_pFile->open(QIODevice::ReadOnly))
-            {
-                closeCurrentFile();
-            }
-        }
+            g_pFile=new QFile;
 
-        QIODevice *pOpenDevice=g_pFile;
+            g_pFile->setFileName(sFileName);
+
+            if(!g_pFile->open(QIODevice::ReadWrite))
+            {
+                if(!g_pFile->open(QIODevice::ReadOnly))
+                {
+                    closeCurrentFile();
+                }
+            }
+
+            pOpenDevice=g_pFile;
+        }
 
         QSet<XBinary::FT> ftArchiveAvailable;
 
         ftArchiveAvailable.insert(XBinary::FT_ZIP);
 
-        if(XArchives::isArchiveOpenValid(g_pFile,ftArchiveAvailable))
+        if(XArchives::isArchiveOpenValid(g_pFile,ftArchiveAvailable)||bIsDirectory)
         {
             bool bError=false;
 
@@ -172,22 +180,49 @@ void GuiMainWindow::processFile(QString sFileName)
 
             DialogArchive dialogArchive(this);
             dialogArchive.setShortcuts(&g_xShortcuts);
-            dialogArchive.setData(g_pFile,options,ftOpenAvailable);
+
+            if(bIsFile)
+            {
+                dialogArchive.setDevice(g_pFile,options,ftOpenAvailable);
+            }
+            else if(bIsDirectory)
+            {
+                dialogArchive.setDirectory(sFileName,options,ftOpenAvailable);
+            }
 
             if(dialogArchive.exec()==QDialog::Accepted)
             {
                 QString sRecordName=dialogArchive.getCurrentRecordFileName();
 
-                g_pTempFile=new QTemporaryFile;
-                g_pTempFile->open();
+                if(bIsFile)
+                {
+                    g_pTempFile=new QTemporaryFile;
+                    g_pTempFile->open();
 
-                if(XArchives::decompressToFile(XBinary::getDeviceFileName(g_pFile),sRecordName,g_pTempFile->fileName()))
-                {
-                    pOpenDevice=g_pTempFile;
+                    if(XArchives::decompressToFile(XBinary::getDeviceFileName(g_pFile),sRecordName,g_pTempFile->fileName()))
+                    {
+                        pOpenDevice=g_pTempFile;
+                    }
+                    else
+                    {
+                        bError=true;
+                    }
                 }
-                else
+                else // Directory
                 {
-                    bError=true;
+                    g_pFile=new QFile;
+
+                    g_pFile->setFileName(sRecordName);
+
+                    if(!g_pFile->open(QIODevice::ReadWrite))
+                    {
+                        if(!g_pFile->open(QIODevice::ReadOnly))
+                        {
+                            closeCurrentFile();
+                        }
+                    }
+
+                    pOpenDevice=g_pFile;
                 }
             }
             else
