@@ -23,7 +23,7 @@
 
 #include <QString>
 
-#define X_APPLICATIONDISPLAYNAME "XMACHOViewer"
+#define X_APPLICATIONDISPLAYNAME "XMachOViewer"
 #define X_APPLICATIONNAME "xmachoviewer"
 #define X_APPLICATIONVERSION "0.01"
 #define X_ORGANIZATIONNAME "NTInfo"
