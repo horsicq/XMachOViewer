@@ -23,12 +23,12 @@
 
 #include <QString>
 
-#define X_APPLICATIONDISPLAYNAME "XMACHViewer"
-#define X_APPLICATIONNAME "xmachviewer"
+#define X_APPLICATIONDISPLAYNAME "XMACHOViewer"
+#define X_APPLICATIONNAME "xmachoviewer"
 #define X_APPLICATIONVERSION "0.01"
 #define X_ORGANIZATIONNAME "NTInfo"
 #define X_ORGANIZATIONDOMAIN "ntinfo.biz"
-#define X_OPTIONSFILE "xmachviewer.ini"
+#define X_OPTIONSFILE "xmachoviewer.ini"
 #define X_SHORTCUTSFILE "shortcuts.ini"
 
 #endif // _GLOBAL_H
