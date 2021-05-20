@@ -17,7 +17,23 @@
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QStackedWidget" name="stackedWidgetMain">
-      <widget class="QWidget" name="widgetEmpty"/>
+      <widget class="QWidget" name="widgetEmpty">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLabel" name="labelLogo">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="rsrc.qrc">:/pics/logo.png</pixmap>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
       <widget class="MACHWidget" name="widgetMACHO"/>
       <widget class="MACHOFATWidget" name="widgetMACHOFAT"/>
      </widget>
@@ -109,6 +125,8 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="rsrc.qrc"/>
+ </resources>
  <connections/>
 </ui>
