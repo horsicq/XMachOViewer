@@ -1,71 +1,37 @@
 #!/bin/bash -x
+export QMAKE_PATH=/usr/bin/qmake
 
-RELEASE_VERSION=$(cat "release_version.txt")
-ARCHITECTURE=$(uname -m)
-REVISION=$(date "+%Y%m%d")
-echo $RELEASE_VERSION
-SOURCE_PATH=$PWD
+export X_SOURCE_PATH=$PWD
+export X_BUILD_NAME=xmachoviewer_linux_portable
+export X_RELEASE_VERSION=$(cat "release_version.txt")
 
-if [[ $ARCHITECTURE == *"x86_64"* ]]; then
-    ARCHITECTURE="amd64"
+source build_tools/linux.sh
+
+check_file $QMAKE_PATH
+
+if [ -z "$X_ERROR" ]; then
+    make_init
+    make_build "$X_SOURCE_PATH/xmachoviewer_source.pro"
+    cd "$X_SOURCE_PATH/gui_source"
+    make_translate "gui_source_tr.pro"
+    cd "$X_SOURCE_PATH"
+
+    check_file "$X_SOURCE_PATH/build/release/xmachoviewer"
+    if [ -z "$X_ERROR" ]; then
+        create_app_dir xmachoviewer
+        
+        cp -f $X_SOURCE_PATH/LICENSE                                        $X_SOURCE_PATH/release/$X_BUILD_NAME/
+        cp -f $X_SOURCE_PATH/DEBIAN/control                                 $X_SOURCE_PATH/release/$X_BUILD_NAME/DEBIAN/
+        cp -f $X_SOURCE_PATH/build/release/xmachoviewer                     $X_SOURCE_PATH/release/$X_BUILD_NAME/usr/bin/
+        cp -f $X_SOURCE_PATH/DEBIAN/xmachoviewer.desktop                    $X_SOURCE_PATH/release/$X_BUILD_NAME/usr/share/applications/
+        cp -Rf $X_SOURCE_PATH/DEBIAN/hicolor/                               $X_SOURCE_PATH/release/$X_BUILD_NAME/usr/share/icons/
+        cp -Rf $X_SOURCE_PATH/XStyles/qss/                                  $X_SOURCE_PATH/release/$X_BUILD_NAME/usr/lib/xmachoviewer/
+        mv $X_SOURCE_PATH/gui_source/translation/*.qm                       $X_SOURCE_PATH/release/$X_BUILD_NAME/usr/lib/xmachoviewer/lang/
+        mkdir -p $X_SOURCE_PATH/release/$X_BUILD_NAME/usr/lib/xmachoviewer/signatures
+        cp -f $X_SOURCE_PATH/signatures/crypto.db                           $X_SOURCE_PATH/release/$X_BUILD_NAME/usr/lib/xmachoviewer/signatures/
+
+        make_deb
+        mv $X_SOURCE_PATH/release/$X_BUILD_NAME.deb $X_SOURCE_PATH/release/xmachoviewer_${X_RELEASE_VERSION}-${X_REVISION}_${X_ARCHITECTURE}.deb
+        make_clear
+    fi
 fi
-
-BUILD_NAME=die_${RELEASE_VERSION}-${REVISION}_${ARCHITECTURE}
-
-cd $SOURCE_PATH
-
-function makeproject
-{
-    cd $SOURCE_PATH/$1
-    
-    qmake $1.pro -spec linux-g++
-    make -f Makefile clean
-    make -f Makefile
-
-    rm -rf Makefile
-    rm -rf Makefile.Release
-    rm -rf Makefile.Debug
-    rm -rf object_script.*     
-
-    cd $SOURCE_PATH
-}
-
-rm -rf $SOURCE_PATH/build
-
-makeproject build_libs
-makeproject gui_source
-
-cd $SOURCE_PATH/gui_source
-lupdate gui_source_tr.pro
-lrelease gui_source_tr.pro
-cd $SOURCE_PATH
-
-mkdir -p $SOURCE_PATH/release
-rm -rf $SOURCE_PATH/release/$BUILD_NAME
-mkdir -p $SOURCE_PATH/release/$BUILD_NAME
-mkdir -p $SOURCE_PATH/release/$BUILD_NAME/DEBIAN
-mkdir -p $SOURCE_PATH/release/$BUILD_NAME/usr
-mkdir -p $SOURCE_PATH/release/$BUILD_NAME/usr/bin
-mkdir -p $SOURCE_PATH/release/$BUILD_NAME/usr/lib
-mkdir -p $SOURCE_PATH/release/$BUILD_NAME/usr/lib/xmachoviewer
-mkdir -p $SOURCE_PATH/release/$BUILD_NAME/usr/lib/xmachoviewer/lang
-mkdir -p $SOURCE_PATH/release/$BUILD_NAME/usr/lib/xmachoviewer/signatures
-mkdir -p $SOURCE_PATH/release/$BUILD_NAME/usr/share
-mkdir -p $SOURCE_PATH/release/$BUILD_NAME/usr/share/applications
-mkdir -p $SOURCE_PATH/release/$BUILD_NAME/usr/share/icons
-
-cp -f $SOURCE_PATH/build/release/xmachoviewer                     		$SOURCE_PATH/release/$BUILD_NAME/usr/bin/
-
-cp -f $SOURCE_PATH/DEBIAN/control                     		            $SOURCE_PATH/release/$BUILD_NAME/DEBIAN/
-cp -f $SOURCE_PATH/DEBIAN/xmachoviewer.desktop                     	    $SOURCE_PATH/release/$BUILD_NAME/usr/share/applications/
-cp -f $SOURCE_PATH/LICENSE                     		                    $SOURCE_PATH/release/$BUILD_NAME/
-cp -Rf $SOURCE_PATH/XStyles/qss/                                        $SOURCE_PATH/release/$BUILD_NAME/usr/lib/xmachoviewer/
-
-cp -Rf $SOURCE_PATH/DEBIAN/hicolor/ $SOURCE_PATH/release/$BUILD_NAME/usr/share/icons/
-
-mv $SOURCE_PATH/gui_source/translation/*.qm  $SOURCE_PATH/release/$BUILD_NAME/base/lang/
-
-cp -f $SOURCE_PATH/signatures/crypto.db                     		$SOURCE_PATH/release/$BUILD_NAME/usr/lib/xmachoviewer/signatures/
-
-dpkg -b $SOURCE_PATH/release/$BUILD_NAME
-rm -rf $SOURCE_PATH/release/$BUILD_NAME
