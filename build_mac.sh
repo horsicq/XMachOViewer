@@ -10,7 +10,7 @@ source build_tools/mac.sh
 check_file $QMAKE_PATH
 
 if [ -z "$X_ERROR" ]; then
-    init
+    make_init
     make_build "$X_SOURCE_PATH/xmachoviewer_source.pro"
     cd "$X_SOURCE_PATH/gui_source"
     make_translate "gui_source_tr.pro" xmachoviewer
