@@ -133,6 +133,8 @@ void GuiMainWindow::processFile(QString sFileName)
     bool bIsFile=XBinary::isFileExists(sFileName);
     bool bIsDirectory=XBinary::isDirectoryExists(sFileName);
 
+    QString sTitle=sFileName;
+
     if((sFileName!="")&&(bIsFile||bIsDirectory))
     {
         QIODevice *pOpenDevice=nullptr;
@@ -211,6 +213,7 @@ void GuiMainWindow::processFile(QString sFileName)
                 else // Directory
                 {
                     g_pFile=new QFile;
+                    sTitle=sRecordName;
 
                     g_pFile->setFileName(sRecordName);
 
@@ -252,7 +255,7 @@ void GuiMainWindow::processFile(QString sFileName)
 
                 adjust();
 
-                setWindowTitle(sFileName);
+                setWindowTitle(sTitle);
             }
             else if(XMACHOFat::isValid(pOpenDevice))
             {
@@ -267,7 +270,7 @@ void GuiMainWindow::processFile(QString sFileName)
 
                 adjust();
 
-                setWindowTitle(sFileName);
+                setWindowTitle(sTitle);
             }
             else
             {

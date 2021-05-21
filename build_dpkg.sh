@@ -22,6 +22,7 @@ if [ -z "$X_ERROR" ]; then
         
         cp -f $X_SOURCE_PATH/LICENSE                                        $X_SOURCE_PATH/release/$X_BUILD_NAME/
         cp -f $X_SOURCE_PATH/DEBIAN/control                                 $X_SOURCE_PATH/release/$X_BUILD_NAME/DEBIAN/
+        sed -i "s/#ARCH#/$X_ARCHITECTURE/" $X_SOURCE_PATH/release/$X_BUILD_NAME/DEBIAN/control
         cp -f $X_SOURCE_PATH/build/release/xmachoviewer                     $X_SOURCE_PATH/release/$X_BUILD_NAME/usr/bin/
         cp -f $X_SOURCE_PATH/DEBIAN/xmachoviewer.desktop                    $X_SOURCE_PATH/release/$X_BUILD_NAME/usr/share/applications/
         cp -Rf $X_SOURCE_PATH/DEBIAN/hicolor/                               $X_SOURCE_PATH/release/$X_BUILD_NAME/usr/share/icons/

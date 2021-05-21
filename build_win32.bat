@@ -36,6 +36,7 @@ call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_qt_library Qt5OpenGL
 call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_qt_library Qt5Svg
 call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_qt_library Qt5Widgets
 call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_qt_plugin platforms qwindows
+call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_vc_redist
 
 call %X_SOURCE_PATH%\build_tools\windows.cmd make_release
 
