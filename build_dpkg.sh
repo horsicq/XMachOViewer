@@ -27,7 +27,7 @@ if [ -z "$X_ERROR" ]; then
         cp -f $X_SOURCE_PATH/DEBIAN/xmachoviewer.desktop                    $X_SOURCE_PATH/release/$X_BUILD_NAME/usr/share/applications/
         cp -Rf $X_SOURCE_PATH/DEBIAN/hicolor/                               $X_SOURCE_PATH/release/$X_BUILD_NAME/usr/share/icons/
         cp -Rf $X_SOURCE_PATH/XStyles/qss/                                  $X_SOURCE_PATH/release/$X_BUILD_NAME/usr/lib/xmachoviewer/
-        mv $X_SOURCE_PATH/gui_source/translation/*.qm                       $X_SOURCE_PATH/release/$X_BUILD_NAME/usr/lib/xmachoviewer/lang/
+        cp -f $X_SOURCE_PATH/gui_source/translation/*.qm                       $X_SOURCE_PATH/release/$X_BUILD_NAME/usr/lib/xmachoviewer/lang/
         mkdir -p $X_SOURCE_PATH/release/$X_BUILD_NAME/usr/lib/xmachoviewer/signatures
         cp -f $X_SOURCE_PATH/signatures/crypto.db                           $X_SOURCE_PATH/release/$X_BUILD_NAME/usr/lib/xmachoviewer/signatures/
 

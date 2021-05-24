@@ -19,5 +19,4 @@ RUN apt-get install --quiet --assume-yes \
 RUN qtchooser -print-env \
  && qmake --version
 
-RUN cd XMachOViewer &&  bash -x build_dpkg.sh
-RUN bash -x install.sh
+RUN cd XMachOViewer &&  bash -x build_dpkg.sh && bash -x install.sh
