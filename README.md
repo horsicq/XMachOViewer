@@ -31,7 +31,6 @@ How to build on Linux(Debian package)
 - sudo apt-get install build-essential -y
 - sudo apt-get install qt5-default -y
 - sudo apt-get install qtbase5-dev -y
-- sudo apt-get install qtscript5-dev -y
 - sudo apt-get install qttools5-dev-tools -y
 
 Clone project: git clone --recursive https://github.com/horsicq/XMachOViewer.git
