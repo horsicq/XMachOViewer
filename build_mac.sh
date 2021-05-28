@@ -22,7 +22,7 @@ if [ -z "$X_ERROR" ]; then
 
         mkdir -p $X_SOURCE_PATH/release/$X_BUILD_NAME/xmachoviewer.app/Contents/Resources/signatures
         cp -R $X_SOURCE_PATH/signatures/crypto.db            $X_SOURCE_PATH/release/$X_BUILD_NAME/xmachoviewer.app/Contents/Resources/signatures
-        cp -R $X_SOURCE_PATH/XStyles/qss/                    $X_SOURCE_PATH/release/$X_BUILD_NAME/xmachoviewer.app/Contents/Resources/qss
+        cp -Rf $X_SOURCE_PATH/XStyles/qss                    $X_SOURCE_PATH/release/$X_BUILD_NAME/xmachoviewer.app/Contents/Resources/
 
         fiximport "$X_SOURCE_PATH/build/release/xmachoviewer.app/Contents/MacOS/xmachoviewer"
 
