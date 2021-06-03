@@ -18,13 +18,15 @@ if [ -z "$X_ERROR" ]; then
 
     check_file "$X_SOURCE_PATH/build/release/xmachoviewer"
     if [ -z "$X_ERROR" ]; then
-        create_app_dir xmachoviewer
+        create_deb_app_dir xmachoviewer
         
         cp -f $X_SOURCE_PATH/LICENSE                                        $X_SOURCE_PATH/release/$X_BUILD_NAME/
         cp -f $X_SOURCE_PATH/DEBIAN/control                                 $X_SOURCE_PATH/release/$X_BUILD_NAME/DEBIAN/
-        sed -i "s/#ARCH#/$X_ARCHITECTURE/" $X_SOURCE_PATH/release/$X_BUILD_NAME/DEBIAN/control
+        sed -i "s/#VERSION#/$X_RELEASE_VERSION/"                            $X_SOURCE_PATH/release/$X_BUILD_NAME/DEBIAN/control
+        sed -i "s/#ARCH#/$X_ARCHITECTURE/"                                  $X_SOURCE_PATH/release/$X_BUILD_NAME/DEBIAN/control
         cp -f $X_SOURCE_PATH/build/release/xmachoviewer                     $X_SOURCE_PATH/release/$X_BUILD_NAME/usr/bin/
         cp -f $X_SOURCE_PATH/DEBIAN/xmachoviewer.desktop                    $X_SOURCE_PATH/release/$X_BUILD_NAME/usr/share/applications/
+        sed -i "s/#VERSION#/$X_RELEASE_VERSION/"                            $X_SOURCE_PATH/release/$X_BUILD_NAME/usr/share/applications/xmachoviewer.desktop
         cp -Rf $X_SOURCE_PATH/DEBIAN/hicolor/                               $X_SOURCE_PATH/release/$X_BUILD_NAME/usr/share/icons/
         cp -Rf $X_SOURCE_PATH/XStyles/qss/                                  $X_SOURCE_PATH/release/$X_BUILD_NAME/usr/lib/xmachoviewer/
         mkdir -p $X_SOURCE_PATH/release/$X_BUILD_NAME/usr/lib/xmachoviewer/lang/
