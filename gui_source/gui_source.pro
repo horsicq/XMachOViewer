@@ -1,6 +1,11 @@
 QT       += core gui widgets
 
 TARGET = xmachoviewer
+
+macx {
+    TARGET = XMachOViewer
+}
+
 TEMPLATE = app
 
 CONFIG += c++11
