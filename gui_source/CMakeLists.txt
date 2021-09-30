@@ -26,6 +26,7 @@ find_package(Qt5 COMPONENTS Svg REQUIRED)
 add_definitions(-DUSE_DEX)
 add_definitions(-DUSE_ARCHIVE)
 
+include_directories(${PROJECT_SOURCE_DIR}/../archive_widget/)
 include_directories(${PROJECT_SOURCE_DIR}/../Controls/)
 include_directories(${PROJECT_SOURCE_DIR}/../FormatDialogs/)
 include_directories(${PROJECT_SOURCE_DIR}/../FormatWidgets/)
@@ -67,6 +68,20 @@ include_directories(${PROJECT_SOURCE_DIR}/../XQwt/3rdparty/qwt/src/)
 include_directories(${PROJECT_SOURCE_DIR}/../XShortcuts/)
 
 set(PROJECT_SOURCES
+            ../archive_widget/archive_widget.ui
+            ../archive_widget/dialogarchive.ui
+            ../archive_widget/dialogcreateviewmodel.ui
+            ../archive_widget/dialogshowimage.ui
+            ../archive_widget/dialogshowtext.ui
+            ../archive_widget/dialogunpackfile.ui
+            ../archive_widget/archive_widget.cpp
+            ../archive_widget/createviewmodelprocess.cpp
+            ../archive_widget/dialogarchive.cpp
+            ../archive_widget/dialogcreateviewmodel.cpp
+            ../archive_widget/dialogshowimage.cpp
+            ../archive_widget/dialogshowtext.cpp
+            ../archive_widget/dialogunpackfile.cpp
+            ../archive_widget/unpackfileprocess.cpp
             ../Controls/hexvalidator.cpp
             ../Controls/subclassofqstyleditemdelegate.cpp
             ../Controls/xabstracttableview.cpp
@@ -91,6 +106,30 @@ set(PROJECT_SOURCES
             ../FormatDialogs/dialogtextinfo.ui
             ../FormatDialogs/dumpprocess.cpp
             ../FormatDialogs/searchprocess.cpp
+            ../FormatWidgets/DEX/dexsectionheaderwidget.ui
+            ../FormatWidgets/DEX/dexwidget.ui
+            ../FormatWidgets/DEX/dialogdex.ui
+            ../FormatWidgets/DEX/dexsectionheaderwidget.cpp
+            ../FormatWidgets/DEX/dexwidget.cpp
+            ../FormatWidgets/DEX/dex_defs.cpp
+            ../FormatWidgets/DEX/dialogdex.cpp
+            ../FormatWidgets/DEX/dexprocessdata.cpp
+            ../FormatWidgets/ELF/elfsectionheaderwidget.ui
+            ../FormatWidgets/ELF/elfwidget.ui
+            ../FormatWidgets/ELF/dialogelf.ui
+            ../FormatWidgets/ELF/elfsectionheaderwidget.cpp
+            ../FormatWidgets/ELF/elfwidget.cpp
+            ../FormatWidgets/ELF/elf_defs.cpp
+            ../FormatWidgets/ELF/dialogelf.cpp
+            ../FormatWidgets/ELF/elfprocessdata.cpp
+            ../FormatWidgets/LE/lesectionheaderwidget.ui
+            ../FormatWidgets/LE/lewidget.ui
+            ../FormatWidgets/LE/dialogle.ui
+            ../FormatWidgets/LE/leprocessdata.cpp
+            ../FormatWidgets/LE/lesectionheaderwidget.cpp
+            ../FormatWidgets/LE/lewidget.cpp
+            ../FormatWidgets/LE/le_defs.cpp
+            ../FormatWidgets/LE/dialogle.cpp
             ../FormatWidgets/MultiSearch/dialogmultisearchprocess.cpp
             ../FormatWidgets/MultiSearch/dialogmultisearchprocess.ui
             ../FormatWidgets/MultiSearch/multisearch.cpp
@@ -102,6 +141,29 @@ set(PROJECT_SOURCES
             ../FormatWidgets/MACH/machsectionheaderwidget.ui
             ../FormatWidgets/MACH/machwidget.cpp
             ../FormatWidgets/MACH/machwidget.ui
+            ../FormatWidgets/MACHOFAT/machofatwidget.cpp
+            ../FormatWidgets/MACHOFAT/machofatwidget.ui
+            ../FormatWidgets/MSDOS/msdoswidget.ui
+            ../FormatWidgets/MSDOS/dialogmsdos.ui
+            ../FormatWidgets/MSDOS/msdoswidget.cpp
+            ../FormatWidgets/MSDOS/msdos_defs.cpp
+            ../FormatWidgets/MSDOS/dialogmsdos.cpp
+            ../FormatWidgets/NE/nesectionheaderwidget.ui
+            ../FormatWidgets/NE/newidget.ui
+            ../FormatWidgets/NE/dialogne.ui
+            ../FormatWidgets/NE/neprocessdata.cpp
+            ../FormatWidgets/NE/nesectionheaderwidget.cpp
+            ../FormatWidgets/NE/newidget.cpp
+            ../FormatWidgets/NE/ne_defs.cpp
+            ../FormatWidgets/NE/dialogne.cpp
+            ../FormatWidgets/PE/pesectionheaderwidget.ui
+            ../FormatWidgets/PE/pewidget.ui
+            ../FormatWidgets/PE/dialogpe.ui
+            ../FormatWidgets/PE/pesectionheaderwidget.cpp
+            ../FormatWidgets/PE/pewidget.cpp
+            ../FormatWidgets/PE/pe_defs.cpp
+            ../FormatWidgets/PE/dialogpe.cpp
+            ../FormatWidgets/PE/peprocessdata.cpp
             ../FormatWidgets/SearchSignatures/dialogsearchsignatures.cpp
             ../FormatWidgets/SearchSignatures/dialogsearchsignatures.ui
             ../FormatWidgets/SearchSignatures/searchsignatureswidget.cpp
@@ -304,7 +366,7 @@ set(PROJECT_SOURCES
 if(APPLE)
     add_library(${PROJECT_NAME} MODULE ${PROJECT_SOURCES})
     set_target_properties(${PROJECT_NAME} PROPERTIES
-            MACOSX_BUNDLE_GUI_IDENTIFIER ntinfo.xpeviewer
+            MACOSX_BUNDLE_GUI_IDENTIFIER ntinfo.xmachoviewer
             MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
             MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
             BUNDLE TRUE)
