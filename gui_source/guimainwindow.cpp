@@ -30,7 +30,7 @@ GuiMainWindow::GuiMainWindow(QWidget *parent) :
     g_pFile=nullptr;
     g_pTempFile=nullptr;
 
-    setWindowTitle(QString("%1 v%2").arg(X_APPLICATIONDISPLAYNAME).arg(X_APPLICATIONVERSION));
+    setWindowTitle(XOptions::getTitle(X_APPLICATIONDISPLAYNAME,X_APPLICATIONVERSION));
 
     setAcceptDrops(true);
 
@@ -126,6 +126,15 @@ void GuiMainWindow::adjust()
 
     ui->widgetMACHOFAT->setOptions(g_formatOptions);
     ui->widgetMACHOFAT->setShortcuts(&g_xShortcuts);
+
+    if(g_xOptions.isShowLogo())
+    {
+        ui->labelLogo->show();
+    }
+    else
+    {
+        ui->labelLogo->hide();
+    }
 }
 
 void GuiMainWindow::processFile(QString sFileName)

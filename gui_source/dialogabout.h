@@ -24,6 +24,7 @@
 #include <QDialog>
 #include <QMessageBox>
 #include "../global.h"
+#include "xoptions.h"
 
 namespace Ui {
 class DialogAbout;
@@ -34,7 +35,7 @@ class DialogAbout : public QDialog
     Q_OBJECT
 
 public:
-    explicit DialogAbout(QWidget *parent=nullptr);
+    explicit DialogAbout(QWidget *pParent=nullptr);
     ~DialogAbout();
 
 private slots:
