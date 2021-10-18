@@ -2,6 +2,7 @@
 -----------------------------------------------------------------------
 [+] m68k support
 [+] Linux AppImage
+[+] New structs
 [+] Autotools build system
 [+] CMAKE build system
 [+] PKG installer for OSX
