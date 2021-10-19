@@ -1,6 +1,7 @@
 0.02
 -----------------------------------------------------------------------
 [+] m68k support
+[+] bridgeOS support
 [+] Linux AppImage
 [+] New structs
 [+] Autotools build system
