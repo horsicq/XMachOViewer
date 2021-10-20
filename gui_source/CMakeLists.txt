@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(DIE VERSION 3.03 LANGUAGES CXX)
+project(XMachOViewer VERSION 0.02 LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -362,7 +362,7 @@ set(PROJECT_SOURCES
             guimainwindow.cpp
             guimainwindow.ui
             main_gui.cpp
-            res.qrc
+            rsrc.qrc
 )
 
 if(APPLE)
