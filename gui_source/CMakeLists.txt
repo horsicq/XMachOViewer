@@ -66,8 +66,6 @@ include_directories(${PROJECT_SOURCE_DIR}/../XMemoryMapWidget/)
 include_directories(${PROJECT_SOURCE_DIR}/../XOptions/)
 include_directories(${PROJECT_SOURCE_DIR}/../XQwt/3rdparty/qwt/src/)
 include_directories(${PROJECT_SOURCE_DIR}/../XShortcuts/)
-include_directories(${PROJECT_SOURCE_DIR}/../XMIMEWidget/)
-include_directories(${PROJECT_SOURCE_DIR}/../XSingleApplication/)
 
 set(PROJECT_SOURCES
             ../archive_widget/archive_widget.ui
@@ -368,7 +366,7 @@ set(PROJECT_SOURCES
 if(APPLE)
     add_library(${PROJECT_NAME} MODULE ${PROJECT_SOURCES})
     set_target_properties(${PROJECT_NAME} PROPERTIES
-            MACOSX_BUNDLE_GUI_IDENTIFIER ntinfo.die
+            MACOSX_BUNDLE_GUI_IDENTIFIER ntinfo.xmachoviewer
             MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
             MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
             BUNDLE TRUE)
