@@ -26,6 +26,8 @@ find_package(Qt5 COMPONENTS Svg REQUIRED)
 add_definitions(-DUSE_DEX)
 add_definitions(-DUSE_ARCHIVE)
 
+include(${PROJECT_SOURCE_DIR}/../XOptions/xoptions.cmake)
+
 include_directories(${PROJECT_SOURCE_DIR}/../archive_widget/)
 include_directories(${PROJECT_SOURCE_DIR}/../Controls/)
 include_directories(${PROJECT_SOURCE_DIR}/../FormatDialogs/)
@@ -63,11 +65,11 @@ include_directories(${PROJECT_SOURCE_DIR}/../XHexView/)
 include_directories(${PROJECT_SOURCE_DIR}/../XLLVMDemangler/3rdparty/)
 include_directories(${PROJECT_SOURCE_DIR}/../XLLVMDemangler/3rdparty/llvm/Demangle/)
 include_directories(${PROJECT_SOURCE_DIR}/../XMemoryMapWidget/)
-include_directories(${PROJECT_SOURCE_DIR}/../XOptions/)
 include_directories(${PROJECT_SOURCE_DIR}/../XQwt/3rdparty/qwt/src/)
 include_directories(${PROJECT_SOURCE_DIR}/../XShortcuts/)
 
 set(PROJECT_SOURCES
+            ${XOPTIONS_SOURCES}
             ../archive_widget/archive_widget.ui
             ../archive_widget/dialogarchive.ui
             ../archive_widget/dialogcreateviewmodel.ui
@@ -251,7 +253,6 @@ set(PROJECT_SOURCES
             ../XMemoryMapWidget/dialogmemorymap.ui
             ../XMemoryMapWidget/xmemorymapwidget.cpp
             ../XMemoryMapWidget/xmemorymapwidget.ui
-            ../XOptions/xoptions.cpp
             ../XQwt/3rdparty/qwt/src/qwt_abstract_legend.cpp
             ../XQwt/3rdparty/qwt/src/qwt_abstract_scale.cpp
             ../XQwt/3rdparty/qwt/src/qwt_abstract_scale_draw.cpp
@@ -372,7 +373,7 @@ if(APPLE)
             BUNDLE TRUE)
     set(MACOSX_BUNDLE_ICON_FILE ../icons/main.icns)
 else()
-    add_executable(${PROJECT_NAME}
+    add_executable(${PROJECT_NAME} WIN32
         ${PROJECT_SOURCES}
     )
 endif()

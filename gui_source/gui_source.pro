@@ -50,3 +50,6 @@ macx {
 
 RESOURCES += \
     rsrc.qrc
+
+DISTFILES += \
+    CMakeLists.txt
