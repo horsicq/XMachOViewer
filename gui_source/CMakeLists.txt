@@ -27,6 +27,7 @@ add_definitions(-DUSE_DEX)
 add_definitions(-DUSE_ARCHIVE)
 
 include(${PROJECT_SOURCE_DIR}/../XOptions/xoptions.cmake)
+include(${PROJECT_SOURCE_DIR}/../Formats/xformats.cmake)
 
 include_directories(${PROJECT_SOURCE_DIR}/../archive_widget/)
 include_directories(${PROJECT_SOURCE_DIR}/../Controls/)
@@ -44,7 +45,6 @@ include_directories(${PROJECT_SOURCE_DIR}/../FormatWidgets/NE/)
 include_directories(${PROJECT_SOURCE_DIR}/../FormatWidgets/PE/)
 include_directories(${PROJECT_SOURCE_DIR}/../FormatWidgets/SearchSignatures/)
 include_directories(${PROJECT_SOURCE_DIR}/../FormatWidgets/SearchStrings/)
-include_directories(${PROJECT_SOURCE_DIR}/../Formats/)
 include_directories(${PROJECT_SOURCE_DIR}/../SpecAbstract/)
 include_directories(${PROJECT_SOURCE_DIR}/../StaticScan/)
 include_directories(${PROJECT_SOURCE_DIR}/../XArchive/)
@@ -70,6 +70,7 @@ include_directories(${PROJECT_SOURCE_DIR}/../XShortcuts/)
 
 set(PROJECT_SOURCES
             ${XOPTIONS_SOURCES}
+            ${XFORMATS_SOURCES}
             ../archive_widget/archive_widget.ui
             ../archive_widget/dialogarchive.ui
             ../archive_widget/dialogcreateviewmodel.ui
@@ -185,16 +186,6 @@ set(PROJECT_SOURCES
             ../FormatWidgets/processdata.cpp
             ../FormatWidgets/toolswidget.cpp
             ../FormatWidgets/toolswidget.ui
-            ../Formats/subdevice.cpp
-            ../Formats/xbinary.cpp
-            ../Formats/xcom.cpp
-            ../Formats/xelf.cpp
-            ../Formats/xformats.cpp
-            ../Formats/xle.cpp
-            ../Formats/xmach.cpp
-            ../Formats/xmsdos.cpp
-            ../Formats/xne.cpp
-            ../Formats/xpe.cpp
             ../SpecAbstract/specabstract.cpp
             ../StaticScan/dialogstaticscan.cpp
             ../StaticScan/dialogstaticscan.ui
@@ -373,9 +364,15 @@ if(APPLE)
             BUNDLE TRUE)
     set(MACOSX_BUNDLE_ICON_FILE ../icons/main.icns)
 else()
-    add_executable(${PROJECT_NAME} WIN32
-        ${PROJECT_SOURCES}
-    )
+    if(WIN32)
+        add_executable(${PROJECT_NAME} WIN32
+            ${PROJECT_SOURCES}
+        )
+    else()
+        add_executable(${PROJECT_NAME}
+                ${PROJECT_SOURCES}
+            )
+    endif()
 endif()
 
 target_link_libraries(${PROJECT_NAME} bzip2)
