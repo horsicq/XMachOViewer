@@ -72,20 +72,7 @@ set(PROJECT_SOURCES
             ${XOPTIONS_SOURCES}
             ${XFORMATS_SOURCES}
             ${XQWT_SOURCES}
-            ../archive_widget/archive_widget.ui
-            ../archive_widget/dialogarchive.ui
-            ../archive_widget/dialogcreateviewmodel.ui
-            ../archive_widget/dialogshowimage.ui
-            ../archive_widget/dialogshowtext.ui
-            ../archive_widget/dialogunpackfile.ui
-            ../archive_widget/archive_widget.cpp
-            ../archive_widget/createviewmodelprocess.cpp
-            ../archive_widget/dialogarchive.cpp
-            ../archive_widget/dialogcreateviewmodel.cpp
-            ../archive_widget/dialogshowimage.cpp
-            ../archive_widget/dialogshowtext.cpp
-            ../archive_widget/dialogunpackfile.cpp
-            ../archive_widget/unpackfileprocess.cpp
+            ${ARCHIVE_WIDGET_SOURCES}
             ../Controls/hexvalidator.cpp
             ../Controls/subclassofqstyleditemdelegate.cpp
             ../Controls/xabstracttableview.cpp
