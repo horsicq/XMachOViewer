@@ -28,6 +28,7 @@ add_definitions(-DUSE_ARCHIVE)
 
 include(${PROJECT_SOURCE_DIR}/../XOptions/xoptions.cmake)
 include(${PROJECT_SOURCE_DIR}/../Formats/xformats.cmake)
+include(${PROJECT_SOURCE_DIR}/../XQwt/xqwt.cmake)
 
 include_directories(${PROJECT_SOURCE_DIR}/../archive_widget/)
 include_directories(${PROJECT_SOURCE_DIR}/../Controls/)
@@ -65,12 +66,12 @@ include_directories(${PROJECT_SOURCE_DIR}/../XHexView/)
 include_directories(${PROJECT_SOURCE_DIR}/../XLLVMDemangler/3rdparty/)
 include_directories(${PROJECT_SOURCE_DIR}/../XLLVMDemangler/3rdparty/llvm/Demangle/)
 include_directories(${PROJECT_SOURCE_DIR}/../XMemoryMapWidget/)
-include_directories(${PROJECT_SOURCE_DIR}/../XQwt/3rdparty/qwt/src/)
 include_directories(${PROJECT_SOURCE_DIR}/../XShortcuts/)
 
 set(PROJECT_SOURCES
             ${XOPTIONS_SOURCES}
             ${XFORMATS_SOURCES}
+            ${XQWT_SOURCES}
             ../archive_widget/archive_widget.ui
             ../archive_widget/dialogarchive.ui
             ../archive_widget/dialogcreateviewmodel.ui
@@ -244,101 +245,6 @@ set(PROJECT_SOURCES
             ../XMemoryMapWidget/dialogmemorymap.ui
             ../XMemoryMapWidget/xmemorymapwidget.cpp
             ../XMemoryMapWidget/xmemorymapwidget.ui
-            ../XQwt/3rdparty/qwt/src/qwt_abstract_legend.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_abstract_scale.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_abstract_scale_draw.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_abstract_slider.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_analog_clock.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_arrow_button.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_clipper.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_color_map.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_column_symbol.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_compass.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_compass_rose.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_counter.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_curve_fitter.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_date.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_date_scale_draw.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_date_scale_engine.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_dial.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_dial_needle.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_dyngrid_layout.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_event_pattern.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_graphic.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_interval.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_interval_symbol.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_knob.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_legend.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_legend_data.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_legend_label.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_magnifier.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_math.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_matrix_raster_data.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_null_paintdevice.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_painter.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_painter_command.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_panner.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_picker.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_picker_machine.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_pixel_matrix.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_abstract_barchart.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_axis.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_barchart.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_canvas.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_curve.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_dict.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_directpainter.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_glcanvas.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_grid.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_histogram.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_intervalcurve.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_item.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_layout.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_legenditem.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_magnifier.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_marker.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_multi_barchart.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_panner.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_picker.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_rasteritem.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_renderer.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_rescaler.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_scaleitem.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_seriesitem.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_shapeitem.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_spectrocurve.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_spectrogram.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_svgitem.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_textlabel.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_tradingcurve.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_xml.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_zoneitem.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_plot_zoomer.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_point_3d.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_point_data.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_point_mapper.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_point_polar.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_raster_data.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_round_scale_draw.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_sampling_thread.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_scale_div.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_scale_draw.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_scale_engine.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_scale_map.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_scale_widget.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_series_data.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_slider.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_spline.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_symbol.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_system_clock.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_text.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_text_engine.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_text_label.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_thermo.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_transform.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_wheel.cpp
-            ../XQwt/3rdparty/qwt/src/qwt_widget_overlay.cpp
             ../XShortcuts/dialogshortcuts.cpp
             ../XShortcuts/dialogshortcuts.ui
             ../XShortcuts/xshortcuts.cpp
