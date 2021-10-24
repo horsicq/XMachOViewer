@@ -107,10 +107,6 @@ set(PROJECT_SOURCES
             ../XDEX/xandroidbinary.cpp
             ../XDEX/xdex.cpp
             ../XDemangle/xdemangle.cpp
-            ../XDemangleWidget/dialogdemangle.cpp
-            ../XDemangleWidget/dialogdemangle.ui
-            ../XDemangleWidget/xdemanglewidget.cpp
-            ../XDemangleWidget/xdemanglewidget.ui
             dialogabout.cpp
             dialogabout.ui
             dialogoptions.cpp
