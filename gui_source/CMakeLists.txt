@@ -34,22 +34,10 @@ include(${PROJECT_SOURCE_DIR}/../XShortcuts/xshortcuts.cmake)
 include(${PROJECT_SOURCE_DIR}/../SpecAbstract/specabstract.cmake)
 include(${PROJECT_SOURCE_DIR}/../XMemoryMapWidget/xmemorymapwidget.cmake)
 include(${PROJECT_SOURCE_DIR}/../XHashWidget/xhashwidget.cmake)
+include(${PROJECT_SOURCE_DIR}/../FormatWidgets/allformatwidget.cmake)
 
 include_directories(${PROJECT_SOURCE_DIR}/../Controls/)
 include_directories(${PROJECT_SOURCE_DIR}/../FormatDialogs/)
-include_directories(${PROJECT_SOURCE_DIR}/../FormatWidgets/)
-include_directories(${PROJECT_SOURCE_DIR}/../FormatWidgets/Binary/)
-include_directories(${PROJECT_SOURCE_DIR}/../FormatWidgets/DEX/)
-include_directories(${PROJECT_SOURCE_DIR}/../FormatWidgets/ELF/)
-include_directories(${PROJECT_SOURCE_DIR}/../FormatWidgets/LE/)
-include_directories(${PROJECT_SOURCE_DIR}/../FormatWidgets/MACH/)
-include_directories(${PROJECT_SOURCE_DIR}/../FormatWidgets/MACHOFAT/)
-include_directories(${PROJECT_SOURCE_DIR}/../FormatWidgets/MSDOS/)
-include_directories(${PROJECT_SOURCE_DIR}/../FormatWidgets/MultiSearch/)
-include_directories(${PROJECT_SOURCE_DIR}/../FormatWidgets/NE/)
-include_directories(${PROJECT_SOURCE_DIR}/../FormatWidgets/PE/)
-include_directories(${PROJECT_SOURCE_DIR}/../FormatWidgets/SearchSignatures/)
-include_directories(${PROJECT_SOURCE_DIR}/../FormatWidgets/SearchStrings/)
 include_directories(${PROJECT_SOURCE_DIR}/../StaticScan/)
 include_directories(${PROJECT_SOURCE_DIR}/../XArchive/)
 include_directories(${PROJECT_SOURCE_DIR}/../XArchive/3rdparty/bzip2/src/)
@@ -77,6 +65,7 @@ set(PROJECT_SOURCES
             ${XMEMORYMAPWIDGET_SOURCES}
             ${XHASHWIDGET_SOURCES}
             ${XENTROPYWIDGET_SOURCES}
+            ${ALLFORMATWIDGET_SOURCES}
             ../Controls/hexvalidator.cpp
             ../Controls/subclassofqstyleditemdelegate.cpp
             ../Controls/xabstracttableview.cpp
@@ -101,83 +90,6 @@ set(PROJECT_SOURCES
             ../FormatDialogs/dialogtextinfo.ui
             ../FormatDialogs/dumpprocess.cpp
             ../FormatDialogs/searchprocess.cpp
-            ../FormatWidgets/DEX/dexsectionheaderwidget.ui
-            ../FormatWidgets/DEX/dexwidget.ui
-            ../FormatWidgets/DEX/dialogdex.ui
-            ../FormatWidgets/DEX/dexsectionheaderwidget.cpp
-            ../FormatWidgets/DEX/dexwidget.cpp
-            ../FormatWidgets/DEX/dex_defs.cpp
-            ../FormatWidgets/DEX/dialogdex.cpp
-            ../FormatWidgets/DEX/dexprocessdata.cpp
-            ../FormatWidgets/ELF/elfsectionheaderwidget.ui
-            ../FormatWidgets/ELF/elfwidget.ui
-            ../FormatWidgets/ELF/dialogelf.ui
-            ../FormatWidgets/ELF/elfsectionheaderwidget.cpp
-            ../FormatWidgets/ELF/elfwidget.cpp
-            ../FormatWidgets/ELF/elf_defs.cpp
-            ../FormatWidgets/ELF/dialogelf.cpp
-            ../FormatWidgets/ELF/elfprocessdata.cpp
-            ../FormatWidgets/LE/lesectionheaderwidget.ui
-            ../FormatWidgets/LE/lewidget.ui
-            ../FormatWidgets/LE/dialogle.ui
-            ../FormatWidgets/LE/leprocessdata.cpp
-            ../FormatWidgets/LE/lesectionheaderwidget.cpp
-            ../FormatWidgets/LE/lewidget.cpp
-            ../FormatWidgets/LE/le_defs.cpp
-            ../FormatWidgets/LE/dialogle.cpp
-            ../FormatWidgets/MultiSearch/dialogmultisearchprocess.cpp
-            ../FormatWidgets/MultiSearch/dialogmultisearchprocess.ui
-            ../FormatWidgets/MultiSearch/multisearch.cpp
-            ../FormatWidgets/MACH/dialogmach.cpp
-            ../FormatWidgets/MACH/dialogmach.ui
-            ../FormatWidgets/MACH/mach_defs.cpp
-            ../FormatWidgets/MACH/machprocessdata.cpp
-            ../FormatWidgets/MACH/machsectionheaderwidget.cpp
-            ../FormatWidgets/MACH/machsectionheaderwidget.ui
-            ../FormatWidgets/MACH/machwidget.cpp
-            ../FormatWidgets/MACH/machwidget.ui
-            ../FormatWidgets/MACHOFAT/machofatwidget.cpp
-            ../FormatWidgets/MACHOFAT/machofatwidget.ui
-            ../FormatWidgets/MSDOS/msdoswidget.ui
-            ../FormatWidgets/MSDOS/dialogmsdos.ui
-            ../FormatWidgets/MSDOS/msdoswidget.cpp
-            ../FormatWidgets/MSDOS/msdos_defs.cpp
-            ../FormatWidgets/MSDOS/dialogmsdos.cpp
-            ../FormatWidgets/NE/nesectionheaderwidget.ui
-            ../FormatWidgets/NE/newidget.ui
-            ../FormatWidgets/NE/dialogne.ui
-            ../FormatWidgets/NE/neprocessdata.cpp
-            ../FormatWidgets/NE/nesectionheaderwidget.cpp
-            ../FormatWidgets/NE/newidget.cpp
-            ../FormatWidgets/NE/ne_defs.cpp
-            ../FormatWidgets/NE/dialogne.cpp
-            ../FormatWidgets/PE/pesectionheaderwidget.ui
-            ../FormatWidgets/PE/pewidget.ui
-            ../FormatWidgets/PE/dialogpe.ui
-            ../FormatWidgets/PE/pesectionheaderwidget.cpp
-            ../FormatWidgets/PE/pewidget.cpp
-            ../FormatWidgets/PE/pe_defs.cpp
-            ../FormatWidgets/PE/dialogpe.cpp
-            ../FormatWidgets/PE/peprocessdata.cpp
-            ../FormatWidgets/SearchSignatures/dialogsearchsignatures.cpp
-            ../FormatWidgets/SearchSignatures/dialogsearchsignatures.ui
-            ../FormatWidgets/SearchSignatures/searchsignatureswidget.cpp
-            ../FormatWidgets/SearchSignatures/searchsignatureswidget.ui
-            ../FormatWidgets/SearchStrings/dialogsearchstrings.cpp
-            ../FormatWidgets/SearchStrings/dialogsearchstrings.ui
-            ../FormatWidgets/SearchStrings/searchstringswidget.cpp
-            ../FormatWidgets/SearchStrings/searchstringswidget.ui
-            ../FormatWidgets/dialogmodelinfo.cpp
-            ../FormatWidgets/dialogmodelinfo.ui
-            ../FormatWidgets/dialogprocessdata.cpp
-            ../FormatWidgets/dialogprocessdata.ui
-            ../FormatWidgets/dialogsectionheader.cpp
-            ../FormatWidgets/dialogsectionheader.ui
-            ../FormatWidgets/formatwidget.cpp
-            ../FormatWidgets/invwidget.cpp
-            ../FormatWidgets/processdata.cpp
-            ../FormatWidgets/toolswidget.cpp
-            ../FormatWidgets/toolswidget.ui
             ../StaticScan/dialogstaticscan.cpp
             ../StaticScan/dialogstaticscan.ui
             ../StaticScan/dialogstaticscanprocess.cpp
