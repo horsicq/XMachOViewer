@@ -74,6 +74,7 @@ set(PROJECT_SOURCES
             ${XQWT_SOURCES}
             ${ARCHIVE_WIDGET_SOURCES}
             ${XSHORTCUTS_SOURCES}
+            ${SPECABSTRACT_SOURCES}
             ../Controls/hexvalidator.cpp
             ../Controls/subclassofqstyleditemdelegate.cpp
             ../Controls/xabstracttableview.cpp
