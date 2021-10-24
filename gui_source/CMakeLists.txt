@@ -32,6 +32,7 @@ include(${PROJECT_SOURCE_DIR}/../XQwt/xqwt.cmake)
 include(${PROJECT_SOURCE_DIR}/../archive_widget/archive_widget.cmake)
 include(${PROJECT_SOURCE_DIR}/../XShortcuts/xshortcuts.cmake)
 include(${PROJECT_SOURCE_DIR}/../SpecAbstract/specabstract.cmake)
+include(${PROJECT_SOURCE_DIR}/../XMemoryMapWidget/xmemorymapwidget.cmake)
 
 include_directories(${PROJECT_SOURCE_DIR}/../Controls/)
 include_directories(${PROJECT_SOURCE_DIR}/../FormatDialogs/)
@@ -66,7 +67,6 @@ include_directories(${PROJECT_SOURCE_DIR}/../XHashWidget/)
 include_directories(${PROJECT_SOURCE_DIR}/../XHexView/)
 include_directories(${PROJECT_SOURCE_DIR}/../XLLVMDemangler/3rdparty/)
 include_directories(${PROJECT_SOURCE_DIR}/../XLLVMDemangler/3rdparty/llvm/Demangle/)
-include_directories(${PROJECT_SOURCE_DIR}/../XMemoryMapWidget/)
 
 set(PROJECT_SOURCES
             ${XOPTIONS_SOURCES}
@@ -75,6 +75,7 @@ set(PROJECT_SOURCES
             ${ARCHIVE_WIDGET_SOURCES}
             ${XSHORTCUTS_SOURCES}
             ${SPECABSTRACT_SOURCES}
+            ${XMEMORYMAPWIDGET_SOURCES}
             ../Controls/hexvalidator.cpp
             ../Controls/subclassofqstyleditemdelegate.cpp
             ../Controls/xabstracttableview.cpp
@@ -229,10 +230,6 @@ set(PROJECT_SOURCES
             ../XHexView/xhexview.cpp
             ../XHexView/xhexviewwidget.cpp
             ../XHexView/xhexviewwidget.ui
-            ../XMemoryMapWidget/dialogmemorymap.cpp
-            ../XMemoryMapWidget/dialogmemorymap.ui
-            ../XMemoryMapWidget/xmemorymapwidget.cpp
-            ../XMemoryMapWidget/xmemorymapwidget.ui
             dialogabout.cpp
             dialogabout.ui
             dialogoptions.cpp
