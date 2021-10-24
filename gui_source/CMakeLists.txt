@@ -34,6 +34,7 @@ include(${PROJECT_SOURCE_DIR}/../XShortcuts/xshortcuts.cmake)
 include(${PROJECT_SOURCE_DIR}/../SpecAbstract/specabstract.cmake)
 include(${PROJECT_SOURCE_DIR}/../XMemoryMapWidget/xmemorymapwidget.cmake)
 include(${PROJECT_SOURCE_DIR}/../XHashWidget/xhashwidget.cmake)
+include(${PROJECT_SOURCE_DIR}/../XEntropyWidget/xentropywidget.cmake)
 include(${PROJECT_SOURCE_DIR}/../FormatWidgets/allformatwidgets.cmake)
 
 include_directories(${PROJECT_SOURCE_DIR}/../Controls/)
