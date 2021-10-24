@@ -36,11 +36,6 @@ XCONFIG += use_extrabuttons
     include(../archive_widget/archive_widget.pri)
 }
 
-!contains(XCONFIG, xoptions) {
-    XCONFIG += xoptions
-    include(../XOptions/xoptions.pri)
-}
-
 win32 {
     RC_ICONS = $$PWD/../icons/main.ico
 }

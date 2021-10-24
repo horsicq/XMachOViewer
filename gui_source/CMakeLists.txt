@@ -37,6 +37,8 @@ include(${PROJECT_SOURCE_DIR}/../XHashWidget/xhashwidget.cmake)
 include(${PROJECT_SOURCE_DIR}/../XEntropyWidget/xentropywidget.cmake)
 include(${PROJECT_SOURCE_DIR}/../FormatWidgets/allformatwidgets.cmake)
 include(${PROJECT_SOURCE_DIR}/../XArchive/xarchives.cmake)
+include(${PROJECT_SOURCE_DIR}/../XHexView/xhexview.cmake)
+include(${PROJECT_SOURCE_DIR}/../XDisasmView/xdisasmview.cmake)
 
 include_directories(${PROJECT_SOURCE_DIR}/../Controls/)
 include_directories(${PROJECT_SOURCE_DIR}/../FormatDialogs/)
@@ -48,8 +50,6 @@ include_directories(${PROJECT_SOURCE_DIR}/../XCppfilt/3rdparty/cppfilt/src/)
 include_directories(${PROJECT_SOURCE_DIR}/../XDEX/)
 include_directories(${PROJECT_SOURCE_DIR}/../XDemangle/)
 include_directories(${PROJECT_SOURCE_DIR}/../XDemangleWidget/)
-include_directories(${PROJECT_SOURCE_DIR}/../XDisasmView/)
-include_directories(${PROJECT_SOURCE_DIR}/../XHexView/)
 include_directories(${PROJECT_SOURCE_DIR}/../XLLVMDemangler/3rdparty/)
 include_directories(${PROJECT_SOURCE_DIR}/../XLLVMDemangler/3rdparty/llvm/Demangle/)
 
@@ -65,6 +65,8 @@ set(PROJECT_SOURCES
             ${XENTROPYWIDGET_SOURCES}
             ${ALLFORMATWIDGETS_SOURCES}
             ${XARCHIVES_SOURCES}
+            ${XHEXVIEW_SOURCES}
+            ${XDISASMVIEW_SOURCES}
             ../Controls/hexvalidator.cpp
             ../Controls/subclassofqstyleditemdelegate.cpp
             ../Controls/xabstracttableview.cpp
@@ -100,13 +102,6 @@ set(PROJECT_SOURCES
             ../StaticScan/staticscan.cpp
             ../StaticScan/staticscanitem.cpp
             ../StaticScan/staticscanitemmodel.cpp
-            ../XArchive/xarchive.cpp
-            ../XArchive/xarchives.cpp
-            ../XArchive/xcab.cpp
-            ../XArchive/xmachofat.cpp
-            ../XArchive/xrar.cpp
-            ../XArchive/xsevenzip.cpp
-            ../XArchive/xzip.cpp
             ../XCapstone/xcapstone.cpp
             ../XCppfilt/xcppfilt.cpp
             ../XDEX/xandroidbinary.cpp
@@ -116,18 +111,6 @@ set(PROJECT_SOURCES
             ../XDemangleWidget/dialogdemangle.ui
             ../XDemangleWidget/xdemanglewidget.cpp
             ../XDemangleWidget/xdemanglewidget.ui
-            ../XDisasmView/dialogmultidisasm.cpp
-            ../XDisasmView/dialogmultidisasm.ui
-            ../XDisasmView/dialogmultidisasmsignature.cpp
-            ../XDisasmView/dialogmultidisasmsignature.ui
-            ../XDisasmView/xdisasmview.cpp
-            ../XDisasmView/xmultidisasmwidget.cpp
-            ../XDisasmView/xmultidisasmwidget.ui
-            ../XHexView/dialoghexview.cpp
-            ../XHexView/dialoghexview.ui
-            ../XHexView/xhexview.cpp
-            ../XHexView/xhexviewwidget.cpp
-            ../XHexView/xhexviewwidget.ui
             dialogabout.cpp
             dialogabout.ui
             dialogoptions.cpp
