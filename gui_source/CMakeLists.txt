@@ -63,7 +63,6 @@ include_directories(${PROJECT_SOURCE_DIR}/../XDEX/)
 include_directories(${PROJECT_SOURCE_DIR}/../XDemangle/)
 include_directories(${PROJECT_SOURCE_DIR}/../XDemangleWidget/)
 include_directories(${PROJECT_SOURCE_DIR}/../XDisasmView/)
-include_directories(${PROJECT_SOURCE_DIR}/../XEntropyWidget/)
 include_directories(${PROJECT_SOURCE_DIR}/../XHexView/)
 include_directories(${PROJECT_SOURCE_DIR}/../XLLVMDemangler/3rdparty/)
 include_directories(${PROJECT_SOURCE_DIR}/../XLLVMDemangler/3rdparty/llvm/Demangle/)
@@ -77,6 +76,7 @@ set(PROJECT_SOURCES
             ${SPECABSTRACT_SOURCES}
             ${XMEMORYMAPWIDGET_SOURCES}
             ${XHASHWIDGET_SOURCES}
+            ${XENTROPYWIDGET_SOURCES}
             ../Controls/hexvalidator.cpp
             ../Controls/subclassofqstyleditemdelegate.cpp
             ../Controls/xabstracttableview.cpp
@@ -212,13 +212,6 @@ set(PROJECT_SOURCES
             ../XDisasmView/xdisasmview.cpp
             ../XDisasmView/xmultidisasmwidget.cpp
             ../XDisasmView/xmultidisasmwidget.ui
-            ../XEntropyWidget/dialogentropy.cpp
-            ../XEntropyWidget/dialogentropy.ui
-            ../XEntropyWidget/dialogentropyprocess.cpp
-            ../XEntropyWidget/dialogentropyprocess.ui
-            ../XEntropyWidget/entropyprocess.cpp
-            ../XEntropyWidget/xentropywidget.cpp
-            ../XEntropyWidget/xentropywidget.ui
             ../XHexView/dialoghexview.cpp
             ../XHexView/dialoghexview.ui
             ../XHexView/xhexview.cpp
