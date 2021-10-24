@@ -31,6 +31,7 @@ include(${PROJECT_SOURCE_DIR}/../Formats/xformats.cmake)
 include(${PROJECT_SOURCE_DIR}/../XQwt/xqwt.cmake)
 include(${PROJECT_SOURCE_DIR}/../archive_widget/archive_widget.cmake)
 include(${PROJECT_SOURCE_DIR}/../XShortcuts/xshortcuts.cmake)
+include(${PROJECT_SOURCE_DIR}/../SpecAbstract/specabstract.cmake)
 
 include_directories(${PROJECT_SOURCE_DIR}/../Controls/)
 include_directories(${PROJECT_SOURCE_DIR}/../FormatDialogs/)
@@ -47,7 +48,6 @@ include_directories(${PROJECT_SOURCE_DIR}/../FormatWidgets/NE/)
 include_directories(${PROJECT_SOURCE_DIR}/../FormatWidgets/PE/)
 include_directories(${PROJECT_SOURCE_DIR}/../FormatWidgets/SearchSignatures/)
 include_directories(${PROJECT_SOURCE_DIR}/../FormatWidgets/SearchStrings/)
-include_directories(${PROJECT_SOURCE_DIR}/../SpecAbstract/)
 include_directories(${PROJECT_SOURCE_DIR}/../StaticScan/)
 include_directories(${PROJECT_SOURCE_DIR}/../XArchive/)
 include_directories(${PROJECT_SOURCE_DIR}/../XArchive/3rdparty/bzip2/src/)
@@ -175,7 +175,6 @@ set(PROJECT_SOURCES
             ../FormatWidgets/processdata.cpp
             ../FormatWidgets/toolswidget.cpp
             ../FormatWidgets/toolswidget.ui
-            ../SpecAbstract/specabstract.cpp
             ../StaticScan/dialogstaticscan.cpp
             ../StaticScan/dialogstaticscan.ui
             ../StaticScan/dialogstaticscanprocess.cpp
