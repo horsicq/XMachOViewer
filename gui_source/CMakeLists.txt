@@ -36,14 +36,11 @@ include(${PROJECT_SOURCE_DIR}/../XMemoryMapWidget/xmemorymapwidget.cmake)
 include(${PROJECT_SOURCE_DIR}/../XHashWidget/xhashwidget.cmake)
 include(${PROJECT_SOURCE_DIR}/../XEntropyWidget/xentropywidget.cmake)
 include(${PROJECT_SOURCE_DIR}/../FormatWidgets/allformatwidgets.cmake)
+include(${PROJECT_SOURCE_DIR}/../XArchive/xarchives.cmake)
 
 include_directories(${PROJECT_SOURCE_DIR}/../Controls/)
 include_directories(${PROJECT_SOURCE_DIR}/../FormatDialogs/)
 include_directories(${PROJECT_SOURCE_DIR}/../StaticScan/)
-include_directories(${PROJECT_SOURCE_DIR}/../XArchive/)
-include_directories(${PROJECT_SOURCE_DIR}/../XArchive/3rdparty/bzip2/src/)
-include_directories(${PROJECT_SOURCE_DIR}/../XArchive/3rdparty/lzma/src/)
-include_directories(${PROJECT_SOURCE_DIR}/../XArchive/3rdparty/zlib/src/)
 include_directories(${PROJECT_SOURCE_DIR}/../XCapstone/)
 include_directories(${PROJECT_SOURCE_DIR}/../XCapstone/3rdparty/Capstone/src/include/)
 include_directories(${PROJECT_SOURCE_DIR}/../XCppfilt/)
@@ -67,6 +64,7 @@ set(PROJECT_SOURCES
             ${XHASHWIDGET_SOURCES}
             ${XENTROPYWIDGET_SOURCES}
             ${ALLFORMATWIDGETS_SOURCES}
+            ${XARCHIVES_SOURCES}
             ../Controls/hexvalidator.cpp
             ../Controls/subclassofqstyleditemdelegate.cpp
             ../Controls/xabstracttableview.cpp
