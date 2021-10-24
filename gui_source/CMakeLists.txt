@@ -39,6 +39,7 @@ include(${PROJECT_SOURCE_DIR}/../FormatWidgets/allformatwidgets.cmake)
 include(${PROJECT_SOURCE_DIR}/../XArchive/xarchives.cmake)
 include(${PROJECT_SOURCE_DIR}/../XHexView/xhexview.cmake)
 include(${PROJECT_SOURCE_DIR}/../XDisasmView/xdisasmview.cmake)
+include(${PROJECT_SOURCE_DIR}/../XDemangleWidget/xdemanglewidget.cmake)
 
 include_directories(${PROJECT_SOURCE_DIR}/../Controls/)
 include_directories(${PROJECT_SOURCE_DIR}/../FormatDialogs/)
@@ -49,7 +50,6 @@ include_directories(${PROJECT_SOURCE_DIR}/../XCppfilt/)
 include_directories(${PROJECT_SOURCE_DIR}/../XCppfilt/3rdparty/cppfilt/src/)
 include_directories(${PROJECT_SOURCE_DIR}/../XDEX/)
 include_directories(${PROJECT_SOURCE_DIR}/../XDemangle/)
-include_directories(${PROJECT_SOURCE_DIR}/../XDemangleWidget/)
 include_directories(${PROJECT_SOURCE_DIR}/../XLLVMDemangler/3rdparty/)
 include_directories(${PROJECT_SOURCE_DIR}/../XLLVMDemangler/3rdparty/llvm/Demangle/)
 
@@ -67,6 +67,7 @@ set(PROJECT_SOURCES
             ${XARCHIVES_SOURCES}
             ${XHEXVIEW_SOURCES}
             ${XDISASMVIEW_SOURCES}
+            ${XDEMANGLEWIDGET_SOURCES}
             ../Controls/hexvalidator.cpp
             ../Controls/subclassofqstyleditemdelegate.cpp
             ../Controls/xabstracttableview.cpp
