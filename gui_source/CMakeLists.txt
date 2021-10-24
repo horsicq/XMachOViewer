@@ -34,7 +34,7 @@ include(${PROJECT_SOURCE_DIR}/../XShortcuts/xshortcuts.cmake)
 include(${PROJECT_SOURCE_DIR}/../SpecAbstract/specabstract.cmake)
 include(${PROJECT_SOURCE_DIR}/../XMemoryMapWidget/xmemorymapwidget.cmake)
 include(${PROJECT_SOURCE_DIR}/../XHashWidget/xhashwidget.cmake)
-include(${PROJECT_SOURCE_DIR}/../FormatWidgets/allformatwidget.cmake)
+include(${PROJECT_SOURCE_DIR}/../FormatWidgets/allformatwidgets.cmake)
 
 include_directories(${PROJECT_SOURCE_DIR}/../Controls/)
 include_directories(${PROJECT_SOURCE_DIR}/../FormatDialogs/)
@@ -65,7 +65,7 @@ set(PROJECT_SOURCES
             ${XMEMORYMAPWIDGET_SOURCES}
             ${XHASHWIDGET_SOURCES}
             ${XENTROPYWIDGET_SOURCES}
-            ${ALLFORMATWIDGET_SOURCES}
+            ${ALLFORMATWIDGETS_SOURCES}
             ../Controls/hexvalidator.cpp
             ../Controls/subclassofqstyleditemdelegate.cpp
             ../Controls/xabstracttableview.cpp
