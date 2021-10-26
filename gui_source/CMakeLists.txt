@@ -42,11 +42,10 @@ include(${PROJECT_SOURCE_DIR}/../XDisasmView/xdisasmview.cmake)
 include(${PROJECT_SOURCE_DIR}/../XDemangleWidget/xdemanglewidget.cmake)
 include(${PROJECT_SOURCE_DIR}/../XDemangle/xdemangle.cmake)
 include(${PROJECT_SOURCE_DIR}/../StaticScan/heurwidget.cmake)
+include(${PROJECT_SOURCE_DIR}/../XCapstone/xcapstone.cmake)
 
 include_directories(${PROJECT_SOURCE_DIR}/../Controls/)
 include_directories(${PROJECT_SOURCE_DIR}/../FormatDialogs/)
-include_directories(${PROJECT_SOURCE_DIR}/../XCapstone/)
-include_directories(${PROJECT_SOURCE_DIR}/../XCapstone/3rdparty/Capstone/src/include/)
 include_directories(${PROJECT_SOURCE_DIR}/../XCppfilt/)
 include_directories(${PROJECT_SOURCE_DIR}/../XCppfilt/3rdparty/cppfilt/src/)
 include_directories(${PROJECT_SOURCE_DIR}/../XDEX/)
@@ -70,6 +69,7 @@ set(PROJECT_SOURCES
             ${XDEMANGLEWIDGET_SOURCES}
             ${XDEMANGLE_SOURCES}
             ${HEURWIDGET_SOURCES}
+            ${XCAPSTONE_SOURCES}
             ../Controls/hexvalidator.cpp
             ../Controls/subclassofqstyleditemdelegate.cpp
             ../Controls/xabstracttableview.cpp
@@ -94,7 +94,6 @@ set(PROJECT_SOURCES
             ../FormatDialogs/dialogtextinfo.ui
             ../FormatDialogs/dumpprocess.cpp
             ../FormatDialogs/searchprocess.cpp
-            ../XCapstone/xcapstone.cpp
             ../XCppfilt/xcppfilt.cpp
             ../XDEX/xandroidbinary.cpp
             ../XDEX/xdex.cpp
