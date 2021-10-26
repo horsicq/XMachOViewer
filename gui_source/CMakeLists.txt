@@ -35,7 +35,6 @@ include(${PROJECT_SOURCE_DIR}/../SpecAbstract/specabstract.cmake)
 include(${PROJECT_SOURCE_DIR}/../XMemoryMapWidget/xmemorymapwidget.cmake)
 include(${PROJECT_SOURCE_DIR}/../XHashWidget/xhashwidget.cmake)
 include(${PROJECT_SOURCE_DIR}/../XEntropyWidget/xentropywidget.cmake)
-include(${PROJECT_SOURCE_DIR}/../FormatWidgets/allformatwidgets.cmake)
 include(${PROJECT_SOURCE_DIR}/../XArchive/xarchives.cmake)
 include(${PROJECT_SOURCE_DIR}/../XHexView/xhexview.cmake)
 include(${PROJECT_SOURCE_DIR}/../XDisasmView/xdisasmview.cmake)
@@ -43,24 +42,18 @@ include(${PROJECT_SOURCE_DIR}/../XDemangleWidget/xdemanglewidget.cmake)
 include(${PROJECT_SOURCE_DIR}/../XDemangle/xdemangle.cmake)
 include(${PROJECT_SOURCE_DIR}/../StaticScan/heurwidget.cmake)
 include(${PROJECT_SOURCE_DIR}/../XCapstone/xcapstone.cmake)
-
-include_directories(${PROJECT_SOURCE_DIR}/../Controls/)
-include_directories(${PROJECT_SOURCE_DIR}/../FormatDialogs/)
-include_directories(${PROJECT_SOURCE_DIR}/../XDEX/)
-include_directories(${PROJECT_SOURCE_DIR}/../XLLVMDemangler/3rdparty/)
-include_directories(${PROJECT_SOURCE_DIR}/../XLLVMDemangler/3rdparty/llvm/Demangle/)
+include(${PROJECT_SOURCE_DIR}/../XDEX/xdex.cmake)
 
 set(PROJECT_SOURCES
+            ${ARCHIVE_WIDGET_SOURCES}
             ${XOPTIONS_SOURCES}
             ${XFORMATS_SOURCES}
             ${XQWT_SOURCES}
-            ${ARCHIVE_WIDGET_SOURCES}
             ${XSHORTCUTS_SOURCES}
             ${SPECABSTRACT_SOURCES}
             ${XMEMORYMAPWIDGET_SOURCES}
             ${XHASHWIDGET_SOURCES}
             ${XENTROPYWIDGET_SOURCES}
-            ${ALLFORMATWIDGETS_SOURCES}
             ${XARCHIVES_SOURCES}
             ${XHEXVIEW_SOURCES}
             ${XDISASMVIEW_SOURCES}
@@ -68,18 +61,16 @@ set(PROJECT_SOURCES
             ${XDEMANGLE_SOURCES}
             ${HEURWIDGET_SOURCES}
             ${XCAPSTONE_SOURCES}
+            ${XDEX_SOURCES}
             ../Controls/hexvalidator.cpp
             ../Controls/subclassofqstyleditemdelegate.cpp
             ../Controls/xabstracttableview.cpp
             ../Controls/xcomboboxex.cpp
             ../Controls/xdatetimeeditx.cpp
             ../Controls/xdevicetableview.cpp
-            ../Controls/xlineedithex.cpp
             ../FormatDialogs/dialogdump.ui
             ../FormatDialogs/dialogdumpprocess.cpp
             ../FormatDialogs/dialogdumpprocess.ui
-            ../FormatDialogs/dialoggotoaddress.cpp
-            ../FormatDialogs/dialoggotoaddress.ui
             ../FormatDialogs/dialoghexsignature.cpp
             ../FormatDialogs/dialoghexsignature.ui
             ../FormatDialogs/dialoginfo.cpp
@@ -92,8 +83,6 @@ set(PROJECT_SOURCES
             ../FormatDialogs/dialogtextinfo.ui
             ../FormatDialogs/dumpprocess.cpp
             ../FormatDialogs/searchprocess.cpp
-            ../XDEX/xandroidbinary.cpp
-            ../XDEX/xdex.cpp
             dialogabout.cpp
             dialogabout.ui
             dialogoptions.cpp
