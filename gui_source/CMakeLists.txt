@@ -41,16 +41,15 @@ include(${PROJECT_SOURCE_DIR}/../XHexView/xhexview.cmake)
 include(${PROJECT_SOURCE_DIR}/../XDisasmView/xdisasmview.cmake)
 include(${PROJECT_SOURCE_DIR}/../XDemangleWidget/xdemanglewidget.cmake)
 include(${PROJECT_SOURCE_DIR}/../XDemangle/xdemangle.cmake)
+include(${PROJECT_SOURCE_DIR}/../StaticScan/heurwidget.cmake)
 
 include_directories(${PROJECT_SOURCE_DIR}/../Controls/)
 include_directories(${PROJECT_SOURCE_DIR}/../FormatDialogs/)
-include_directories(${PROJECT_SOURCE_DIR}/../StaticScan/)
 include_directories(${PROJECT_SOURCE_DIR}/../XCapstone/)
 include_directories(${PROJECT_SOURCE_DIR}/../XCapstone/3rdparty/Capstone/src/include/)
 include_directories(${PROJECT_SOURCE_DIR}/../XCppfilt/)
 include_directories(${PROJECT_SOURCE_DIR}/../XCppfilt/3rdparty/cppfilt/src/)
 include_directories(${PROJECT_SOURCE_DIR}/../XDEX/)
-include_directories(${PROJECT_SOURCE_DIR}/../XDemangle/)
 include_directories(${PROJECT_SOURCE_DIR}/../XLLVMDemangler/3rdparty/)
 include_directories(${PROJECT_SOURCE_DIR}/../XLLVMDemangler/3rdparty/llvm/Demangle/)
 
@@ -70,6 +69,7 @@ set(PROJECT_SOURCES
             ${XDISASMVIEW_SOURCES}
             ${XDEMANGLEWIDGET_SOURCES}
             ${XDEMANGLE_SOURCES}
+            ${HEURWIDGET_SOURCES}
             ../Controls/hexvalidator.cpp
             ../Controls/subclassofqstyleditemdelegate.cpp
             ../Controls/xabstracttableview.cpp
@@ -94,17 +94,6 @@ set(PROJECT_SOURCES
             ../FormatDialogs/dialogtextinfo.ui
             ../FormatDialogs/dumpprocess.cpp
             ../FormatDialogs/searchprocess.cpp
-            ../StaticScan/dialogstaticscan.cpp
-            ../StaticScan/dialogstaticscan.ui
-            ../StaticScan/dialogstaticscanprocess.cpp
-            ../StaticScan/dialogstaticscanprocess.ui
-            ../StaticScan/formresult.cpp
-            ../StaticScan/formresult.ui
-            ../StaticScan/heurwidget.cpp
-            ../StaticScan/heurwidget.ui
-            ../StaticScan/staticscan.cpp
-            ../StaticScan/staticscanitem.cpp
-            ../StaticScan/staticscanitemmodel.cpp
             ../XCapstone/xcapstone.cpp
             ../XCppfilt/xcppfilt.cpp
             ../XDEX/xandroidbinary.cpp
