@@ -40,6 +40,7 @@ include(${PROJECT_SOURCE_DIR}/../XArchive/xarchives.cmake)
 include(${PROJECT_SOURCE_DIR}/../XHexView/xhexview.cmake)
 include(${PROJECT_SOURCE_DIR}/../XDisasmView/xdisasmview.cmake)
 include(${PROJECT_SOURCE_DIR}/../XDemangleWidget/xdemanglewidget.cmake)
+include(${PROJECT_SOURCE_DIR}/../XDemangle/xdemangle.cmake)
 
 include_directories(${PROJECT_SOURCE_DIR}/../Controls/)
 include_directories(${PROJECT_SOURCE_DIR}/../FormatDialogs/)
@@ -68,6 +69,7 @@ set(PROJECT_SOURCES
             ${XHEXVIEW_SOURCES}
             ${XDISASMVIEW_SOURCES}
             ${XDEMANGLEWIDGET_SOURCES}
+            ${XDEMANGLE_SOURCES}
             ../Controls/hexvalidator.cpp
             ../Controls/subclassofqstyleditemdelegate.cpp
             ../Controls/xabstracttableview.cpp
@@ -107,7 +109,6 @@ set(PROJECT_SOURCES
             ../XCppfilt/xcppfilt.cpp
             ../XDEX/xandroidbinary.cpp
             ../XDEX/xdex.cpp
-            ../XDemangle/xdemangle.cpp
             dialogabout.cpp
             dialogabout.ui
             dialogoptions.cpp
