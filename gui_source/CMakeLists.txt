@@ -46,8 +46,6 @@ include(${PROJECT_SOURCE_DIR}/../XCapstone/xcapstone.cmake)
 
 include_directories(${PROJECT_SOURCE_DIR}/../Controls/)
 include_directories(${PROJECT_SOURCE_DIR}/../FormatDialogs/)
-include_directories(${PROJECT_SOURCE_DIR}/../XCppfilt/)
-include_directories(${PROJECT_SOURCE_DIR}/../XCppfilt/3rdparty/cppfilt/src/)
 include_directories(${PROJECT_SOURCE_DIR}/../XDEX/)
 include_directories(${PROJECT_SOURCE_DIR}/../XLLVMDemangler/3rdparty/)
 include_directories(${PROJECT_SOURCE_DIR}/../XLLVMDemangler/3rdparty/llvm/Demangle/)
@@ -94,7 +92,6 @@ set(PROJECT_SOURCES
             ../FormatDialogs/dialogtextinfo.ui
             ../FormatDialogs/dumpprocess.cpp
             ../FormatDialogs/searchprocess.cpp
-            ../XCppfilt/xcppfilt.cpp
             ../XDEX/xandroidbinary.cpp
             ../XDEX/xdex.cpp
             dialogabout.cpp
