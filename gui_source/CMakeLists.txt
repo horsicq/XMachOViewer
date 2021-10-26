@@ -62,7 +62,6 @@ set(PROJECT_SOURCES
             ${HEURWIDGET_SOURCES}
             ${XCAPSTONE_SOURCES}
             ${XDEX_SOURCES}
-            ../Controls/hexvalidator.cpp
             ../Controls/subclassofqstyleditemdelegate.cpp
             ../Controls/xabstracttableview.cpp
             ../Controls/xcomboboxex.cpp
