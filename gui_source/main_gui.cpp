@@ -45,8 +45,8 @@ int main(int argc, char *argv[])
         return 0;
     }
 
-    QApplication a(argc, argv);
-    // QApplication::setWindowIcon(QIcon(":/images/icon.png"));
+    QApplication app(argc, argv);
+    QApplication::setWindowIcon(QIcon(":/pics/main.png"));
 
     XOptions xOptions;
 
@@ -66,5 +66,5 @@ int main(int argc, char *argv[])
     GuiMainWindow w;
     w.show();
 
-    return a.exec();
+    return app.exec();
 }

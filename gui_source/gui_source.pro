@@ -48,3 +48,7 @@ RESOURCES += \
 
 DISTFILES += \
     CMakeLists.txt
+
+# TODO translations/Signatures
+target.path = /usr/local/xmachoviewer
+INSTALLS += target

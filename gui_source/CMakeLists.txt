@@ -26,62 +26,10 @@ find_package(Qt5 COMPONENTS Svg REQUIRED)
 add_definitions(-DUSE_DEX)
 add_definitions(-DUSE_ARCHIVE)
 
-include(${PROJECT_SOURCE_DIR}/../XOptions/xoptions.cmake)
-include(${PROJECT_SOURCE_DIR}/../Formats/xformats.cmake)
-include(${PROJECT_SOURCE_DIR}/../XQwt/xqwt.cmake)
 include(${PROJECT_SOURCE_DIR}/../archive_widget/archive_widget.cmake)
-include(${PROJECT_SOURCE_DIR}/../XShortcuts/xshortcuts.cmake)
-include(${PROJECT_SOURCE_DIR}/../SpecAbstract/specabstract.cmake)
-include(${PROJECT_SOURCE_DIR}/../XMemoryMapWidget/xmemorymapwidget.cmake)
-include(${PROJECT_SOURCE_DIR}/../XHashWidget/xhashwidget.cmake)
-include(${PROJECT_SOURCE_DIR}/../XEntropyWidget/xentropywidget.cmake)
-include(${PROJECT_SOURCE_DIR}/../XArchive/xarchives.cmake)
-include(${PROJECT_SOURCE_DIR}/../XHexView/xhexview.cmake)
-include(${PROJECT_SOURCE_DIR}/../XDisasmView/xdisasmview.cmake)
-include(${PROJECT_SOURCE_DIR}/../XDemangleWidget/xdemanglewidget.cmake)
-include(${PROJECT_SOURCE_DIR}/../XDemangle/xdemangle.cmake)
-include(${PROJECT_SOURCE_DIR}/../StaticScan/heurwidget.cmake)
-include(${PROJECT_SOURCE_DIR}/../XCapstone/xcapstone.cmake)
-include(${PROJECT_SOURCE_DIR}/../XDEX/xdex.cmake)
 
 set(PROJECT_SOURCES
             ${ARCHIVE_WIDGET_SOURCES}
-            ${XOPTIONS_SOURCES}
-            ${XFORMATS_SOURCES}
-            ${XQWT_SOURCES}
-            ${XSHORTCUTS_SOURCES}
-            ${SPECABSTRACT_SOURCES}
-            ${XMEMORYMAPWIDGET_SOURCES}
-            ${XHASHWIDGET_SOURCES}
-            ${XENTROPYWIDGET_SOURCES}
-            ${XARCHIVES_SOURCES}
-            ${XHEXVIEW_SOURCES}
-            ${XDISASMVIEW_SOURCES}
-            ${XDEMANGLEWIDGET_SOURCES}
-            ${XDEMANGLE_SOURCES}
-            ${HEURWIDGET_SOURCES}
-            ${XCAPSTONE_SOURCES}
-            ${XDEX_SOURCES}
-            ../Controls/subclassofqstyleditemdelegate.cpp
-            ../Controls/xabstracttableview.cpp
-            ../Controls/xcomboboxex.cpp
-            ../Controls/xdatetimeeditx.cpp
-            ../Controls/xdevicetableview.cpp
-            ../FormatDialogs/dialogdump.ui
-            ../FormatDialogs/dialogdumpprocess.cpp
-            ../FormatDialogs/dialogdumpprocess.ui
-            ../FormatDialogs/dialoghexsignature.cpp
-            ../FormatDialogs/dialoghexsignature.ui
-            ../FormatDialogs/dialoginfo.cpp
-            ../FormatDialogs/dialoginfo.ui
-            ../FormatDialogs/dialogsearch.cpp
-            ../FormatDialogs/dialogsearch.ui
-            ../FormatDialogs/dialogsearchprocess.cpp
-            ../FormatDialogs/dialogsearchprocess.ui
-            ../FormatDialogs/dialogtextinfo.cpp
-            ../FormatDialogs/dialogtextinfo.ui
-            ../FormatDialogs/dumpprocess.cpp
-            ../FormatDialogs/searchprocess.cpp
             dialogabout.cpp
             dialogabout.ui
             dialogoptions.cpp
