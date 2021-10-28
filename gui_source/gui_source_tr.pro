@@ -4,6 +4,7 @@ TRANSLATIONS = \
         translation/xmachoviewer_es.ts \
         translation/xmachoviewer_fr.ts \
         translation/xmachoviewer_he.ts \
+        translation/xmachoviewer_id.ts \
         translation/xmachoviewer_it.ts \
         translation/xmachoviewer_ja.ts \
         translation/xmachoviewer_ko.ts \
@@ -21,7 +22,6 @@ FORMS += \
     ../FormatDialogs/dialogdumpprocess.ui \
     ../FormatDialogs/dialoggotoaddress.ui \
     ../FormatDialogs/dialoghexsignature.ui \
-    ../FormatDialogs/dialoginfo.ui \
     ../FormatDialogs/dialogsearch.ui \
     ../FormatDialogs/dialogsearchprocess.ui \
     ../FormatDialogs/dialogtextinfo.ui \
@@ -53,6 +53,7 @@ FORMS += \
     ../FormatWidgets/SearchSignatures/searchsignatureswidget.ui \
     ../FormatWidgets/SearchStrings/dialogsearchstrings.ui \
     ../FormatWidgets/SearchStrings/searchstringswidget.ui \
+    ../FormatWidgets/dialogmodelinfo.ui \
     ../FormatWidgets/dialogprocessdata.ui \
     ../FormatWidgets/dialogsectionheader.ui \
     ../FormatWidgets/formatswidget.ui \
@@ -74,6 +75,8 @@ FORMS += \
     ../XDisasmView/dialogmultidisasm.ui \
     ../XDisasmView/dialogmultidisasmsignature.ui \
     ../XDisasmView/xmultidisasmwidget.ui \
+    ../XDynStructsWidget/dialogxdynstructs.ui \
+    ../XDynStructsWidget/xdynstructswidget.ui \
     ../XEntropyWidget/dialogentropy.ui \
     ../XEntropyWidget/dialogentropyprocess.ui \
     ../XEntropyWidget/xentropywidget.ui \
@@ -97,16 +100,18 @@ FORMS += \
     ../nfd_widget/nfd_widget.ui
 
 SOURCES += \
+    ../CMakeFiles/3.21.2/CompilerIdCXX/CMakeCXXCompilerId.cpp \
     ../Controls/hexvalidator.cpp \
     ../Controls/subclassofqstyleditemdelegate.cpp \
     ../Controls/xabstracttableview.cpp \
     ../Controls/xcomboboxex.cpp \
     ../Controls/xdatetimeeditx.cpp \
+    ../Controls/xdevicetableview.cpp \
+    ../Controls/xhtml.cpp \
     ../Controls/xlineedithex.cpp \
     ../FormatDialogs/dialogdumpprocess.cpp \
     ../FormatDialogs/dialoggotoaddress.cpp \
     ../FormatDialogs/dialoghexsignature.cpp \
-    ../FormatDialogs/dialoginfo.cpp \
     ../FormatDialogs/dialogsearch.cpp \
     ../FormatDialogs/dialogsearchprocess.cpp \
     ../FormatDialogs/dialogtextinfo.cpp \
@@ -155,6 +160,7 @@ SOURCES += \
     ../FormatWidgets/SearchSignatures/searchsignatureswidget.cpp \
     ../FormatWidgets/SearchStrings/dialogsearchstrings.cpp \
     ../FormatWidgets/SearchStrings/searchstringswidget.cpp \
+    ../FormatWidgets/dialogmodelinfo.cpp \
     ../FormatWidgets/dialogprocessdata.cpp \
     ../FormatWidgets/dialogsectionheader.cpp \
     ../FormatWidgets/formatswidget.cpp \
@@ -193,6 +199,7 @@ SOURCES += \
     ../XArchive/xsevenzip.cpp \
     ../XArchive/xzip.cpp \
     ../XCapstone/xcapstone.cpp \
+    ../XCppfilt/xcppfilt.cpp \
     ../XDEX/xandroidbinary.cpp \
     ../XDEX/xdex.cpp \
     ../XDemangle/xdemangle.cpp \
@@ -209,6 +216,9 @@ SOURCES += \
     ../XDisasmView/dialogmultidisasmsignature.cpp \
     ../XDisasmView/xdisasmview.cpp \
     ../XDisasmView/xmultidisasmwidget.cpp \
+    ../XDynStructsEngine/xdynstructsengine.cpp \
+    ../XDynStructsWidget/dialogxdynstructs.cpp \
+    ../XDynStructsWidget/xdynstructswidget.cpp \
     ../XEntropyWidget/dialogentropy.cpp \
     ../XEntropyWidget/dialogentropyprocess.cpp \
     ../XEntropyWidget/entropyprocess.cpp \
@@ -341,3 +351,4 @@ SOURCES += \
     guimainwindow.cpp \
     main_gui.cpp \
     ../nfd_widget/nfd_widget.cpp
+

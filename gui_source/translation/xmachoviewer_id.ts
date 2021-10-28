@@ -1,137 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="zh">
+<TS version="2.1" language="id">
 <context>
     <name>DialogAbout</name>
     <message>
         <source>About</source>
-        <translation>关于</translation>
+        <translation>Tentang</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation>确定</translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
     <name>DialogOptions</name>
     <message>
         <source>Options</source>
-        <translation>选项</translation>
+        <translation>Pilihan</translation>
     </message>
     <message>
         <source>Save last directory</source>
-        <translation>保存到上次目录</translation>
+        <translation>Simpan direktori terakhir</translation>
     </message>
     <message>
         <source>Stay on top</source>
-        <translation>窗口置顶</translation>
+        <translation>Tetap diatas</translation>
     </message>
     <message>
         <source>Save backup</source>
-        <translation>保存备份</translation>
+        <translation>Simpan cadangan</translation>
     </message>
     <message>
         <source>Show logo</source>
-        <translation>显示徽标</translation>
+        <translation>Tampilkan logo</translation>
     </message>
     <message>
         <source>Context</source>
-        <translation>上下文</translation>
+        <translation>Konteks</translation>
     </message>
     <message>
         <source>Style</source>
-        <translation>样式</translation>
+        <translation>Gaya</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>语言</translation>
+        <translation>Bahasa</translation>
     </message>
     <message>
         <source>Search signatures</source>
-        <translation>搜索签名</translation>
+        <translation>Cari tanda tangan</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation>确定</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>取消</translation>
+        <translation>Batal</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>资讯</translation>
+        <translation>Informasi</translation>
     </message>
     <message>
         <source>Please restart the application</source>
-        <translation>请重启应用程序</translation>
+        <translation>Silahkan mulai ulang aplikasi</translation>
     </message>
     <message>
         <source>Open directory</source>
-        <translation>打开目录</translation>
+        <translation>Buka direktori</translation>
     </message>
 </context>
 <context>
     <name>GuiMainWindow</name>
     <message>
         <source>File</source>
-        <translation>文件</translation>
+        <translation>File</translation>
     </message>
     <message>
         <source>Tools</source>
-        <translation>工具</translation>
+        <translation>Alat-alat</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation>帮助</translation>
+        <translation>Bantuan</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>打开</translation>
+        <translation>Buka</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>关闭</translation>
+        <translation>Tutup</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation>退出</translation>
+        <translation>Keluar</translation>
     </message>
     <message>
         <source>Options</source>
-        <translation>选项</translation>
+        <translation>Pilihan</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>关于</translation>
+        <translation>Tentang</translation>
     </message>
     <message>
         <source>Shortcuts</source>
-        <translation>快捷指令</translation>
+        <translation>Jalan pintas</translation>
     </message>
     <message>
         <source>Demangle</source>
-        <translation>符号重组</translation>
+        <translation>Demangle</translation>
     </message>
     <message>
         <source>Open file</source>
-        <translation>打开文件</translation>
+        <translation>Buka file</translation>
     </message>
     <message>
         <source>All files</source>
-        <translation>所有文件</translation>
+        <translation>Semua file</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>错误</translation>
+        <translation>Kesalahan</translation>
     </message>
     <message>
         <source>It is not a valid file</source>
-        <translation>不是有效文件</translation>
+        <translation>Ini bukan file yang valid</translation>
     </message>
     <message>
         <source>Cannot open file</source>
-        <translation>无法打开文件</translation>
+        <translation>Tidak dapat membuka file</translation>
     </message>
 </context>
 </TS>
