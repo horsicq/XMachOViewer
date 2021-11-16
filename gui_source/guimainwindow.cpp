@@ -38,6 +38,7 @@ GuiMainWindow::GuiMainWindow(QWidget *parent) :
 
     QList<XOptions::ID> listIDs;
 
+    // TODO setId
     listIDs.append(XOptions::ID_STYLE);
     listIDs.append(XOptions::ID_QSS);
     listIDs.append(XOptions::ID_LANG);
@@ -59,6 +60,8 @@ GuiMainWindow::GuiMainWindow(QWidget *parent) :
     g_xShortcuts.addGroup(XShortcuts::ID_ARCHIVE);
 
     g_xShortcuts.load();
+
+    ui->widgetMACHO->setGlobalOptions(&g_xOptions);
 
     adjust();
 
@@ -118,8 +121,6 @@ void GuiMainWindow::on_actionAbout_triggered()
 void GuiMainWindow::adjust()
 {
     g_xOptions.adjustStayOnTop(this);
-
-    g_formatOptions.bIsSaveBackup=g_xOptions.isSaveBackup();
 
     ui->widgetMACHO->setOptions(g_formatOptions);
     ui->widgetMACHO->setShortcuts(&g_xShortcuts);
@@ -257,7 +258,7 @@ void GuiMainWindow::processFile(QString sFileName)
                 g_formatOptions.bIsImage=false;
                 g_formatOptions.nImageBase=-1;
                 g_formatOptions.nStartType=SMACH::TYPE_HEURISTICSCAN;
-                g_formatOptions.sSearchSignaturesPath=g_xOptions.getSearchSignaturesPath();
+                ui->widgetMACHO->setGlobalOptions(&g_xOptions);
                 ui->widgetMACHO->setData(pOpenDevice,g_formatOptions,0,0,0);
 
                 ui->widgetMACHO->reload();
@@ -272,7 +273,7 @@ void GuiMainWindow::processFile(QString sFileName)
                 g_formatOptions.bIsImage=false;
                 g_formatOptions.nImageBase=-1;
                 g_formatOptions.nStartType=SMACH::TYPE_HEURISTICSCAN;
-                g_formatOptions.sSearchSignaturesPath=g_xOptions.getSearchSignaturesPath();
+                ui->widgetMACHOFAT->setGlobalOptions(&g_xOptions);
                 ui->widgetMACHOFAT->setData(pOpenDevice,g_formatOptions,0,0,0);
 
                 ui->widgetMACHOFAT->reload();
