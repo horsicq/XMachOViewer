@@ -61,7 +61,7 @@ GuiMainWindow::GuiMainWindow(QWidget *parent) :
 
     g_xShortcuts.load();
 
-    ui->widgetMACHO->setGlobalOptions(&g_xOptions);
+    ui->widgetMACHO->setGlobal(&g_xShortcuts,&g_xOptions);
 
     adjust();
 
@@ -123,10 +123,10 @@ void GuiMainWindow::adjust()
     g_xOptions.adjustStayOnTop(this);
 
     ui->widgetMACHO->setOptions(g_formatOptions);
-    ui->widgetMACHO->setShortcuts(&g_xShortcuts);
+    ui->widgetMACHO->setGlobal(&g_xShortcuts,&g_xOptions);
 
     ui->widgetMACHOFAT->setOptions(g_formatOptions);
-    ui->widgetMACHOFAT->setShortcuts(&g_xShortcuts);
+    ui->widgetMACHOFAT->setGlobal(&g_xShortcuts,&g_xOptions);
 
     if(g_xOptions.isShowLogo())
     {
@@ -191,7 +191,7 @@ void GuiMainWindow::processFile(QString sFileName)
             options.bNoWindowOpen=true;
 
             DialogArchive dialogArchive(this);
-            dialogArchive.setShortcuts(&g_xShortcuts);
+            dialogArchive.setGlobal(&g_xShortcuts,&g_xOptions);
 
             if(bIsFile)
             {
@@ -258,7 +258,7 @@ void GuiMainWindow::processFile(QString sFileName)
                 g_formatOptions.bIsImage=false;
                 g_formatOptions.nImageBase=-1;
                 g_formatOptions.nStartType=SMACH::TYPE_HEURISTICSCAN;
-                ui->widgetMACHO->setGlobalOptions(&g_xOptions);
+                ui->widgetMACHO->setGlobal(&g_xShortcuts,&g_xOptions);
                 ui->widgetMACHO->setData(pOpenDevice,g_formatOptions,0,0,0);
 
                 ui->widgetMACHO->reload();
@@ -273,7 +273,7 @@ void GuiMainWindow::processFile(QString sFileName)
                 g_formatOptions.bIsImage=false;
                 g_formatOptions.nImageBase=-1;
                 g_formatOptions.nStartType=SMACH::TYPE_HEURISTICSCAN;
-                ui->widgetMACHOFAT->setGlobalOptions(&g_xOptions);
+                ui->widgetMACHOFAT->setGlobal(&g_xShortcuts,&g_xOptions);
                 ui->widgetMACHOFAT->setData(pOpenDevice,g_formatOptions,0,0,0);
 
                 ui->widgetMACHOFAT->reload();
