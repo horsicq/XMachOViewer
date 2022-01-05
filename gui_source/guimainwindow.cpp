@@ -258,7 +258,7 @@ void GuiMainWindow::processFile(QString sFileName)
                 ui->stackedWidgetMain->setCurrentIndex(1);
                 g_formatOptions.bIsImage=false;
                 g_formatOptions.nImageBase=-1;
-                g_formatOptions.nStartType=SMACH::TYPE_HEURISTICSCAN;
+                g_formatOptions.nStartType=SMACH::TYPE_INFO;
                 ui->widgetMACHO->setGlobal(&g_xShortcuts,&g_xOptions);
                 ui->widgetMACHO->setData(pOpenDevice,g_formatOptions,0,0,0);
 
@@ -273,7 +273,7 @@ void GuiMainWindow::processFile(QString sFileName)
                 ui->stackedWidgetMain->setCurrentIndex(2);
                 g_formatOptions.bIsImage=false;
                 g_formatOptions.nImageBase=-1;
-                g_formatOptions.nStartType=SMACH::TYPE_HEURISTICSCAN;
+                g_formatOptions.nStartType=SMACH::TYPE_INFO;
                 ui->widgetMACHOFAT->setGlobal(&g_xShortcuts,&g_xOptions);
                 ui->widgetMACHOFAT->setData(pOpenDevice,g_formatOptions,0,0,0);
 
