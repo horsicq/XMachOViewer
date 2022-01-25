@@ -20,7 +20,7 @@ add_subdirectory(gui_source)
 
 include(GNUInstallDirs)
 
-install (TARGETS XMachOViewer)
+install (TARGETS xmachoviewer)
 install (FILES LINUX/xmachoviewer.desktop DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications/)
 install (DIRECTORY LINUX/hicolor DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons)
 install (DIRECTORY XStyles/qss DESTINATION ${CMAKE_INSTALL_LIBDIR}/xmachoviewer)
