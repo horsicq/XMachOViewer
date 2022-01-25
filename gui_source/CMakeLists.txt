@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(XMachOViewer VERSION 0.02 LANGUAGES CXX)
+project(XMachOViewer VERSION 0.03 LANGUAGES CXX)
 
 include_guard(DIRECTORY)
 

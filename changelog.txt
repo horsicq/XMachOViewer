@@ -2,6 +2,7 @@
 -----------------------------------------------------------------------
 [+] Source code qt6 compatibility
 [+] New info file widget
+[+] New structs
 [+] Qwt 6.2.0
 [+] New translations
 [+] Many bugs have been fixed.

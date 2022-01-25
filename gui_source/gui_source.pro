@@ -38,6 +38,8 @@ XCONFIG += use_extrabuttons
 
 win32 {
     RC_ICONS = $$PWD/../icons/main.ico
+    CONFIG -= embed_manifest_exe
+    QMAKE_MANIFEST = windows.manifest.xml
 }
 macx {
     ICON = $$PWD/../icons/main.icns
@@ -47,8 +49,11 @@ RESOURCES += \
     rsrc.qrc
 
 DISTFILES += \
+    ../CMakeLists.txt \
+    ../LICENSE \
+    ../README.md \
+    ../changelog.txt \
+    ../release_version.txt \
     CMakeLists.txt
 
-# TODO translations/Signatures
-target.path = /usr/local/xmachoviewer
-INSTALLS += target
+

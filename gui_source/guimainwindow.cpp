@@ -30,25 +30,31 @@ GuiMainWindow::GuiMainWindow(QWidget *parent) :
     g_pFile=nullptr;
     g_pTempFile=nullptr;
 
+    ui->stackedWidget->setCurrentIndex(0);
+
     setWindowTitle(XOptions::getTitle(X_APPLICATIONDISPLAYNAME,X_APPLICATIONVERSION));
 
     setAcceptDrops(true);
 
     g_xOptions.setName(X_OPTIONSFILE);
 
-    QList<XOptions::ID> listIDs;
+    g_xOptions.addID(XOptions::ID_VIEW_STYLE,"Fusion");
+    g_xOptions.addID(XOptions::ID_VIEW_QSS,"");
+    g_xOptions.addID(XOptions::ID_VIEW_LANG,"System");
+    g_xOptions.addID(XOptions::ID_VIEW_STAYONTOP,false);
+    g_xOptions.addID(XOptions::ID_VIEW_SHOWLOGO,true);
+    g_xOptions.addID(XOptions::ID_FILE_SAVELASTDIRECTORY,true);
+    g_xOptions.addID(XOptions::ID_FILE_SAVEBACKUP,true);
 
-    // TODO setId
-    listIDs.append(XOptions::ID_STYLE);
-    listIDs.append(XOptions::ID_QSS);
-    listIDs.append(XOptions::ID_LANG);
-    listIDs.append(XOptions::ID_STAYONTOP);
-    listIDs.append(XOptions::ID_SAVELASTDIRECTORY);
-    listIDs.append(XOptions::ID_SAVEBACKUP);
-    listIDs.append(XOptions::ID_SEARCHSIGNATURESPATH);
-    listIDs.append(XOptions::ID_SHOWLOGO);
+#ifdef Q_OS_WIN
+    g_xOptions.addID(XOptions::ID_FILE_CONTEXT,"*");
+#endif
 
-    g_xOptions.setValueIDs(listIDs);
+    StaticScanOptionsWidget::setDefaultValues(&g_xOptions);
+    SearchSignaturesOptionsWidget::setDefaultValues(&g_xOptions);
+    XHexViewOptionsWidget::setDefaultValues(&g_xOptions);
+    XDisasmViewOptionsWidget::setDefaultValues(&g_xOptions);
+
     g_xOptions.load();
 
     g_xShortcuts.setName(X_SHORTCUTSFILE);
@@ -58,13 +64,13 @@ GuiMainWindow::GuiMainWindow(QWidget *parent) :
     g_xShortcuts.addGroup(XShortcuts::ID_SIGNATURES);
     g_xShortcuts.addGroup(XShortcuts::ID_HEX);
     g_xShortcuts.addGroup(XShortcuts::ID_DISASM);
-    g_xShortcuts.addGroup(XShortcuts::ID_ARCHIVE);
 
     g_xShortcuts.load();
 
     ui->widgetMACHO->setGlobal(&g_xShortcuts,&g_xOptions);
+    ui->widgetMACHOFAT->setGlobal(&g_xShortcuts,&g_xOptions);
 
-    adjust();
+    adjustWindow();
 
     if(QCoreApplication::arguments().count()>1)
     {
@@ -110,7 +116,7 @@ void GuiMainWindow::on_actionOptions_triggered()
     DialogOptions dialogOptions(this,&g_xOptions);
     dialogOptions.exec();
 
-    adjust();
+    adjustWindow();
 }
 
 void GuiMainWindow::on_actionAbout_triggered()
@@ -119,15 +125,12 @@ void GuiMainWindow::on_actionAbout_triggered()
     dialogAbout.exec();
 }
 
-void GuiMainWindow::adjust()
+void GuiMainWindow::adjustWindow()
 {
+    ui->widgetMACHO->adjustView();
+    ui->widgetMACHOFAT->adjustView();
+
     g_xOptions.adjustStayOnTop(this);
-
-    ui->widgetMACHO->setOptions(g_formatOptions);
-    ui->widgetMACHO->setGlobal(&g_xShortcuts,&g_xOptions);
-
-    ui->widgetMACHOFAT->setOptions(g_formatOptions);
-    ui->widgetMACHOFAT->setGlobal(&g_xShortcuts,&g_xOptions);
 
     if(g_xOptions.isShowLogo())
     {
@@ -255,31 +258,31 @@ void GuiMainWindow::processFile(QString sFileName)
         {
             if(XMACH::isValid(pOpenDevice))
             {
-                ui->stackedWidgetMain->setCurrentIndex(1);
+                ui->stackedWidget->setCurrentIndex(1);
                 g_formatOptions.bIsImage=false;
                 g_formatOptions.nImageBase=-1;
-                g_formatOptions.nStartType=SMACH::TYPE_INFO;
+                g_formatOptions.nStartType=SMACH::TYPE_HEURISTICSCAN;
                 ui->widgetMACHO->setGlobal(&g_xShortcuts,&g_xOptions);
                 ui->widgetMACHO->setData(pOpenDevice,g_formatOptions,0,0,0);
 
                 ui->widgetMACHO->reload();
 
-                adjust();
+                adjustWindow();
 
                 setWindowTitle(sTitle);
             }
             else if(XMACHOFat::isValid(pOpenDevice))
             {
-                ui->stackedWidgetMain->setCurrentIndex(2);
+                ui->stackedWidget->setCurrentIndex(2);
                 g_formatOptions.bIsImage=false;
                 g_formatOptions.nImageBase=-1;
-                g_formatOptions.nStartType=SMACH::TYPE_INFO;
+                g_formatOptions.nStartType=SMACH::TYPE_HEURISTICSCAN;
                 ui->widgetMACHOFAT->setGlobal(&g_xShortcuts,&g_xOptions);
                 ui->widgetMACHOFAT->setData(pOpenDevice,g_formatOptions,0,0,0);
 
                 ui->widgetMACHOFAT->reload();
 
-                adjust();
+                adjustWindow();
 
                 setWindowTitle(sTitle);
             }
@@ -297,7 +300,7 @@ void GuiMainWindow::processFile(QString sFileName)
 
 void GuiMainWindow::closeCurrentFile()
 {
-    ui->stackedWidgetMain->setCurrentIndex(0);
+    ui->stackedWidget->setCurrentIndex(0);
 
     if(g_pFile)
     {
@@ -353,7 +356,7 @@ void GuiMainWindow::on_actionShortcuts_triggered()
 
     dialogShortcuts.exec();
 
-    adjust();
+    adjustWindow();
 }
 
 void GuiMainWindow::on_actionDemangle_triggered()
