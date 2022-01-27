@@ -20,7 +20,7 @@ if [ -z "$X_ERROR" ]; then
     if [ -z "$X_ERROR" ]; then
         create_deb_app_dir xmachoviewer
         
-        export X_PACKAGENAME='xelfviewer'
+        export X_PACKAGENAME='xmachoviewer'
         export X_MAINTAINER='hors <horsicq@gmail.com>'
         
         export X_HOMEPAGE='http://ntinfo.biz'
