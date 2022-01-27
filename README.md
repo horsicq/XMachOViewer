@@ -28,3 +28,4 @@ MachO file viewer/editor for Windows, Linux and macOS.
 ![alt text](https://github.com/horsicq/XMachOViewer/blob/master/docs/5.png "5")
 ![alt text](https://github.com/horsicq/XMachOViewer/blob/master/docs/6.png "6")
 ![alt text](https://github.com/horsicq/XMachOViewer/blob/master/docs/7.png "7")
+![alt text](https://github.com/horsicq/XMachOViewer/blob/master/docs/8.png "8")

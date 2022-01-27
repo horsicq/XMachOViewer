@@ -316,7 +316,7 @@ void GuiMainWindow::closeCurrentFile()
         g_pTempFile=nullptr;
     }
 
-    setWindowTitle(QString("%1 v%2").arg(X_APPLICATIONDISPLAYNAME).arg(X_APPLICATIONVERSION));
+    setWindowTitle(QString("%1 v%2").arg(X_APPLICATIONDISPLAYNAME,X_APPLICATIONVERSION));
 }
 
 void GuiMainWindow::dragEnterEvent(QDragEnterEvent *event)
