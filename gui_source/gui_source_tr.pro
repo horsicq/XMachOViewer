@@ -12,7 +12,8 @@ TRANSLATIONS = \
         translation/xmachoviewer_pt_BR.ts \
         translation/xmachoviewer_pt_PT.ts \
         translation/xmachoviewer_ru.ts \
-        translation/xmachoviewer_tr.ts\
+        translation/xmachoviewer_tr.ts \
+		translation/xmachoviewer_uk.ts \
         translation/xmachoviewer_vi.ts \
         translation/xmachoviewer_zh.ts \
         translation/xmachoviewer_zh_TW.ts
