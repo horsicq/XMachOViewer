@@ -358,6 +358,10 @@ void GuiMainWindow::closeCurrentFile()
         g_pTempFile=nullptr;
     }
 
+    ui->stackedWidget->setCurrentIndex(0);
+    ui->widgetMACHO->cleanup();
+    ui->widgetMACHOFAT->cleanup();
+
     setWindowTitle(QString("%1 v%2").arg(X_APPLICATIONDISPLAYNAME,X_APPLICATIONVERSION));
 }
 
