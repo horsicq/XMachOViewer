@@ -29,6 +29,7 @@ GuiMainWindow::GuiMainWindow(QWidget *parent) :
 
     g_pFile=nullptr;
     g_pTempFile=nullptr;
+    g_mode=MODE_UNKNOWN;
 
     ui->stackedWidget->setCurrentIndex(0);
 
@@ -169,8 +170,14 @@ void GuiMainWindow::actionAboutSlot()
 
 void GuiMainWindow::adjustWindow()
 {
-    ui->widgetMACHO->adjustView();
-    ui->widgetMACHOFAT->adjustView();
+    if(g_mode==MODE_MACHO)
+    {
+        ui->widgetMACHO->adjustView();
+    }
+    else if(g_mode==MODE_MACHOFAT)
+    {
+        ui->widgetMACHOFAT->adjustView();
+    }
 
     g_xOptions.adjustWindow(this);
 
@@ -300,10 +307,12 @@ void GuiMainWindow::processFile(QString sFileName)
         {
             if(XMACH::isValid(pOpenDevice))
             {
+                g_mode=MODE_MACHO;
+
                 ui->stackedWidget->setCurrentIndex(1);
                 g_formatOptions.bIsImage=false;
                 g_formatOptions.nImageBase=-1;
-                g_formatOptions.nStartType=SMACH::TYPE_HEURISTICSCAN;
+                g_formatOptions.nStartType=SMACH::TYPE_INFO;
                 ui->widgetMACHO->setGlobal(&g_xShortcuts,&g_xOptions);
                 ui->widgetMACHO->setData(pOpenDevice,g_formatOptions,0,0,0);
 
@@ -315,10 +324,12 @@ void GuiMainWindow::processFile(QString sFileName)
             }
             else if(XMACHOFat::isValid(pOpenDevice))
             {
+                g_mode=MODE_MACHOFAT;
+
                 ui->stackedWidget->setCurrentIndex(2);
                 g_formatOptions.bIsImage=false;
                 g_formatOptions.nImageBase=-1;
-                g_formatOptions.nStartType=SMACH::TYPE_HEURISTICSCAN;
+                g_formatOptions.nStartType=SMACH::TYPE_INFO;
                 ui->widgetMACHOFAT->setGlobal(&g_xShortcuts,&g_xOptions);
                 ui->widgetMACHOFAT->setData(pOpenDevice,g_formatOptions,0,0,0);
 

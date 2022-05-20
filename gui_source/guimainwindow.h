@@ -43,6 +43,13 @@ class GuiMainWindow : public QMainWindow
 {
     Q_OBJECT
 
+    enum MODE
+    {
+        MODE_UNKNOWN=0,
+        MODE_MACHO,
+        MODE_MACHOFAT
+    };
+
 public:
     explicit GuiMainWindow(QWidget *parent=nullptr);
     ~GuiMainWindow();
@@ -72,6 +79,7 @@ private:
     FW_DEF::OPTIONS g_formatOptions;
     QFile *g_pFile;
     QTemporaryFile *g_pTempFile;
+    MODE g_mode;
 };
 
 #endif // GUIMAINWINDOW_H
