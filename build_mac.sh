@@ -23,22 +23,8 @@ if [ -z "$X_ERROR" ]; then
         mkdir -p $X_SOURCE_PATH/release/$X_BUILD_NAME/XMachOViewer.app/Contents/Resources/signatures
         cp -R $X_SOURCE_PATH/signatures/crypto.db            $X_SOURCE_PATH/release/$X_BUILD_NAME/XMachOViewer.app/Contents/Resources/signatures/
         cp -Rf $X_SOURCE_PATH/XStyles/qss                    $X_SOURCE_PATH/release/$X_BUILD_NAME/XMachOViewer.app/Contents/Resources/
-        cp -Rf $X_SOURCE_PATH/XStyles/qss                    $X_SOURCE_PATH/release/$X_BUILD_NAME/XMachOViewer.app/Contents/Resources/
 
-        fiximport "$X_SOURCE_PATH/build/release/XMachOViewer.app/Contents/MacOS/XMachOViewer"
-
-        deploy_qt_library QtWidgets XMachOViewer
-        deploy_qt_library QtGui XMachOViewer
-        deploy_qt_library QtCore XMachOViewer
-        deploy_qt_library QtDBus XMachOViewer
-        deploy_qt_library QtPrintSupport XMachOViewer
-        deploy_qt_library QtSvg XMachOViewer
-        deploy_qt_library QtOpenGL XMachOViewer
-        deploy_qt_library QtConcurrent XMachOViewer
-
-        deploy_qt_plugin platforms libqcocoa XMachOViewer
-        deploy_qt_plugin platforms libqminimal XMachOViewer
-        deploy_qt_plugin platforms libqoffscreen XMachOViewer
+        deploy_qt XMachOViewer
 
         make_release
         make_clear

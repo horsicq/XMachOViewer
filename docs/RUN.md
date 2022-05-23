@@ -1,3 +1,5 @@
+**xmachoviewer** - GUI version
+
 How to run portable version on Linux
 =======
 

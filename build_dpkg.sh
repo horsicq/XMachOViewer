@@ -24,12 +24,12 @@ if [ -z "$X_ERROR" ]; then
         export X_MAINTAINER='hors <horsicq@gmail.com>'
         
         export X_HOMEPAGE='http://ntinfo.biz'
-        export X_DESCRIPTION='XMachOViewer is a MACH-O file viewer/editor.'
+        export X_DESCRIPTION='XMachOViewer is a Mach-O file viewer/editor.'
         
         if [ "$X_DEBIAN_VERSION" -ge "11" ]; then
-            export X_DEPENDS='libqt5core5a, libqt5svg5, libqt5gui5, libqt5widgets5, libqt5opengl5, libqt5dbus5'
+            export X_DEPENDS='libqt5core5a, libqt5svg5, libqt5gui5, libqt5widgets5, libqt5opengl5, libqt5dbus5, libqt5sql5'
         else
-            export X_DEPENDS='qt5-default, libqt5core5a, libqt5svg5, libqt5gui5, libqt5widgets5, libqt5opengl5, libqt5dbus5'
+            export X_DEPENDS='qt5-default, libqt5core5a, libqt5svg5, libqt5gui5, libqt5widgets5, libqt5opengl5, libqt5dbus5, libqt5sql5'
         fi
         
         create_deb_control $X_SOURCE_PATH/release/$X_BUILD_NAME/DEBIAN/control
