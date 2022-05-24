@@ -30,6 +30,7 @@ call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_qt_plugin imageformats qjpeg
 call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_qt_plugin imageformats qtiff
 call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_qt_plugin imageformats qico
 call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_qt_plugin imageformats qgif
+call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_qt_plugin sqldrivers qsqlite
 call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_redist
 
 call %X_SOURCE_PATH%\build_tools\windows.cmd make_release

@@ -1,5 +1,5 @@
 #define MyAppName "XMachOViewer"
-#define MyAppVersion "0.03"
+#define MyAppVersion "0.04"
 #define MyAppPublisher "NTInfo"
 #define MyAppURL "ntinfo.biz"
 #define MyAppExeName "xmachoviewer.exe"

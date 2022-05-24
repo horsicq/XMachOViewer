@@ -36,7 +36,7 @@ DialogAbout::DialogAbout(QWidget *pParent) :
                                 .arg(tr("Website")));
     ui->labelDonate->setText(QString("<html><head/><body><p><span style=\" font-weight:600;\">%1(Paypal): </span><a href=\"mailto:ntinfo.re@gmail.com\"><span style=\" text-decoration: underline; color:#ff0000;\">ntinfo.re@gmail.com</span></a></p></body></html>")
                                 .arg(tr("Donate")));
-    ui->labelSourceCode->setText(QString("<html><head/><body><p><span style=\" font-weight:600;\">%1: </span><a href=\"https://github.com/horsicq/XELFViewer\"><span style=\" text-decoration: underline; color:#ff0000;\">https://github.com/horsicq/XELFViewer</span></a></p></body></html>")
+    ui->labelSourceCode->setText(QString("<html><head/><body><p><span style=\" font-weight:600;\">%1: </span><a href=\"https://github.com/horsicq/XMachOViewer\"><span style=\" text-decoration: underline; color:#ff0000;\">https://github.com/horsicq/XMachOViewer</span></a></p></body></html>")
                                 .arg(tr("Source code")));
     ui->labelThanks->setText(QString("<html><head/><body>"
                                          "<p align=\"center\"><span style=\" font-weight:600;\">%1:</span></p>"
@@ -56,8 +56,13 @@ DialogAbout::DialogAbout(QWidget *pParent) :
                                             "<a href=\"http://mrexodia.re/\"><span style=\" text-decoration: underline; color:#ff0000;\">Duncan Ogilvie</span></a>, "
                                          "</p>"
                                          "<p align=\"center\">"
-                                            "<a href=\"https://github.com/leandrofroes\"><span style=\" text-decoration: underline; color:#ff0000;\">Leandro Fróes</span></a>, "
-                                            "<a href=\"https://www.leavesongs.com/\"><span style=\" text-decoration: underline; color:#ff0000;\">phithon</span></a>"
+                                             "<a href=\"https://github.com/leandrofroes\"><span style=\" text-decoration: underline; color:#ff0000;\">Leandro Fróes</span></a>, "
+                                             "<a href=\"https://www.leavesongs.com/\"><span style=\" text-decoration: underline; color:#ff0000;\">phithon</span></a>, "
+                                             "<a href=\"https://github.com/clayne/\"><span style=\" text-decoration: underline; color:#ff0000;\">Christopher Layne</span></a>, "
+                                         "</p>"
+                                         "<p align=\"center\">"
+                                             "<a href=\"http://dfirnotes.net/\"><span style=\" text-decoration: underline; color:#ff0000;\">Adric Net</span></a>, "
+                                             "<a href=\"https://greich.com/\"><span style=\" text-decoration: underline; color:#ff0000;\">Gilad Reich</span></a>"
                                          "</p>"
                                      "</body></html>")
                                 .arg(tr("Thanks")));
