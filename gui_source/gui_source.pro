@@ -36,11 +36,16 @@ XCONFIG += use_extrabuttons
     include(../archive_widget/archive_widget.pri)
 }
 
+!contains(XCONFIG, xaboutwidget) {
+    XCONFIG += xaboutwidget
+    include(../XAboutWidget/xaboutwidget.pri)
+}
+
 win32 {
     RC_ICONS = $$PWD/../icons/main.ico
     CONFIG -= embed_manifest_exe
     QMAKE_MANIFEST = windows.manifest.xml
-    VERSION = 0.04.0.0
+    VERSION = 0.05.0.0
     QMAKE_TARGET_COMPANY = NTInfo
     QMAKE_TARGET_PRODUCT = XMachOViewer
     QMAKE_TARGET_DESCRIPTION = XMachOViewer is a Mach-O file viewer/editor.

@@ -25,15 +25,18 @@ find_package(Qt5 COMPONENTS OpenGL REQUIRED)
 find_package(Qt5 COMPONENTS PrintSupport REQUIRED)
 find_package(Qt5 COMPONENTS Svg REQUIRED)
 find_package(Qt5 COMPONENTS Sql REQUIRED)
+find_package(Qt5 COMPONENTS Network REQUIRED)
 
 add_definitions(-DUSE_DEX)
 add_definitions(-DUSE_PDF)
 add_definitions(-DUSE_ARCHIVE)
 
 include(${PROJECT_SOURCE_DIR}/../archive_widget/archive_widget.cmake)
+include(${PROJECT_SOURCE_DIR}/../XAboutWidget/xaboutwidget.cmake)
 
 set(PROJECT_SOURCES
             ${ARCHIVE_WIDGET_SOURCES}
+            ${XABOUTWIDGET_SOURCES}
             dialogabout.cpp
             dialogabout.ui
             dialogoptions.cpp
@@ -76,6 +79,7 @@ target_link_libraries(${PROJECT_NAME} Qt5::OpenGL)
 target_link_libraries(${PROJECT_NAME} Qt5::PrintSupport)
 target_link_libraries(${PROJECT_NAME} Qt5::Svg)
 target_link_libraries(${PROJECT_NAME} Qt5::Sql)
+target_link_libraries(${PROJECT_NAME} Qt5::Network)
 
 if(WIN32)
     target_link_libraries(${PROJECT_NAME} Wintrust)
