@@ -5,7 +5,7 @@
     <name>Archive_widget</name>
     <message>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation>Formulário</translation>
     </message>
     <message>
         <source>Type</source>
@@ -21,7 +21,7 @@
     </message>
     <message>
         <source>Table</source>
-        <translation>Mesa</translation>
+        <translation>Tabela</translation>
     </message>
     <message>
         <source>Open</source>
@@ -37,7 +37,7 @@
     </message>
     <message>
         <source>Strings</source>
-        <translation>Cordas</translation>
+        <translation>Strings</translation>
     </message>
     <message>
         <source>Entropy</source>
@@ -45,14 +45,14 @@
     </message>
     <message>
         <source>Hash</source>
-        <translation>Cerquilha</translation>
+        <translation>Hash</translation>
     </message>
     <message>
         <source>Copy</source>
         <translation>Copiar</translation>
     </message>
     <message>
-        <source>Filename</source>
+        <source>File name</source>
         <translation>Nome do arquivo</translation>
     </message>
     <message>
@@ -116,6 +116,10 @@
         <translation>Filtro</translation>
     </message>
     <message>
+        <source>Save</source>
+        <translation>Salvar</translation>
+    </message>
+    <message>
         <source>Info</source>
         <translation>Info</translation>
     </message>
@@ -125,11 +129,11 @@
     </message>
     <message>
         <source>Hash</source>
-        <translation>Cerquilha</translation>
+        <translation>Hash</translation>
     </message>
     <message>
         <source>Strings</source>
-        <translation>Cordas</translation>
+        <translation>Strings</translation>
     </message>
     <message>
         <source>Memory map</source>
@@ -160,7 +164,7 @@
     </message>
     <message>
         <source>Website</source>
-        <translation>Local na rede Internet</translation>
+        <translation>Site</translation>
     </message>
     <message>
         <source>Donate</source>
@@ -169,10 +173,6 @@
     <message>
         <source>Source code</source>
         <translation>Código Fonte</translation>
-    </message>
-    <message>
-        <source>Thanks</source>
-        <translation>Obrigado</translation>
     </message>
 </context>
 <context>
@@ -198,7 +198,7 @@
     </message>
     <message>
         <source>Spaces</source>
-        <translation>Spaces</translation>
+        <translation>Espaços</translation>
     </message>
     <message>
         <source>Upper</source>
@@ -230,14 +230,14 @@
     </message>
     <message>
         <source>Opcode</source>
-        <translation>Código de operação</translation>
+        <translation>Opcode</translation>
     </message>
 </context>
 <context>
     <name>DialogCreateViewModel</name>
     <message>
         <source>Create view model</source>
-        <translation>Criar modelo de vista</translation>
+        <translation>Criar modelo de visualização</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -259,7 +259,7 @@
     <name>DialogDisasm</name>
     <message>
         <source>Disasm</source>
-        <translation>Desastre</translation>
+        <translation>Disassemblar</translation>
     </message>
     <message>
         <source>Close</source>
@@ -293,7 +293,7 @@
     <name>DialogDisasmProcess</name>
     <message>
         <source>Disasm</source>
-        <translation>Desastre</translation>
+        <translation>Disassemblar</translation>
     </message>
     <message>
         <source>Opcodes</source>
@@ -321,7 +321,7 @@
     </message>
 </context>
 <context>
-    <name>DialogDump</name>
+    <name>DialogDumpProcess</name>
     <message>
         <source>Dump</source>
         <translation>Dump</translation>
@@ -332,18 +332,30 @@
     </message>
 </context>
 <context>
-    <name>DialogDumpProcess</name>
+    <name>DialogEditString</name>
     <message>
-        <source>Dump</source>
-        <translation>Dump</translation>
+        <source>String</source>
+        <translation>String</translation>
+    </message>
+    <message>
+        <source>Keep size</source>
+        <translation>Manter tamanho</translation>
+    </message>
+    <message>
+        <source>C Strings</source>
+        <translation>C Strings</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <source>Error</source>
-        <translation>Erro</translation>
+        <source>Bytes available</source>
+        <translation>Bytes disponíveis</translation>
     </message>
 </context>
 <context>
@@ -367,20 +379,20 @@
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
-    <message>
-        <source>Error</source>
-        <translation>Erro</translation>
-    </message>
 </context>
 <context>
     <name>DialogGoToAddress</name>
     <message>
         <source>Go to address</source>
-        <translation>Ir para endereço</translation>
+        <translation>Ir para o endereço</translation>
     </message>
     <message>
         <source>Address</source>
         <translation>Endereço</translation>
+    </message>
+    <message>
+        <source>Hex</source>
+        <translation>Hex</translation>
     </message>
     <message>
         <source>OK</source>
@@ -415,7 +427,7 @@
     <name>DialogHash</name>
     <message>
         <source>Hash</source>
-        <translation>Cerquilha</translation>
+        <translation>Hash</translation>
     </message>
     <message>
         <source>Close</source>
@@ -432,13 +444,13 @@
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
-    <message>
-        <source>Error</source>
-        <translation>Erro</translation>
-    </message>
 </context>
 <context>
-    <name>DialogHex</name>
+    <name>DialogHexEdit</name>
+    <message>
+        <source>Edit</source>
+        <translation>Editar</translation>
+    </message>
     <message>
         <source>Close</source>
         <translation>Fechar</translation>
@@ -452,7 +464,7 @@
     </message>
     <message>
         <source>Spaces</source>
-        <translation>Spaces</translation>
+        <translation>Espaços</translation>
     </message>
     <message>
         <source>Upper</source>
@@ -520,7 +532,7 @@
     <name>DialogMultiDisasm</name>
     <message>
         <source>Disasm</source>
-        <translation>Desastre</translation>
+        <translation>Disassemblar</translation>
     </message>
     <message>
         <source>Close</source>
@@ -535,7 +547,7 @@
     </message>
     <message>
         <source>Spaces</source>
-        <translation>Spaces</translation>
+        <translation>Espaços</translation>
     </message>
     <message>
         <source>Upper</source>
@@ -571,7 +583,7 @@
     </message>
     <message>
         <source>Opcode</source>
-        <translation>Código de operação</translation>
+        <translation>Opcode</translation>
     </message>
 </context>
 <context>
@@ -594,11 +606,7 @@
     </message>
     <message>
         <source>Create view model</source>
-        <translation>Criar modelo de vista</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>Erro</translation>
+        <translation>Criar modelo de visualização</translation>
     </message>
 </context>
 <context>
@@ -608,64 +616,12 @@
         <translation>Opções</translation>
     </message>
     <message>
-        <source>Save last directory</source>
-        <translation>Salvar último diretório</translation>
-    </message>
-    <message>
-        <source>Stay on top</source>
-        <translation>Permanecer no topo</translation>
-    </message>
-    <message>
-        <source>Save backup</source>
-        <translation>Salvar backup</translation>
-    </message>
-    <message>
-        <source>Show logo</source>
-        <translation>Exibir logo</translation>
-    </message>
-    <message>
-        <source>Context</source>
-        <translation>Contexto</translation>
-    </message>
-    <message>
-        <source>Style</source>
-        <translation>Estilo</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation>Linguagem</translation>
-    </message>
-    <message>
-        <source>Search signatures</source>
-        <translation>Pesquisar assinaturas</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation>OK</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation>Cancelar</translation>
-    </message>
-    <message>
-        <source>Information</source>
-        <translation>Informação</translation>
-    </message>
-    <message>
-        <source>Please restart the application</source>
-        <translation>Por favor reinicie a aplicação</translation>
-    </message>
-    <message>
-        <source>Open directory</source>
-        <translation>Abrir diretórios</translation>
-    </message>
-    <message>
         <source>Scan</source>
         <translation>Scan</translation>
     </message>
     <message>
         <source>Signatures</source>
-        <translation>Signatures</translation>
+        <translation>Assinaturas</translation>
     </message>
     <message>
         <source>Hex</source>
@@ -673,7 +629,11 @@
     </message>
     <message>
         <source>Disasm</source>
-        <translation>Desastre</translation>
+        <translation>Disassemblar</translation>
+    </message>
+    <message>
+        <source>Online tools</source>
+        <translation>Ferramentas Online</translation>
     </message>
 </context>
 <context>
@@ -685,10 +645,6 @@
     <message>
         <source>Cancel</source>
         <translation>Cancelar</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>Erro</translation>
     </message>
 </context>
 <context>
@@ -703,7 +659,7 @@
     </message>
     <message>
         <source>String</source>
-        <translation>Fragmento</translation>
+        <translation>String</translation>
     </message>
     <message>
         <source>Match case</source>
@@ -748,16 +704,12 @@
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
-    <message>
-        <source>Error</source>
-        <translation>Erro</translation>
-    </message>
 </context>
 <context>
     <name>DialogSearchSignatures</name>
     <message>
         <source>Signatures</source>
-        <translation>Signatures</translation>
+        <translation>Assinaturas</translation>
     </message>
     <message>
         <source>Close</source>
@@ -768,7 +720,7 @@
     <name>DialogSearchStrings</name>
     <message>
         <source>Strings</source>
-        <translation>Cordas</translation>
+        <translation>Strings</translation>
     </message>
     <message>
         <source>Close</source>
@@ -797,12 +749,12 @@
         <translation>Limpar</translation>
     </message>
     <message>
-        <source>Close</source>
-        <translation>Fechar</translation>
+        <source>Default</source>
+        <translation>Padrão</translation>
     </message>
     <message>
-        <source>Group</source>
-        <translation>Grupo</translation>
+        <source>Close</source>
+        <translation>Fechar</translation>
     </message>
     <message>
         <source>Name</source>
@@ -821,18 +773,7 @@
     <name>DialogShowImage</name>
     <message>
         <source>Image</source>
-        <translation>Image</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation>Fechar</translation>
-    </message>
-</context>
-<context>
-    <name>DialogShowText</name>
-    <message>
-        <source>Text</source>
-        <translation>Texto</translation>
+        <translation>Imagem</translation>
     </message>
     <message>
         <source>Close</source>
@@ -856,6 +797,10 @@
     <message>
         <source>Heuristic scan</source>
         <translation>Varredura heurística</translation>
+    </message>
+    <message>
+        <source>Verbose</source>
+        <translation>Detalhado</translation>
     </message>
     <message>
         <source>All types</source>
@@ -895,6 +840,10 @@
     <message>
         <source>Heuristic scan</source>
         <translation>Varredura heurística</translation>
+    </message>
+    <message>
+        <source>Verbose</source>
+        <translation>Detalhado</translation>
     </message>
     <message>
         <source>All types</source>
@@ -959,8 +908,24 @@
         <translation>Info</translation>
     </message>
     <message>
+        <source>Save</source>
+        <translation>Salvar</translation>
+    </message>
+    <message>
         <source>Close</source>
         <translation>Fechar</translation>
+    </message>
+    <message>
+        <source>Text documents</source>
+        <translation>Documentos de texto</translation>
+    </message>
+    <message>
+        <source>Save result</source>
+        <translation>Salvar resultados</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultado</translation>
     </message>
 </context>
 <context>
@@ -972,6 +937,29 @@
     <message>
         <source>Cancel</source>
         <translation>Cancelar</translation>
+    </message>
+</context>
+<context>
+    <name>DialogXDisasmViewColors</name>
+    <message>
+        <source>Colors</source>
+        <translation>Cores</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancelar</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Text</source>
+        <translation>Texto</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Background</translation>
     </message>
 </context>
 <context>
@@ -1004,6 +992,39 @@
     </message>
 </context>
 <context>
+    <name>DialogXInfoDBTransferProcess</name>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancelar</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Importação</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Exportar</translation>
+    </message>
+</context>
+<context>
+    <name>DialogXSymbols</name>
+    <message>
+        <source>Symbols</source>
+        <translation>Símbolos</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Fechar</translation>
+    </message>
+</context>
+<context>
+    <name>DialogXVirusTotal</name>
+    <message>
+        <source>Close</source>
+        <translation>Fechar</translation>
+    </message>
+</context>
+<context>
     <name>ELFProcessData</name>
     <message>
         <source>Name</source>
@@ -1015,7 +1036,7 @@
     </message>
     <message>
         <source>Bind</source>
-        <translation>Ligar</translation>
+        <translation>Vincular</translation>
     </message>
 </context>
 <context>
@@ -1033,11 +1054,11 @@
     </message>
     <message>
         <source>Disasm</source>
-        <translation>Desastre</translation>
+        <translation>Disassemblar</translation>
     </message>
     <message>
         <source>Strings</source>
-        <translation>Cordas</translation>
+        <translation>Strings</translation>
     </message>
     <message>
         <source>Memory map</source>
@@ -1069,11 +1090,11 @@
     </message>
     <message>
         <source>Hash</source>
-        <translation>Cerquilha</translation>
+        <translation>Hash</translation>
     </message>
     <message>
         <source>Signatures</source>
-        <translation>Signatures</translation>
+        <translation>Assinaturas</translation>
     </message>
     <message>
         <source>Sections</source>
@@ -1161,7 +1182,7 @@
     </message>
     <message>
         <source>Raw data</source>
-        <translation>Dados não tratados</translation>
+        <translation>Dados raw</translation>
     </message>
     <message>
         <source>Name</source>
@@ -1192,7 +1213,7 @@
     </message>
     <message>
         <source>Disasm</source>
-        <translation>Desastre</translation>
+        <translation>Disassemblar</translation>
     </message>
     <message>
         <source>Base address</source>
@@ -1212,7 +1233,7 @@
     </message>
     <message>
         <source>Import</source>
-        <translation>Importar</translation>
+        <translation>Importação</translation>
     </message>
     <message>
         <source>Resources</source>
@@ -1339,14 +1360,14 @@
     </message>
     <message>
         <source>Cannot open file</source>
-        <translation>Impossível abrir arquivo</translation>
+        <translation>Não é possível abrir o arquivo</translation>
     </message>
 </context>
 <context>
     <name>HashProcess</name>
     <message>
         <source>Import</source>
-        <translation>Importar</translation>
+        <translation>Importação</translation>
     </message>
 </context>
 <context>
@@ -1366,6 +1387,10 @@
     <message>
         <source>Heuristic scan</source>
         <translation>Varredura heurística</translation>
+    </message>
+    <message>
+        <source>Verbose</source>
+        <translation>Detalhado</translation>
     </message>
     <message>
         <source>All types</source>
@@ -1404,7 +1429,7 @@
     </message>
     <message>
         <source>Disasm</source>
-        <translation>Desastre</translation>
+        <translation>Disassemblar</translation>
     </message>
 </context>
 <context>
@@ -1426,11 +1451,11 @@
     </message>
     <message>
         <source>Disasm</source>
-        <translation>Desastre</translation>
+        <translation>Disassemblar</translation>
     </message>
     <message>
         <source>Strings</source>
-        <translation>Cordas</translation>
+        <translation>Strings</translation>
     </message>
     <message>
         <source>Memory map</source>
@@ -1454,11 +1479,11 @@
     </message>
     <message>
         <source>Hash</source>
-        <translation>Cerquilha</translation>
+        <translation>Hash</translation>
     </message>
     <message>
         <source>Signatures</source>
-        <translation>Signatures</translation>
+        <translation>Assinaturas</translation>
     </message>
     <message>
         <source>Overlay</source>
@@ -1473,7 +1498,7 @@
     <name>MACHOFATWidget</name>
     <message>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation>Formulário</translation>
     </message>
 </context>
 <context>
@@ -1492,7 +1517,7 @@
     </message>
     <message>
         <source>Opcode</source>
-        <translation>Código de operação</translation>
+        <translation>Opcode</translation>
     </message>
     <message>
         <source>Value</source>
@@ -1518,11 +1543,11 @@
     </message>
     <message>
         <source>Disasm</source>
-        <translation>Desastre</translation>
+        <translation>Disassemblar</translation>
     </message>
     <message>
         <source>Strings</source>
-        <translation>Cordas</translation>
+        <translation>Strings</translation>
     </message>
     <message>
         <source>Memory map</source>
@@ -1546,11 +1571,11 @@
     </message>
     <message>
         <source>Hash</source>
-        <translation>Cerquilha</translation>
+        <translation>Hash</translation>
     </message>
     <message>
         <source>Signatures</source>
-        <translation>Signatures</translation>
+        <translation>Assinaturas</translation>
     </message>
     <message>
         <source>Commands</source>
@@ -1570,7 +1595,7 @@
     </message>
     <message>
         <source>Binding</source>
-        <translation>Obrigatório</translation>
+        <translation>Vinculo</translation>
     </message>
     <message>
         <source>Weak binding</source>
@@ -1586,7 +1611,7 @@
     </message>
     <message>
         <source>String table</source>
-        <translation>Mesa de cordas</translation>
+        <translation>Tabela de strings</translation>
     </message>
     <message>
         <source>Symbol table</source>
@@ -1618,7 +1643,7 @@
     </message>
     <message>
         <source>Data in code</source>
-        <translation>Dados no código</translation>
+        <translation>Dados em código</translation>
     </message>
     <message>
         <source>Unknown</source>
@@ -1649,11 +1674,11 @@
     </message>
     <message>
         <source>Disasm</source>
-        <translation>Desastre</translation>
+        <translation>Disassemblar</translation>
     </message>
     <message>
         <source>Strings</source>
-        <translation>Cordas</translation>
+        <translation>Strings</translation>
     </message>
     <message>
         <source>Memory map</source>
@@ -1677,11 +1702,11 @@
     </message>
     <message>
         <source>Hash</source>
-        <translation>Cerquilha</translation>
+        <translation>Hash</translation>
     </message>
     <message>
         <source>Signatures</source>
-        <translation>Signatures</translation>
+        <translation>Assinaturas</translation>
     </message>
     <message>
         <source>Overlay</source>
@@ -1708,7 +1733,7 @@
     </message>
     <message>
         <source>String</source>
-        <translation>Fragmento</translation>
+        <translation>String</translation>
     </message>
     <message>
         <source>Name</source>
@@ -1734,11 +1759,11 @@
     </message>
     <message>
         <source>Disasm</source>
-        <translation>Desastre</translation>
+        <translation>Disassemblar</translation>
     </message>
     <message>
         <source>Strings</source>
-        <translation>Cordas</translation>
+        <translation>Strings</translation>
     </message>
     <message>
         <source>Memory map</source>
@@ -1762,11 +1787,11 @@
     </message>
     <message>
         <source>Hash</source>
-        <translation>Cerquilha</translation>
+        <translation>Hash</translation>
     </message>
     <message>
         <source>Signatures</source>
-        <translation>Signatures</translation>
+        <translation>Assinaturas</translation>
     </message>
     <message>
         <source>Segments</source>
@@ -1792,12 +1817,16 @@
         <translation>Varredura heurística</translation>
     </message>
     <message>
-        <source>All types</source>
-        <translation>Todos os tipos</translation>
+        <source>Verbose</source>
+        <translation>Detalhado</translation>
     </message>
     <message>
         <source>Directory</source>
         <translation>Diretório</translation>
+    </message>
+    <message>
+        <source>All types</source>
+        <translation>Todos os tipos</translation>
     </message>
     <message>
         <source>Scan</source>
@@ -1810,6 +1839,49 @@
     <message>
         <source>msec</source>
         <translation>mseg</translation>
+    </message>
+</context>
+<context>
+    <name>PDFWidget</name>
+    <message>
+        <source>Reload</source>
+        <translation>Recarregar</translation>
+    </message>
+    <message>
+        <source>Hex</source>
+        <translation>Hex</translation>
+    </message>
+    <message>
+        <source>Strings</source>
+        <translation>Strings</translation>
+    </message>
+    <message>
+        <source>Memory map</source>
+        <translation>Mapa de memória</translation>
+    </message>
+    <message>
+        <source>Entropy</source>
+        <translation>Entropia</translation>
+    </message>
+    <message>
+        <source>Heuristic scan</source>
+        <translation>Varredura heurística</translation>
+    </message>
+    <message>
+        <source>Readonly</source>
+        <translation>Somente leitura</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation>Info</translation>
+    </message>
+    <message>
+        <source>Hash</source>
+        <translation>Hash</translation>
+    </message>
+    <message>
+        <source>Signatures</source>
+        <translation>Assinaturas</translation>
     </message>
 </context>
 <context>
@@ -1828,7 +1900,7 @@
     </message>
     <message>
         <source>Hash</source>
-        <translation>Cerquilha</translation>
+        <translation>Hash</translation>
     </message>
     <message>
         <source>Name</source>
@@ -1845,6 +1917,14 @@
     <message>
         <source>Size</source>
         <translation>Tamanho</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Linguagem</translation>
+    </message>
+    <message>
+        <source>String</source>
+        <translation>String</translation>
     </message>
     <message>
         <source>Certificate</source>
@@ -1910,11 +1990,11 @@
     </message>
     <message>
         <source>Disasm</source>
-        <translation>Desastre</translation>
+        <translation>Disassemblar</translation>
     </message>
     <message>
         <source>Strings</source>
-        <translation>Cordas</translation>
+        <translation>Strings</translation>
     </message>
     <message>
         <source>Memory map</source>
@@ -1942,7 +2022,7 @@
     </message>
     <message>
         <source>Table</source>
-        <translation>Mesa</translation>
+        <translation>Tabela</translation>
     </message>
     <message>
         <source>Tree</source>
@@ -1958,7 +2038,7 @@
     </message>
     <message>
         <source>Hash</source>
-        <translation>Cerquilha</translation>
+        <translation>Hash</translation>
     </message>
     <message>
         <source>Info</source>
@@ -1966,7 +2046,7 @@
     </message>
     <message>
         <source>Signatures</source>
-        <translation>Signatures</translation>
+        <translation>Assinaturas</translation>
     </message>
     <message>
         <source>Signature</source>
@@ -1982,11 +2062,15 @@
     </message>
     <message>
         <source>Import</source>
-        <translation>Importar</translation>
+        <translation>Importação</translation>
     </message>
     <message>
         <source>Resources</source>
         <translation>Recursos</translation>
+    </message>
+    <message>
+        <source>String table</source>
+        <translation>Tabela de strings</translation>
     </message>
     <message>
         <source>Version</source>
@@ -2018,7 +2102,7 @@
     </message>
     <message>
         <source>Load config</source>
-        <translation>Carregar configuração</translation>
+        <translation>Exibir configuração</translation>
     </message>
     <message>
         <source>Bound import</source>
@@ -2062,48 +2146,6 @@
     </message>
 </context>
 <context>
-    <name>QHexView</name>
-    <message>
-        <source>Cannot save file</source>
-        <translation>Impossível salvar arquivo</translation>
-    </message>
-</context>
-<context>
-    <name>QHexViewWidget</name>
-    <message>
-        <source>Go to address</source>
-        <translation>Ir para endereço</translation>
-    </message>
-    <message>
-        <source>Cursor</source>
-        <translation>Cursor</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>Seleção</translation>
-    </message>
-    <message>
-        <source>Size</source>
-        <translation>Tamanho</translation>
-    </message>
-    <message>
-        <source>Readonly</source>
-        <translation>Somente leitura</translation>
-    </message>
-    <message>
-        <source>Raw data</source>
-        <translation>Dados não tratados</translation>
-    </message>
-    <message>
-        <source>Save dump</source>
-        <translation>Salvar despejo</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>Erro</translation>
-    </message>
-</context>
-<context>
     <name>QObject</name>
     <message>
         <source>Type</source>
@@ -2119,7 +2161,7 @@
     </message>
     <message>
         <source>String</source>
-        <translation>Fragmento</translation>
+        <translation>String</translation>
     </message>
     <message>
         <source>Library name</source>
@@ -2127,7 +2169,7 @@
     </message>
     <message>
         <source>Interpreter</source>
-        <translation>Intérprete</translation>
+        <translation>Interpretador</translation>
     </message>
     <message>
         <source>Name</source>
@@ -2159,11 +2201,11 @@
     </message>
     <message>
         <source>Write error</source>
-        <translation>Escrever erro</translation>
+        <translation>Erro de escrita</translation>
     </message>
     <message>
         <source>Cannot open file</source>
-        <translation>Impossível abrir arquivo</translation>
+        <translation>Não é possível abrir o arquivo</translation>
     </message>
 </context>
 <context>
@@ -2207,7 +2249,7 @@
     <name>SearchSignaturesOptionsWidget</name>
     <message>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation>Formulário</translation>
     </message>
     <message>
         <source>Search signatures</source>
@@ -2242,23 +2284,31 @@
     </message>
     <message>
         <source>Signatures</source>
-        <translation>Signatures</translation>
+        <translation>Assinaturas</translation>
     </message>
     <message>
-        <source>Copy name</source>
-        <translation>Copiar o nome</translation>
+        <source>Copy</source>
+        <translation>Copiar</translation>
     </message>
     <message>
-        <source>Copy signature</source>
-        <translation>Copiar assinatura</translation>
+        <source>Follow in</source>
+        <translation>Siga em</translation>
     </message>
     <message>
-        <source>Copy address</source>
-        <translation>Copiar endereço</translation>
+        <source>Name</source>
+        <translation>Nome</translation>
     </message>
     <message>
-        <source>Copy offset</source>
-        <translation>Deslocamento de cópia</translation>
+        <source>Signature</source>
+        <translation>Assinatura</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Endereço</translation>
+    </message>
+    <message>
+        <source>Offset</source>
+        <translation>Offset</translation>
     </message>
     <message>
         <source>Hex</source>
@@ -2272,6 +2322,10 @@
         <translation>Filtro</translation>
     </message>
     <message>
+        <source>C Strings</source>
+        <translation>C Strings</translation>
+    </message>
+    <message>
         <source>Save</source>
         <translation>Salvar</translation>
     </message>
@@ -2281,23 +2335,35 @@
     </message>
     <message>
         <source>Strings</source>
-        <translation>Cordas</translation>
+        <translation>Strings</translation>
     </message>
     <message>
-        <source>Copy string</source>
-        <translation>Copiar string</translation>
+        <source>Copy</source>
+        <translation>Copiar</translation>
     </message>
     <message>
-        <source>Copy address</source>
-        <translation>Copiar endereço</translation>
+        <source>Follow in</source>
+        <translation>Siga em</translation>
     </message>
     <message>
-        <source>Copy offset</source>
-        <translation>Deslocamento de cópia</translation>
+        <source>Edit</source>
+        <translation>Editar</translation>
     </message>
     <message>
-        <source>Copy size</source>
-        <translation>Tamanho da cópia</translation>
+        <source>String</source>
+        <translation>String</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Endereço</translation>
+    </message>
+    <message>
+        <source>Offset</source>
+        <translation>Offset</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Tamanho</translation>
     </message>
     <message>
         <source>Hex</source>
@@ -2306,6 +2372,14 @@
     <message>
         <source>Demangle</source>
         <translation>Demangle</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Erro</translation>
+    </message>
+    <message>
+        <source>Cannot save file</source>
+        <translation>Impossível salvar arquivo</translation>
     </message>
 </context>
 <context>
@@ -2364,7 +2438,7 @@
     </message>
     <message>
         <source>Image</source>
-        <translation>Image</translation>
+        <translation>Imagem</translation>
     </message>
     <message>
         <source>Installer</source>
@@ -2448,7 +2522,7 @@
     </message>
     <message>
         <source>Import hash</source>
-        <translation>Importar hash</translation>
+        <translation>Hash Importação</translation>
     </message>
     <message>
         <source>Code section</source>
@@ -2460,7 +2534,7 @@
     </message>
     <message>
         <source>String</source>
-        <translation>Fragmento</translation>
+        <translation>String</translation>
     </message>
     <message>
         <source>Archive</source>
@@ -2495,13 +2569,6 @@
     </message>
 </context>
 <context>
-    <name>StaticScanItemModel</name>
-    <message>
-        <source>Result</source>
-        <translation>Resultado</translation>
-    </message>
-</context>
-<context>
     <name>StaticScanOptionsWidget</name>
     <message>
         <source>Scan after open</source>
@@ -2520,6 +2587,10 @@
         <translation>Varredura heurística</translation>
     </message>
     <message>
+        <source>Verbose</source>
+        <translation>Detalhado</translation>
+    </message>
+    <message>
         <source>All types</source>
         <translation>Todos os tipos</translation>
     </message>
@@ -2528,7 +2599,30 @@
     <name>ToolsWidget</name>
     <message>
         <source>Strings</source>
-        <translation>Cordas</translation>
+        <translation>Strings</translation>
+    </message>
+</context>
+<context>
+    <name>XAboutWidget</name>
+    <message>
+        <source>Info</source>
+        <translation>Info</translation>
+    </message>
+    <message>
+        <source>Check updates</source>
+        <translation>Verificar atualizações</translation>
+    </message>
+    <message>
+        <source>Thanks</source>
+        <translation>Obrigado</translation>
+    </message>
+    <message>
+        <source>Website</source>
+        <translation>Site</translation>
+    </message>
+    <message>
+        <source>Libraries</source>
+        <translation>Bibliotecas</translation>
     </message>
 </context>
 <context>
@@ -2571,7 +2665,7 @@
     </message>
     <message>
         <source>Image</source>
-        <translation>Image</translation>
+        <translation>Imagem</translation>
     </message>
     <message>
         <source>Text</source>
@@ -2587,11 +2681,11 @@
     </message>
     <message>
         <source>Write error</source>
-        <translation>Escrever erro</translation>
+        <translation>Erro de escrita</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>Predefinição</translation>
+        <translation>Padrão</translation>
     </message>
     <message>
         <source>Bytes</source>
@@ -2608,6 +2702,10 @@
     <message>
         <source>GB</source>
         <translation>GB</translation>
+    </message>
+    <message>
+        <source>TB</source>
+        <translation>TB</translation>
     </message>
     <message>
         <source>Header</source>
@@ -2685,11 +2783,26 @@
     </message>
     <message>
         <source>Raw data</source>
-        <translation>Dados não tratados</translation>
+        <translation>Dados raw</translation>
     </message>
     <message>
         <source>Nothing found</source>
         <translation>Nada encontrado</translation>
+    </message>
+</context>
+<context>
+    <name>XDialogProcess</name>
+    <message>
+        <source>Process</source>
+        <translation>Processo</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancelar</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Erro</translation>
     </message>
 </context>
 <context>
@@ -2712,7 +2825,7 @@
     </message>
     <message>
         <source>Opcode</source>
-        <translation>Código de operação</translation>
+        <translation>Opcode</translation>
     </message>
 </context>
 <context>
@@ -2727,7 +2840,11 @@
     </message>
     <message>
         <source>Opcode</source>
-        <translation>Código de operação</translation>
+        <translation>Opcode</translation>
+    </message>
+    <message>
+        <source>Symbol</source>
+        <translation>Símbolo</translation>
     </message>
     <message>
         <source>Comment</source>
@@ -2738,16 +2855,12 @@
         <translation>Opcode inválido</translation>
     </message>
     <message>
-        <source>Go to address</source>
-        <translation>Ir para endereço</translation>
+        <source>Offset</source>
+        <translation>Offset</translation>
     </message>
     <message>
-        <source>Go to offset</source>
-        <translation>Vá para compensar</translation>
-    </message>
-    <message>
-        <source>Go to entry point</source>
-        <translation>Vá para o ponto de entrada</translation>
+        <source>Entry point</source>
+        <translation>Ponto de entrada</translation>
     </message>
     <message>
         <source>Dump to file</source>
@@ -2762,8 +2875,12 @@
         <translation>Assinatura</translation>
     </message>
     <message>
-        <source>Find</source>
-        <translation>Encontrar</translation>
+        <source>String</source>
+        <translation>String</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valor</translation>
     </message>
     <message>
         <source>Find next</source>
@@ -2774,24 +2891,16 @@
         <translation>Selecionar todos</translation>
     </message>
     <message>
-        <source>Copy as hex</source>
-        <translation>Copiar como hexadecimal</translation>
-    </message>
-    <message>
-        <source>Copy cursor offset</source>
-        <translation>Copiar deslocamento do cursor</translation>
-    </message>
-    <message>
-        <source>Copy cursor address</source>
-        <translation>Copiar endereço do cursor</translation>
-    </message>
-    <message>
         <source>Hex</source>
         <translation>Hex</translation>
     </message>
     <message>
         <source>Go to</source>
         <translation>Ir para</translation>
+    </message>
+    <message>
+        <source>Find</source>
+        <translation>Encontrar</translation>
     </message>
     <message>
         <source>Select</source>
@@ -2802,8 +2911,12 @@
         <translation>Copiar</translation>
     </message>
     <message>
-        <source>Offset</source>
-        <translation>Offset</translation>
+        <source>Follow in</source>
+        <translation>Siga em</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Editar</translation>
     </message>
     <message>
         <source>Relative address</source>
@@ -2815,6 +2928,26 @@
     <message>
         <source>Font</source>
         <translation>Fonte</translation>
+    </message>
+    <message>
+        <source>Syntax</source>
+        <translation>Sintaxe</translation>
+    </message>
+    <message>
+        <source>Uppercase</source>
+        <translation>Uppercase</translation>
+    </message>
+    <message>
+        <source>Address colon</source>
+        <translation>Coluna de endereço</translation>
+    </message>
+    <message>
+        <source>Highlight</source>
+        <translation>Destacar</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Cores</translation>
     </message>
 </context>
 <context>
@@ -2869,7 +3002,7 @@
     </message>
     <message>
         <source>Disasm</source>
-        <translation>Desastre</translation>
+        <translation>Disassemblar</translation>
     </message>
     <message>
         <source>To data</source>
@@ -2877,7 +3010,7 @@
     </message>
     <message>
         <source>Raw data</source>
-        <translation>Dados não tratados</translation>
+        <translation>Dados raw</translation>
     </message>
     <message>
         <source>Save dump</source>
@@ -2896,7 +3029,18 @@
     </message>
     <message>
         <source>Cannot load file</source>
-        <translation>Não pode carregar o arquivo</translation>
+        <translation>Não é possível carregar o arquivo</translation>
+    </message>
+</context>
+<context>
+    <name>XDynStructsOptionsWidget</name>
+    <message>
+        <source>Structs</source>
+        <translation>Estruturas</translation>
+    </message>
+    <message>
+        <source>Open directory</source>
+        <translation>Abrir diretórios</translation>
     </message>
 </context>
 <context>
@@ -2911,7 +3055,7 @@
     </message>
     <message>
         <source>Disasm</source>
-        <translation>Desastre</translation>
+        <translation>Disassemblar</translation>
     </message>
     <message>
         <source>Prototype</source>
@@ -2923,7 +3067,7 @@
     </message>
     <message>
         <source>Array</source>
-        <translation>Variedade</translation>
+        <translation>Array</translation>
     </message>
     <message>
         <source>Variable</source>
@@ -2931,7 +3075,7 @@
     </message>
     <message>
         <source>Pointer</source>
-        <translation>Pointer</translation>
+        <translation>Ponteiro</translation>
     </message>
     <message>
         <source>Error</source>
@@ -2947,7 +3091,7 @@
     </message>
     <message>
         <source>Files</source>
-        <translation>arquivos</translation>
+        <translation>Arquivos</translation>
     </message>
     <message>
         <source>All files</source>
@@ -3008,6 +3152,14 @@
         <translation>Regiões</translation>
     </message>
     <message>
+        <source>Diagram</source>
+        <translation>Diagrama</translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation>Grid</translation>
+    </message>
+    <message>
         <source>Bytes</source>
         <translation>Bytes</translation>
     </message>
@@ -3021,7 +3173,7 @@
     </message>
     <message>
         <source>Strings</source>
-        <translation>Cordas</translation>
+        <translation>Strings</translation>
     </message>
     <message>
         <source>Images</source>
@@ -3034,6 +3186,38 @@
 </context>
 <context>
     <name>XFileInfo</name>
+    <message>
+        <source>Info</source>
+        <translation>Info</translation>
+    </message>
+    <message>
+        <source>Hash</source>
+        <translation>Hash</translation>
+    </message>
+    <message>
+        <source>Entropy</source>
+        <translation>Entropia</translation>
+    </message>
+    <message>
+        <source>Entry point</source>
+        <translation>Ponto de entrada</translation>
+    </message>
+    <message>
+        <source>Header</source>
+        <translation>Header</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Versão</translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation>Nome do arquivo</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Tamanho</translation>
+    </message>
     <message>
         <source>Operation system</source>
         <translation>Sistema operacional</translation>
@@ -3051,16 +3235,8 @@
         <translation>Tipo</translation>
     </message>
     <message>
-        <source>Endianess</source>
+        <source>Endianness</source>
         <translation>Endianness</translation>
-    </message>
-    <message>
-        <source>File name</source>
-        <translation>Nome do arquivo</translation>
-    </message>
-    <message>
-        <source>Size</source>
-        <translation>Tamanho</translation>
     </message>
     <message>
         <source>packed</source>
@@ -3071,12 +3247,8 @@
         <translation>não comprimido</translation>
     </message>
     <message>
-        <source>Entropy</source>
-        <translation>Entropia</translation>
-    </message>
-    <message>
-        <source>Entry point</source>
-        <translation>Ponto de entrada</translation>
+        <source>File type</source>
+        <translation>Tipo do arquivo</translation>
     </message>
     <message>
         <source>Address</source>
@@ -3086,36 +3258,48 @@
         <source>Offset</source>
         <translation>Offset</translation>
     </message>
+    <message>
+        <source>Relative address</source>
+        <translation>Endereço relativo</translation>
+    </message>
+    <message>
+        <source>Bytes</source>
+        <translation>Bytes</translation>
+    </message>
+    <message>
+        <source>Signature</source>
+        <translation>Assinatura</translation>
+    </message>
 </context>
 <context>
     <name>XFileInfoWidget</name>
     <message>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation>Formulário</translation>
     </message>
     <message>
         <source>Type</source>
         <translation>Tipo</translation>
     </message>
     <message>
-        <source>Offset</source>
-        <translation>Offset</translation>
-    </message>
-    <message>
-        <source>Size</source>
-        <translation>Tamanho</translation>
+        <source>Method</source>
+        <translation>Método</translation>
     </message>
     <message>
         <source>Comment</source>
         <translation>Comente</translation>
     </message>
     <message>
+        <source>Reload</source>
+        <translation>Recarregar</translation>
+    </message>
+    <message>
         <source>Save</source>
         <translation>Salvar</translation>
     </message>
     <message>
-        <source>Reload</source>
-        <translation>Recarregar</translation>
+        <source>Text</source>
+        <translation>Texto</translation>
     </message>
     <message>
         <source>Info</source>
@@ -3162,7 +3346,7 @@
     </message>
     <message>
         <source>Hash</source>
-        <translation>Cerquilha</translation>
+        <translation>Hash</translation>
     </message>
     <message>
         <source>Name</source>
@@ -3199,14 +3383,6 @@
         <translation>Offset</translation>
     </message>
     <message>
-        <source>Go to offset</source>
-        <translation>Vá para compensar</translation>
-    </message>
-    <message>
-        <source>Go to address</source>
-        <translation>Ir para endereço</translation>
-    </message>
-    <message>
         <source>Dump to file</source>
         <translation>Despejar para arquivo</translation>
     </message>
@@ -3215,8 +3391,12 @@
         <translation>Assinatura</translation>
     </message>
     <message>
-        <source>Find</source>
-        <translation>Encontrar</translation>
+        <source>String</source>
+        <translation>String</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valor</translation>
     </message>
     <message>
         <source>Find next</source>
@@ -3227,20 +3407,8 @@
         <translation>Selecionar todos</translation>
     </message>
     <message>
-        <source>Copy as hex</source>
-        <translation>Copiar como hexadecimal</translation>
-    </message>
-    <message>
-        <source>Copy cursor offset</source>
-        <translation>Copiar deslocamento do cursor</translation>
-    </message>
-    <message>
-        <source>Copy cursor address</source>
-        <translation>Copiar endereço do cursor</translation>
-    </message>
-    <message>
         <source>Disasm</source>
-        <translation>Desastre</translation>
+        <translation>Disassemblar</translation>
     </message>
     <message>
         <source>Memory map</source>
@@ -3251,12 +3419,24 @@
         <translation>Ir para</translation>
     </message>
     <message>
+        <source>Find</source>
+        <translation>Encontrar</translation>
+    </message>
+    <message>
         <source>Select</source>
         <translation>Selecionar</translation>
     </message>
     <message>
         <source>Copy</source>
         <translation>Copiar</translation>
+    </message>
+    <message>
+        <source>Follow in</source>
+        <translation>Siga em</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Editar</translation>
     </message>
 </context>
 <context>
@@ -3265,20 +3445,63 @@
         <source>Font</source>
         <translation>Fonte</translation>
     </message>
+    <message>
+        <source>Address colon</source>
+        <translation>Coluna de endereço</translation>
+    </message>
 </context>
 <context>
     <name>XHexViewWidget</name>
     <message>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation>Formulário</translation>
     </message>
     <message>
         <source>Hex</source>
         <translation>Hex</translation>
     </message>
+</context>
+<context>
+    <name>XInfoDB</name>
     <message>
-        <source>Error</source>
-        <translation>Erro</translation>
+        <source>Unknown</source>
+        <translation>Desconhecido</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Arquivo</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Usuário</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Rótulo</translation>
+    </message>
+    <message>
+        <source>Entry point</source>
+        <translation>Ponto de entrada</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Exportar</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Importação</translation>
+    </message>
+    <message>
+        <source>Data</source>
+        <translation>Dados</translation>
+    </message>
+    <message>
+        <source>Object</source>
+        <translation>Objeto</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Função</translation>
     </message>
 </context>
 <context>
@@ -3375,6 +3598,10 @@
         <translation>Arquitetura</translation>
     </message>
     <message>
+        <source>Show all</source>
+        <translation>Mostrar todos</translation>
+    </message>
+    <message>
         <source>Memory map</source>
         <translation>Mapa de memória</translation>
     </message>
@@ -3399,23 +3626,15 @@
     <name>XMultiDisasmWidget</name>
     <message>
         <source>Form</source>
-        <translation>Forma</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation>Tipo</translation>
+        <translation>Formulário</translation>
     </message>
     <message>
         <source>Mode</source>
         <translation>Modo</translation>
     </message>
     <message>
-        <source>Syntax</source>
-        <translation>Sintaxe</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>Erro</translation>
+        <source>Symbols</source>
+        <translation>Símbolos</translation>
     </message>
 </context>
 <context>
@@ -3426,10 +3645,33 @@
     </message>
 </context>
 <context>
+    <name>XOnlineToolsOptionsWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulário</translation>
+    </message>
+    <message>
+        <source>Get</source>
+        <translation>Get</translation>
+    </message>
+    <message>
+        <source>API key</source>
+        <translation>Chave API</translation>
+    </message>
+</context>
+<context>
     <name>XOptions</name>
     <message>
         <source>Automatic</source>
         <translation>Automático</translation>
+    </message>
+    <message>
+        <source>Recent files</source>
+        <translation>Arquivos recentes</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Limpar</translation>
     </message>
 </context>
 <context>
@@ -3455,6 +3697,10 @@
         <translation>Exibir logo</translation>
     </message>
     <message>
+        <source>Font</source>
+        <translation>Fonte</translation>
+    </message>
+    <message>
         <source>Save last directory</source>
         <translation>Salvar último diretório</translation>
     </message>
@@ -3463,8 +3709,24 @@
         <translation>Salvar backup</translation>
     </message>
     <message>
+        <source>Save history</source>
+        <translation>Salvar histórico</translation>
+    </message>
+    <message>
         <source>Add to context menu</source>
         <translation>Adicionar ao menu de contexto</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Padrão</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -3473,6 +3735,22 @@
     <message>
         <source>File</source>
         <translation>Arquivo</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Erro</translation>
+    </message>
+    <message>
+        <source>Please run the program as an administrator</source>
+        <translation>Por favor, execute o programa como administrador</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>Informação</translation>
+    </message>
+    <message>
+        <source>Please restart the application</source>
+        <translation>Por favor, reinicie a aplicação</translation>
     </message>
 </context>
 <context>
@@ -3491,7 +3769,7 @@
     </message>
     <message>
         <source>Driver</source>
-        <translation>Motorista</translation>
+        <translation>Driver</translation>
     </message>
     <message>
         <source>Boot application</source>
@@ -3519,7 +3797,7 @@
     </message>
     <message>
         <source>Cannot open file</source>
-        <translation>Impossível abrir arquivo</translation>
+        <translation>Não é possível abrir o arquivo</translation>
     </message>
     <message>
         <source>The file is signed and the signature was verified</source>
@@ -3556,8 +3834,132 @@
 <context>
     <name>XShortcuts</name>
     <message>
-        <source>Unknown</source>
-        <translation>Desconhecido</translation>
+        <source>Action</source>
+        <translation>Açao</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Arquivo</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>Visualizar</translation>
+    </message>
+    <message>
+        <source>String</source>
+        <translation>String</translation>
+    </message>
+    <message>
+        <source>Strings</source>
+        <translation>Strings</translation>
+    </message>
+    <message>
+        <source>Signature</source>
+        <translation>Assinatura</translation>
+    </message>
+    <message>
+        <source>Signatures</source>
+        <translation>Assinaturas</translation>
+    </message>
+    <message>
+        <source>Struct</source>
+        <translation>Estrutura</translation>
+    </message>
+    <message>
+        <source>Hex</source>
+        <translation>Hex</translation>
+    </message>
+    <message>
+        <source>Disasm</source>
+        <translation>Disassemblar</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation>Depurar</translation>
+    </message>
+    <message>
+        <source>Debugger</source>
+        <translation>Depurador</translation>
+    </message>
+    <message>
+        <source>Register</source>
+        <translation>Registrador</translation>
+    </message>
+    <message>
+        <source>Stack</source>
+        <translation>Pilha</translation>
+    </message>
+    <message>
+        <source>Archive</source>
+        <translation>Arquivo</translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation>Tabela</translation>
+    </message>
+    <message>
+        <source>Process</source>
+        <translation>Processo</translation>
+    </message>
+    <message>
+        <source>Memory</source>
+        <translation>Memória</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Copiar</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Editar</translation>
+    </message>
+    <message>
+        <source>Find</source>
+        <translation>Encontrar</translation>
+    </message>
+    <message>
+        <source>Go to</source>
+        <translation>Ir para</translation>
+    </message>
+    <message>
+        <source>Tools</source>
+        <translation>Ferramentas</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Ajuda</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Selecionar</translation>
+    </message>
+    <message>
+        <source>Follow in</source>
+        <translation>Siga em</translation>
+    </message>
+    <message>
+        <source>Show in</source>
+        <translation>Mostrar em</translation>
+    </message>
+    <message>
+        <source>Breakpoint</source>
+        <translation>Breakpoint</translation>
+    </message>
+    <message>
+        <source>Modules</source>
+        <translation>Módulos</translation>
+    </message>
+    <message>
+        <source>Memory map</source>
+        <translation>Mapa de memória</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valor</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Mostrar</translation>
     </message>
     <message>
         <source>Open</source>
@@ -3568,7 +3970,7 @@
         <translation>Salvar</translation>
     </message>
     <message>
-        <source>Save As</source>
+        <source>Save as</source>
         <translation>Salvar como</translation>
     </message>
     <message>
@@ -3584,104 +3986,40 @@
         <translation>Sair</translation>
     </message>
     <message>
-        <source>Copy</source>
-        <translation>Copiar</translation>
+        <source>Dump to file</source>
+        <translation>Despejar para arquivo</translation>
     </message>
     <message>
-        <source>Show</source>
-        <translation>Mostrar</translation>
+        <source>Address</source>
+        <translation>Endereço</translation>
     </message>
     <message>
-        <source>Copy string</source>
-        <translation>Copiar string</translation>
+        <source>Entry point</source>
+        <translation>Ponto de entrada</translation>
     </message>
     <message>
-        <source>Copy offset</source>
-        <translation>Deslocamento de cópia</translation>
+        <source>Offset</source>
+        <translation>Offset</translation>
     </message>
     <message>
-        <source>Copy size</source>
-        <translation>Tamanho da cópia</translation>
-    </message>
-    <message>
-        <source>Hex</source>
-        <translation>Hex</translation>
+        <source>Size</source>
+        <translation>Tamanho</translation>
     </message>
     <message>
         <source>Demangle</source>
         <translation>Demangle</translation>
     </message>
     <message>
-        <source>Copy name</source>
-        <translation>Copiar o nome</translation>
+        <source>Name</source>
+        <translation>Nome</translation>
     </message>
     <message>
-        <source>Copy signature</source>
-        <translation>Copiar assinatura</translation>
+        <source>Next</source>
+        <translation>Próximo</translation>
     </message>
     <message>
-        <source>Copy address</source>
-        <translation>Copiar endereço</translation>
-    </message>
-    <message>
-        <source>Dump to file</source>
-        <translation>Despejar para arquivo</translation>
-    </message>
-    <message>
-        <source>Go to address</source>
-        <translation>Ir para endereço</translation>
-    </message>
-    <message>
-        <source>Go to offset</source>
-        <translation>Vá para compensar</translation>
-    </message>
-    <message>
-        <source>Signature</source>
-        <translation>Assinatura</translation>
-    </message>
-    <message>
-        <source>Signatures</source>
-        <translation>Signatures</translation>
-    </message>
-    <message>
-        <source>Find</source>
-        <translation>Encontrar</translation>
-    </message>
-    <message>
-        <source>Find next</source>
-        <translation>Encontre o próximo</translation>
-    </message>
-    <message>
-        <source>Select all</source>
-        <translation>Selecionar todos</translation>
-    </message>
-    <message>
-        <source>Copy as hex</source>
-        <translation>Copiar como hexadecimal</translation>
-    </message>
-    <message>
-        <source>Copy cursor offset</source>
-        <translation>Copiar deslocamento do cursor</translation>
-    </message>
-    <message>
-        <source>Copy cursor address</source>
-        <translation>Copiar endereço do cursor</translation>
-    </message>
-    <message>
-        <source>Disasm</source>
-        <translation>Desastre</translation>
-    </message>
-    <message>
-        <source>Memory map</source>
-        <translation>Mapa de memória</translation>
-    </message>
-    <message>
-        <source>Go to entry point</source>
-        <translation>Vá para o ponto de entrada</translation>
-    </message>
-    <message>
-        <source>Hex signature</source>
-        <translation>Assinatura hexadecimal</translation>
+        <source>All</source>
+        <translation>Todos</translation>
     </message>
     <message>
         <source>Attach</source>
@@ -3696,10 +4034,6 @@
         <translation>CPU</translation>
     </message>
     <message>
-        <source>Actions</source>
-        <translation>Ações</translation>
-    </message>
-    <message>
         <source>Log</source>
         <translation>Log</translation>
     </message>
@@ -3708,20 +4042,52 @@
         <translation>Breakpoints</translation>
     </message>
     <message>
-        <source>Call stack</source>
-        <translation>Pilha de chamadas</translation>
+        <source>Callstack</source>
+        <translation>Callstack</translation>
     </message>
     <message>
         <source>Threads</source>
-        <translation>Tópicos</translation>
+        <translation>Threads</translation>
     </message>
     <message>
         <source>Handles</source>
-        <translation>Alças</translation>
+        <translation>Handles</translation>
+    </message>
+    <message>
+        <source>Symbols</source>
+        <translation>Símbolos</translation>
+    </message>
+    <message>
+        <source>Shortcuts</source>
+        <translation>Atalhos</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Opções</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Sobre</translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation>Nome do arquivo</translation>
+    </message>
+    <message>
+        <source>Structs</source>
+        <translation>Estruturas</translation>
+    </message>
+    <message>
+        <source>Viewer</source>
+        <translation>Visualizador</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Pasta</translation>
     </message>
     <message>
         <source>Run</source>
-        <translation>Corre</translation>
+        <translation>Executar</translation>
     </message>
     <message>
         <source>Pause</source>
@@ -3748,8 +4114,8 @@
         <translation>Alternancia</translation>
     </message>
     <message>
-        <source>Copy filename</source>
-        <translation>Copiar o nome do arquivo</translation>
+        <source>Scan</source>
+        <translation>Scan</translation>
     </message>
     <message>
         <source>Entropy</source>
@@ -3757,67 +4123,7 @@
     </message>
     <message>
         <source>Hash</source>
-        <translation>Cerquilha</translation>
-    </message>
-    <message>
-        <source>Scan</source>
-        <translation>Scan</translation>
-    </message>
-    <message>
-        <source>Strings</source>
-        <translation>Cordas</translation>
-    </message>
-    <message>
-        <source>Structs</source>
-        <translation>Structs</translation>
-    </message>
-    <message>
-        <source>Viewer</source>
-        <translation>Visualizador</translation>
-    </message>
-    <message>
-        <source>Action</source>
-        <translation>Açao</translation>
-    </message>
-    <message>
-        <source>File</source>
-        <translation>Arquivo</translation>
-    </message>
-    <message>
-        <source>View</source>
-        <translation>Visualizar</translation>
-    </message>
-    <message>
-        <source>Debug</source>
-        <translation>Depurar</translation>
-    </message>
-    <message>
-        <source>Debugger</source>
-        <translation>Depurador</translation>
-    </message>
-    <message>
-        <source>Registers</source>
-        <translation>Registros</translation>
-    </message>
-    <message>
-        <source>Stack</source>
-        <translation>Pilha</translation>
-    </message>
-    <message>
-        <source>Archive</source>
-        <translation>Arquivo</translation>
-    </message>
-    <message>
-        <source>Table</source>
-        <translation>Mesa</translation>
-    </message>
-    <message>
-        <source>Process</source>
-        <translation>Processo</translation>
-    </message>
-    <message>
-        <source>Memory</source>
-        <translation>Memória</translation>
+        <translation>Hash</translation>
     </message>
 </context>
 <context>
@@ -3841,6 +4147,108 @@
     <message>
         <source>Cannot save file</source>
         <translation>Impossível salvar arquivo</translation>
+    </message>
+</context>
+<context>
+    <name>XSymbolsWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulário</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Salvar</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Endereço</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Tamanho</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Fonte</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tipo</translation>
+    </message>
+    <message>
+        <source>Symbol</source>
+        <translation>Símbolo</translation>
+    </message>
+    <message>
+        <source>Symbols</source>
+        <translation>Símbolos</translation>
+    </message>
+</context>
+<context>
+    <name>XVirusTotalWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulário</translation>
+    </message>
+    <message>
+        <source>Rescan</source>
+        <translation>Verificar novamente</translation>
+    </message>
+    <message>
+        <source>Show detects</source>
+        <translation>Mostrar detecções</translation>
+    </message>
+    <message>
+        <source>Website</source>
+        <translation>Site</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Salvar</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Recarregar</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>Informação</translation>
+    </message>
+    <message>
+        <source>Upload the file for analyze?</source>
+        <translation>Fazer upload do arquivo para analisar ?</translation>
+    </message>
+    <message>
+        <source>Scan</source>
+        <translation>Scan</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Versão</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Data</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultado</translation>
+    </message>
+    <message>
+        <source>Please use valid API key</source>
+        <translation>Por gentileza utilize uma chave API Válida</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Opções</translation>
+    </message>
+    <message>
+        <source>Online tools</source>
+        <translation>Ferramentas Online</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Erro</translation>
     </message>
 </context>
 </TS>
