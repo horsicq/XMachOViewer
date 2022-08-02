@@ -25,6 +25,9 @@ call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_qt_library Qt5OpenGL
 call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_qt_library Qt5Svg
 call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_qt_library Qt5Sql
 call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_qt_library Qt5PrintSupport
+call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_qt_library Qt5Script
+call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_qt_library Qt5ScriptTools
+call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_qt_library Qt5Network
 call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_qt_plugin platforms qwindows
 call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_qt_plugin imageformats qjpeg
 call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_qt_plugin imageformats qtiff
@@ -32,6 +35,7 @@ call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_qt_plugin imageformats qico
 call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_qt_plugin imageformats qgif
 call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_qt_plugin sqldrivers qsqlite
 call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_redist
+call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_openssl
 
 call %X_SOURCE_PATH%\build_tools\windows.cmd make_release
 :exit
