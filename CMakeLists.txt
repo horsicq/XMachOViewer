@@ -25,3 +25,4 @@ install (FILES LINUX/xmachoviewer.desktop DESTINATION ${CMAKE_INSTALL_DATAROOTDI
 install (DIRECTORY LINUX/hicolor DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons)
 install (DIRECTORY XStyles/qss DESTINATION ${CMAKE_INSTALL_LIBDIR}/xmachoviewer)
 install (FILES signatures/crypto.db DESTINATION ${CMAKE_INSTALL_LIBDIR}/xmachoviewer/signatures)
+install (DIRECTORY images DESTINATION ${CMAKE_INSTALL_LIBDIR}/xmachoviewer)

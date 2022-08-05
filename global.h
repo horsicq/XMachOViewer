@@ -25,7 +25,7 @@
 
 #define X_APPLICATIONDISPLAYNAME "XMachOViewer"
 #define X_APPLICATIONNAME "xmachoviewer"
-#define X_APPLICATIONVERSION "0.03"
+#define X_APPLICATIONVERSION "0.04"
 #define X_ORGANIZATIONNAME "NTInfo"
 #define X_ORGANIZATIONDOMAIN "ntinfo.biz"
 #define X_OPTIONSFILE "xmachoviewer.ini"
