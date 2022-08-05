@@ -14,6 +14,7 @@ cp -Rf $X_SOURCE_PATH/LINUX/hicolor/                                $X_SOURCE_PA
 cp -Rf $X_SOURCE_PATH/XStyles/qss/                                  $X_SOURCE_PATH/release/appDir/usr/lib/xmachoviewer/
 mkdir -p $X_SOURCE_PATH/release/appDir/usr/lib/xmachoviewer/signatures
 cp -f $X_SOURCE_PATH/signatures/crypto.db                           $X_SOURCE_PATH/release/appDir/usr/lib/xmachoviewer/signatures/
+cp -Rf $X_SOURCE_PATH/images/                                       $X_SOURCE_PATH/release/appDir/usr/lib/xmachoviewer/
 
 cd $X_SOURCE_PATH/release
 
