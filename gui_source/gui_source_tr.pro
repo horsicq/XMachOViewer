@@ -13,7 +13,7 @@ TRANSLATIONS = \
         translation/xmachoviewer_pt_PT.ts \
         translation/xmachoviewer_ru.ts \
         translation/xmachoviewer_tr.ts \
-		translation/xmachoviewer_uk.ts \
+        translation/xmachoviewer_uk.ts \
         translation/xmachoviewer_vi.ts \
         translation/xmachoviewer_zh.ts \
         translation/xmachoviewer_zh_TW.ts
@@ -431,8 +431,23 @@ SOURCES += \
     $$PWD/../archive_widget/dialogshowtext.cpp \
     $$PWD/../archive_widget/dialogunpackfile.cpp \
     $$PWD/../archive_widget/unpackfileprocess.cpp \
+    $$PWD/../die_script/binary_script.cpp \
+    $$PWD/../die_script/com_script.cpp \
+    $$PWD/../die_script/die_script.cpp \
+    $$PWD/../die_script/die_scriptengine.cpp \
+    $$PWD/../die_script/elf_script.cpp \
+    $$PWD/../die_script/global_script.cpp \
+    $$PWD/../die_script/le_script.cpp \
+    $$PWD/../die_script/lx_script.cpp \
+    $$PWD/../die_script/mach_script.cpp \
+    $$PWD/../die_script/msdos_script.cpp \
+    $$PWD/../die_script/ne_script.cpp \
+    $$PWD/../die_script/pe_script.cpp \
+    $$PWD/../die_script/xscriptengine.cpp \
     dialogabout.cpp \
     dialogoptions.cpp \
     guimainwindow.cpp \
     main_gui.cpp \
     $$PWD/../nfd_widget/nfd_widget.cpp
+
+

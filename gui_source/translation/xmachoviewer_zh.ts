@@ -79,8 +79,48 @@
         <translation>重新加载</translation>
     </message>
     <message>
+        <source>Disasm</source>
+        <translation>反汇编</translation>
+    </message>
+    <message>
+        <source>Strings</source>
+        <translation>字符串</translation>
+    </message>
+    <message>
+        <source>Memory map</source>
+        <translation>内存映射</translation>
+    </message>
+    <message>
+        <source>Entropy</source>
+        <translation>信息熵</translation>
+    </message>
+    <message>
+        <source>Heuristic scan</source>
+        <translation>启发式扫描</translation>
+    </message>
+    <message>
         <source>Readonly</source>
         <translation>只读</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>保存</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation>信息</translation>
+    </message>
+    <message>
+        <source>Hex</source>
+        <translation>十六进制</translation>
+    </message>
+    <message>
+        <source>Hash</source>
+        <translation>哈希</translation>
+    </message>
+    <message>
+        <source>Signatures</source>
+        <translation>全部签名</translation>
     </message>
 </context>
 <context>
@@ -146,6 +186,129 @@
     <message>
         <source>Heuristic scan</source>
         <translation>启发式扫描</translation>
+    </message>
+</context>
+<context>
+    <name>DiE_Script</name>
+    <message>
+        <source>Cannot load database</source>
+        <translation>无法加载数据库</translation>
+    </message>
+    <message>
+        <source>Directory scan</source>
+        <translation>目录扫描</translation>
+    </message>
+    <message>
+        <source>Archive</source>
+        <translation>存档</translation>
+    </message>
+    <message>
+        <source>Compiler</source>
+        <translation>编译器</translation>
+    </message>
+    <message>
+        <source>Cryptor</source>
+        <translation>加密库</translation>
+    </message>
+    <message>
+        <source>Certificate</source>
+        <translation>证书</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>转换器</translation>
+    </message>
+    <message>
+        <source>Data</source>
+        <translation>数据</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>数据库</translation>
+    </message>
+    <message>
+        <source>Debug data</source>
+        <translation>调试数据</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>格式</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>镜像</translation>
+    </message>
+    <message>
+        <source>Installer</source>
+        <translation>安装程序</translation>
+    </message>
+    <message>
+        <source>Installer data</source>
+        <translation>安装程序数据</translation>
+    </message>
+    <message>
+        <source>Joiner</source>
+        <translation>合并工具</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>语言</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>库</translation>
+    </message>
+    <message>
+        <source>Linker</source>
+        <translation>链接程序</translation>
+    </message>
+    <message>
+        <source>Overlay</source>
+        <translation>附加</translation>
+    </message>
+    <message>
+        <source>Packer</source>
+        <translation>打包工具</translation>
+    </message>
+    <message>
+        <source>Player</source>
+        <translation>播放器</translation>
+    </message>
+    <message>
+        <source>Protection</source>
+        <translation>保护</translation>
+    </message>
+    <message>
+        <source>Protector</source>
+        <translation>保护器</translation>
+    </message>
+    <message>
+        <source>Protector data</source>
+        <translation>保护器数据</translation>
+    </message>
+    <message>
+        <source>Source code</source>
+        <translation>源代码</translation>
+    </message>
+    <message>
+        <source>Stub</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Tool</source>
+        <translation>工具</translation>
+    </message>
+    <message>
+        <source>compressor</source>
+        <translation>压缩工具</translation>
+    </message>
+    <message>
+        <source>obfuscator</source>
+        <translation>混淆器</translation>
+    </message>
+    <message>
+        <source>extender</source>
+        <translation>扩展器</translation>
     </message>
 </context>
 <context>
@@ -633,7 +796,7 @@
     </message>
     <message>
         <source>Online tools</source>
-        <translation>签名工具</translation>
+        <translation>在线工具</translation>
     </message>
 </context>
 <context>
@@ -1224,6 +1387,30 @@
         <translation>内存映射</translation>
     </message>
     <message>
+        <source>File info</source>
+        <translation>文件信息</translation>
+    </message>
+    <message>
+        <source>Hash</source>
+        <translation>哈希</translation>
+    </message>
+    <message>
+        <source>Strings</source>
+        <translation>字符串</translation>
+    </message>
+    <message>
+        <source>Signatures</source>
+        <translation>全部签名</translation>
+    </message>
+    <message>
+        <source>Hex</source>
+        <translation>十六进制</translation>
+    </message>
+    <message>
+        <source>Entropy</source>
+        <translation>信息熵</translation>
+    </message>
+    <message>
         <source>Overlay</source>
         <translation>附加</translation>
     </message>
@@ -1373,8 +1560,8 @@
 <context>
     <name>HeurWidget</name>
     <message>
-        <source>Scan</source>
-        <translation>扫描</translation>
+        <source>Type</source>
+        <translation>类型</translation>
     </message>
     <message>
         <source>Recursive scan</source>
@@ -1401,16 +1588,16 @@
         <translation>保存</translation>
     </message>
     <message>
+        <source>Scan</source>
+        <translation>扫描</translation>
+    </message>
+    <message>
         <source>Heuristic</source>
         <translation>启发式</translation>
     </message>
     <message>
         <source>Result</source>
         <translation>结果</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation>类型</translation>
     </message>
     <message>
         <source>Name</source>
@@ -2680,6 +2867,10 @@
         <translation>最大值</translation>
     </message>
     <message>
+        <source>Invalid signature</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>Write error</source>
         <translation>写入错误</translation>
     </message>
@@ -2692,7 +2883,15 @@
         <translation>字节数</translation>
     </message>
     <message>
+        <source>KiB</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>kB</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>MiB</source>
         <translation></translation>
     </message>
     <message>
@@ -2700,7 +2899,15 @@
         <translation></translation>
     </message>
     <message>
+        <source>GiB</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>GB</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>TiB</source>
         <translation></translation>
     </message>
     <message>
@@ -3457,8 +3664,32 @@
         <translation>载入</translation>
     </message>
     <message>
-        <source>Hex</source>
-        <translation>十六进制</translation>
+        <source>Read only</source>
+        <translation>只读</translation>
+    </message>
+    <message>
+        <source>Data inspector</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>名称</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>值</translation>
+    </message>
+    <message>
+        <source>Cursor</source>
+        <translation>光标</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>选区</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>大小</translation>
     </message>
 </context>
 <context>
@@ -3473,7 +3704,7 @@
     </message>
     <message>
         <source>User</source>
-        <translation></translation>
+        <translation>用户</translation>
     </message>
     <message>
         <source>Label</source>
@@ -3501,7 +3732,7 @@
     </message>
     <message>
         <source>Function</source>
-        <translation></translation>
+        <translation>函数</translation>
     </message>
 </context>
 <context>
@@ -3636,6 +3867,10 @@
         <source>Symbols</source>
         <translation>符号</translation>
     </message>
+    <message>
+        <source>Read only</source>
+        <translation>只读</translation>
+    </message>
 </context>
 <context>
     <name>XNE</name>
@@ -3668,6 +3903,10 @@
     <message>
         <source>Recent files</source>
         <translation>最近打开文件</translation>
+    </message>
+    <message>
+        <source>Code pages</source>
+        <translation></translation>
     </message>
     <message>
         <source>Clear</source>
@@ -3863,7 +4102,7 @@
     </message>
     <message>
         <source>Struct</source>
-        <translation></translation>
+        <translation>结构体</translation>
     </message>
     <message>
         <source>Hex</source>
@@ -3876,6 +4115,14 @@
     <message>
         <source>Debug</source>
         <translation>调试</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Animate</source>
+        <translation></translation>
     </message>
     <message>
         <source>Debugger</source>
@@ -4083,7 +4330,7 @@
     </message>
     <message>
         <source>Folder</source>
-        <translation></translation>
+        <translation>文件夹</translation>
     </message>
     <message>
         <source>Run</source>
@@ -4192,7 +4439,7 @@
     </message>
     <message>
         <source>Rescan</source>
-        <translation></translation>
+        <translation>重新扫描</translation>
     </message>
     <message>
         <source>Show detects</source>
@@ -4228,7 +4475,7 @@
     </message>
     <message>
         <source>Date</source>
-        <translation></translation>
+        <translation>日期</translation>
     </message>
     <message>
         <source>Result</source>
@@ -4244,7 +4491,7 @@
     </message>
     <message>
         <source>Online tools</source>
-        <translation>签名工具</translation>
+        <translation>在线工具</translation>
     </message>
     <message>
         <source>Error</source>

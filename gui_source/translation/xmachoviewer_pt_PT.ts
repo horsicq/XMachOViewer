@@ -79,8 +79,48 @@
         <translation>Recarregar</translation>
     </message>
     <message>
+        <source>Disasm</source>
+        <translation>Desassemblar</translation>
+    </message>
+    <message>
+        <source>Strings</source>
+        <translation>Cordas</translation>
+    </message>
+    <message>
+        <source>Memory map</source>
+        <translation>Mapa de memória</translation>
+    </message>
+    <message>
+        <source>Entropy</source>
+        <translation>Entropia</translation>
+    </message>
+    <message>
+        <source>Heuristic scan</source>
+        <translation>Análise heurística</translation>
+    </message>
+    <message>
         <source>Readonly</source>
         <translation>Somente leitura</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Salvar</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation>Info</translation>
+    </message>
+    <message>
+        <source>Hex</source>
+        <translation>Hex</translation>
+    </message>
+    <message>
+        <source>Hash</source>
+        <translation>Hash</translation>
+    </message>
+    <message>
+        <source>Signatures</source>
+        <translation>Assinaturas</translation>
     </message>
 </context>
 <context>
@@ -146,6 +186,129 @@
     <message>
         <source>Heuristic scan</source>
         <translation>Análise heurística</translation>
+    </message>
+</context>
+<context>
+    <name>DiE_Script</name>
+    <message>
+        <source>Cannot load database</source>
+        <translation>Não é possível carregar o banco de dados</translation>
+    </message>
+    <message>
+        <source>Directory scan</source>
+        <translation>Analisar directório</translation>
+    </message>
+    <message>
+        <source>Archive</source>
+        <translation>Arquivo</translation>
+    </message>
+    <message>
+        <source>Compiler</source>
+        <translation>Compilador</translation>
+    </message>
+    <message>
+        <source>Cryptor</source>
+        <translation>Encriptador</translation>
+    </message>
+    <message>
+        <source>Certificate</source>
+        <translation>Certificado</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Conversor</translation>
+    </message>
+    <message>
+        <source>Data</source>
+        <translation>Dados</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Base de dados</translation>
+    </message>
+    <message>
+        <source>Debug data</source>
+        <translation>Dados de depuração</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Formato</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>Imagem</translation>
+    </message>
+    <message>
+        <source>Installer</source>
+        <translation>Instalador</translation>
+    </message>
+    <message>
+        <source>Installer data</source>
+        <translation>Data do instalador</translation>
+    </message>
+    <message>
+        <source>Joiner</source>
+        <translation>Marceneiro</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Linguagem</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Biblioteca</translation>
+    </message>
+    <message>
+        <source>Linker</source>
+        <translation>Linker</translation>
+    </message>
+    <message>
+        <source>Overlay</source>
+        <translation>Overlay</translation>
+    </message>
+    <message>
+        <source>Packer</source>
+        <translation>Compactador</translation>
+    </message>
+    <message>
+        <source>Player</source>
+        <translation>Jogador</translation>
+    </message>
+    <message>
+        <source>Protection</source>
+        <translation>Proteção</translation>
+    </message>
+    <message>
+        <source>Protector</source>
+        <translation>Protetor</translation>
+    </message>
+    <message>
+        <source>Protector data</source>
+        <translation>Dados do protetor</translation>
+    </message>
+    <message>
+        <source>Source code</source>
+        <translation>Código fonte</translation>
+    </message>
+    <message>
+        <source>Stub</source>
+        <translation>Stub</translation>
+    </message>
+    <message>
+        <source>Tool</source>
+        <translation>Ferramenta</translation>
+    </message>
+    <message>
+        <source>compressor</source>
+        <translation>compressor</translation>
+    </message>
+    <message>
+        <source>obfuscator</source>
+        <translation>obfuscador</translation>
+    </message>
+    <message>
+        <source>extender</source>
+        <translation>extensor</translation>
     </message>
 </context>
 <context>
@@ -1224,6 +1387,30 @@
         <translation>Mapa de memória</translation>
     </message>
     <message>
+        <source>File info</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Hash</source>
+        <translation>Hash</translation>
+    </message>
+    <message>
+        <source>Strings</source>
+        <translation>Cordas</translation>
+    </message>
+    <message>
+        <source>Signatures</source>
+        <translation>Assinaturas</translation>
+    </message>
+    <message>
+        <source>Hex</source>
+        <translation>Hex</translation>
+    </message>
+    <message>
+        <source>Entropy</source>
+        <translation>Entropia</translation>
+    </message>
+    <message>
         <source>Overlay</source>
         <translation>Overlay</translation>
     </message>
@@ -1373,8 +1560,8 @@
 <context>
     <name>HeurWidget</name>
     <message>
-        <source>Scan</source>
-        <translation>Analisar</translation>
+        <source>Type</source>
+        <translation>Tipo</translation>
     </message>
     <message>
         <source>Recursive scan</source>
@@ -1401,16 +1588,16 @@
         <translation>Salvar</translation>
     </message>
     <message>
+        <source>Scan</source>
+        <translation>Analisar</translation>
+    </message>
+    <message>
         <source>Heuristic</source>
         <translation>Heurística</translation>
     </message>
     <message>
         <source>Result</source>
         <translation>Resultado</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation>Tipo</translation>
     </message>
     <message>
         <source>Name</source>
@@ -2680,6 +2867,10 @@
         <translation>Maximo</translation>
     </message>
     <message>
+        <source>Invalid signature</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>Write error</source>
         <translation>Erro de escrita</translation>
     </message>
@@ -2692,16 +2883,32 @@
         <translation>Bytes</translation>
     </message>
     <message>
+        <source>KiB</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>kB</source>
         <translation>kB</translation>
+    </message>
+    <message>
+        <source>MiB</source>
+        <translation></translation>
     </message>
     <message>
         <source>MB</source>
         <translation>MB</translation>
     </message>
     <message>
+        <source>GiB</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>GB</source>
         <translation>GB</translation>
+    </message>
+    <message>
+        <source>TiB</source>
+        <translation></translation>
     </message>
     <message>
         <source>TB</source>
@@ -3457,8 +3664,32 @@
         <translation>Formulário</translation>
     </message>
     <message>
-        <source>Hex</source>
-        <translation>Hex</translation>
+        <source>Read only</source>
+        <translation>Somente leitura</translation>
+    </message>
+    <message>
+        <source>Data inspector</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nome</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valor</translation>
+    </message>
+    <message>
+        <source>Cursor</source>
+        <translation>Cursor</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Selecção</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Tamanho</translation>
     </message>
 </context>
 <context>
@@ -3636,6 +3867,10 @@
         <source>Symbols</source>
         <translation>Simbolos</translation>
     </message>
+    <message>
+        <source>Read only</source>
+        <translation>Somente leitura</translation>
+    </message>
 </context>
 <context>
     <name>XNE</name>
@@ -3667,6 +3902,10 @@
     </message>
     <message>
         <source>Recent files</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Code pages</source>
         <translation></translation>
     </message>
     <message>
@@ -3876,6 +4115,14 @@
     <message>
         <source>Debug</source>
         <translation>Depurar</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Animate</source>
+        <translation></translation>
     </message>
     <message>
         <source>Debugger</source>

@@ -79,8 +79,48 @@
         <translation>Обновить</translation>
     </message>
     <message>
+        <source>Disasm</source>
+        <translation>Дизассемблировать</translation>
+    </message>
+    <message>
+        <source>Strings</source>
+        <translation>Строки</translation>
+    </message>
+    <message>
+        <source>Memory map</source>
+        <translation>Карта памяти</translation>
+    </message>
+    <message>
+        <source>Entropy</source>
+        <translation>Энтропия</translation>
+    </message>
+    <message>
+        <source>Heuristic scan</source>
+        <translation>Эвристическое сканирование</translation>
+    </message>
+    <message>
         <source>Readonly</source>
         <translation>Только чтение</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Сохранить</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation>Инфо</translation>
+    </message>
+    <message>
+        <source>Hex</source>
+        <translation>Hex</translation>
+    </message>
+    <message>
+        <source>Hash</source>
+        <translation>Хеш</translation>
+    </message>
+    <message>
+        <source>Signatures</source>
+        <translation>Сигнатуры</translation>
     </message>
 </context>
 <context>
@@ -146,6 +186,129 @@
     <message>
         <source>Heuristic scan</source>
         <translation>Эвристическое сканирование</translation>
+    </message>
+</context>
+<context>
+    <name>DiE_Script</name>
+    <message>
+        <source>Cannot load database</source>
+        <translation>Не удается загрузить базу данных</translation>
+    </message>
+    <message>
+        <source>Directory scan</source>
+        <translation>Сканирование папки</translation>
+    </message>
+    <message>
+        <source>Archive</source>
+        <translation>Архив</translation>
+    </message>
+    <message>
+        <source>Compiler</source>
+        <translation>Компилятор</translation>
+    </message>
+    <message>
+        <source>Cryptor</source>
+        <translation>Криптор</translation>
+    </message>
+    <message>
+        <source>Certificate</source>
+        <translation>Сертификат</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Конвертер</translation>
+    </message>
+    <message>
+        <source>Data</source>
+        <translation>Данные</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>База данных</translation>
+    </message>
+    <message>
+        <source>Debug data</source>
+        <translation>Отладочная информация</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Формат</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>Рисунок</translation>
+    </message>
+    <message>
+        <source>Installer</source>
+        <translation>Установщик</translation>
+    </message>
+    <message>
+        <source>Installer data</source>
+        <translation>Данные установщика</translation>
+    </message>
+    <message>
+        <source>Joiner</source>
+        <translation>Джойнер</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Язык</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Библиотека</translation>
+    </message>
+    <message>
+        <source>Linker</source>
+        <translation>Линковщик</translation>
+    </message>
+    <message>
+        <source>Overlay</source>
+        <translation>Оверлей</translation>
+    </message>
+    <message>
+        <source>Packer</source>
+        <translation>Упаковщик</translation>
+    </message>
+    <message>
+        <source>Player</source>
+        <translation>Игрок</translation>
+    </message>
+    <message>
+        <source>Protection</source>
+        <translation>Защита</translation>
+    </message>
+    <message>
+        <source>Protector</source>
+        <translation>Протектор</translation>
+    </message>
+    <message>
+        <source>Protector data</source>
+        <translation>Данные протектора</translation>
+    </message>
+    <message>
+        <source>Source code</source>
+        <translation>Исходный код</translation>
+    </message>
+    <message>
+        <source>Stub</source>
+        <translation>Заглушка</translation>
+    </message>
+    <message>
+        <source>Tool</source>
+        <translation>Инструмент</translation>
+    </message>
+    <message>
+        <source>compressor</source>
+        <translation>упаковщик</translation>
+    </message>
+    <message>
+        <source>obfuscator</source>
+        <translation>обфускатор</translation>
+    </message>
+    <message>
+        <source>extender</source>
+        <translation>расширение</translation>
     </message>
 </context>
 <context>
@@ -1224,6 +1387,30 @@
         <translation>Карта памяти</translation>
     </message>
     <message>
+        <source>File info</source>
+        <translation>Информация о файле</translation>
+    </message>
+    <message>
+        <source>Hash</source>
+        <translation>Хеш</translation>
+    </message>
+    <message>
+        <source>Strings</source>
+        <translation>Строки</translation>
+    </message>
+    <message>
+        <source>Signatures</source>
+        <translation>Сигнатуры</translation>
+    </message>
+    <message>
+        <source>Hex</source>
+        <translation>Hex</translation>
+    </message>
+    <message>
+        <source>Entropy</source>
+        <translation>Энтропия</translation>
+    </message>
+    <message>
         <source>Overlay</source>
         <translation>Оверлей</translation>
     </message>
@@ -1373,8 +1560,8 @@
 <context>
     <name>HeurWidget</name>
     <message>
-        <source>Scan</source>
-        <translation>Сканировать</translation>
+        <source>Type</source>
+        <translation>Тип</translation>
     </message>
     <message>
         <source>Recursive scan</source>
@@ -1401,16 +1588,16 @@
         <translation>Сохранить</translation>
     </message>
     <message>
+        <source>Scan</source>
+        <translation>Сканировать</translation>
+    </message>
+    <message>
         <source>Heuristic</source>
         <translation>Эвристика</translation>
     </message>
     <message>
         <source>Result</source>
         <translation>Результат</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation>Тип</translation>
     </message>
     <message>
         <source>Name</source>
@@ -2680,6 +2867,10 @@
         <translation>Максимум</translation>
     </message>
     <message>
+        <source>Invalid signature</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>Write error</source>
         <translation>Ошибка записи</translation>
     </message>
@@ -2692,16 +2883,32 @@
         <translation>Байты</translation>
     </message>
     <message>
+        <source>KiB</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>kB</source>
         <translation>кБ</translation>
+    </message>
+    <message>
+        <source>MiB</source>
+        <translation></translation>
     </message>
     <message>
         <source>MB</source>
         <translation>МБ</translation>
     </message>
     <message>
+        <source>GiB</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>GB</source>
         <translation>ГБ</translation>
+    </message>
+    <message>
+        <source>TiB</source>
+        <translation></translation>
     </message>
     <message>
         <source>TB</source>
@@ -3457,8 +3664,32 @@
         <translation>Форма</translation>
     </message>
     <message>
-        <source>Hex</source>
-        <translation>Hex</translation>
+        <source>Read only</source>
+        <translation>Только чтение</translation>
+    </message>
+    <message>
+        <source>Data inspector</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Имя</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Значение</translation>
+    </message>
+    <message>
+        <source>Cursor</source>
+        <translation>Курсор</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Выделение</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Размер</translation>
     </message>
 </context>
 <context>
@@ -3636,6 +3867,10 @@
         <source>Symbols</source>
         <translation>Символы</translation>
     </message>
+    <message>
+        <source>Read only</source>
+        <translation>Только чтение</translation>
+    </message>
 </context>
 <context>
     <name>XNE</name>
@@ -3668,6 +3903,10 @@
     <message>
         <source>Recent files</source>
         <translation>Недавние файлы</translation>
+    </message>
+    <message>
+        <source>Code pages</source>
+        <translation></translation>
     </message>
     <message>
         <source>Clear</source>
@@ -3876,6 +4115,14 @@
     <message>
         <source>Debug</source>
         <translation>Отладка</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Animate</source>
+        <translation></translation>
     </message>
     <message>
         <source>Debugger</source>

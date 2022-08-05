@@ -79,8 +79,48 @@
         <translation>Tekrar yükle</translation>
     </message>
     <message>
+        <source>Disasm</source>
+        <translation>Disasm</translation>
+    </message>
+    <message>
+        <source>Strings</source>
+        <translation>Kelimeler</translation>
+    </message>
+    <message>
+        <source>Memory map</source>
+        <translation>Hafıza haritası</translation>
+    </message>
+    <message>
+        <source>Entropy</source>
+        <translation>Entropy</translation>
+    </message>
+    <message>
+        <source>Heuristic scan</source>
+        <translation>Sezgisel tarama</translation>
+    </message>
+    <message>
         <source>Readonly</source>
         <translation>Sadece okuma</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Kaydet</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation>Bilgi</translation>
+    </message>
+    <message>
+        <source>Hex</source>
+        <translation>altıgen</translation>
+    </message>
+    <message>
+        <source>Hash</source>
+        <translation>Hash</translation>
+    </message>
+    <message>
+        <source>Signatures</source>
+        <translation>İmzalar</translation>
     </message>
 </context>
 <context>
@@ -146,6 +186,129 @@
     <message>
         <source>Heuristic scan</source>
         <translation>Sezgisel tarama</translation>
+    </message>
+</context>
+<context>
+    <name>DiE_Script</name>
+    <message>
+        <source>Cannot load database</source>
+        <translation>veritabanı yüklenemiyor</translation>
+    </message>
+    <message>
+        <source>Directory scan</source>
+        <translation>Klasör tara</translation>
+    </message>
+    <message>
+        <source>Archive</source>
+        <translation>Arşiv</translation>
+    </message>
+    <message>
+        <source>Compiler</source>
+        <translation>Derleyici</translation>
+    </message>
+    <message>
+        <source>Cryptor</source>
+        <translation>Cryptor</translation>
+    </message>
+    <message>
+        <source>Certificate</source>
+        <translation>Sertifika</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Çevirici</translation>
+    </message>
+    <message>
+        <source>Data</source>
+        <translation>Veri</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Database</translation>
+    </message>
+    <message>
+        <source>Debug data</source>
+        <translation>Debug data</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>İmaj</translation>
+    </message>
+    <message>
+        <source>Installer</source>
+        <translation>Yükleyici</translation>
+    </message>
+    <message>
+        <source>Installer data</source>
+        <translation>Yükleyici verileri</translation>
+    </message>
+    <message>
+        <source>Joiner</source>
+        <translation>Ekleyici</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Diller</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Kütüphane</translation>
+    </message>
+    <message>
+        <source>Linker</source>
+        <translation>Bağlayıcı</translation>
+    </message>
+    <message>
+        <source>Overlay</source>
+        <translation>Kaplama</translation>
+    </message>
+    <message>
+        <source>Packer</source>
+        <translation>Paketleyici</translation>
+    </message>
+    <message>
+        <source>Player</source>
+        <translation>oyuncu</translation>
+    </message>
+    <message>
+        <source>Protection</source>
+        <translation>Koruma</translation>
+    </message>
+    <message>
+        <source>Protector</source>
+        <translation>Koruyucu</translation>
+    </message>
+    <message>
+        <source>Protector data</source>
+        <translation>Koruyucu verisi</translation>
+    </message>
+    <message>
+        <source>Source code</source>
+        <translation>Kaynak kodu</translation>
+    </message>
+    <message>
+        <source>Stub</source>
+        <translation>Taslak</translation>
+    </message>
+    <message>
+        <source>Tool</source>
+        <translation>Araç</translation>
+    </message>
+    <message>
+        <source>compressor</source>
+        <translation>sıkıştırıcı</translation>
+    </message>
+    <message>
+        <source>obfuscator</source>
+        <translation>karıştırıcı</translation>
+    </message>
+    <message>
+        <source>extender</source>
+        <translation>genişletici</translation>
     </message>
 </context>
 <context>
@@ -1224,6 +1387,30 @@
         <translation>Hafıza haritası</translation>
     </message>
     <message>
+        <source>File info</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Hash</source>
+        <translation>Hash</translation>
+    </message>
+    <message>
+        <source>Strings</source>
+        <translation>Kelimeler</translation>
+    </message>
+    <message>
+        <source>Signatures</source>
+        <translation>İmzalar</translation>
+    </message>
+    <message>
+        <source>Hex</source>
+        <translation>altıgen</translation>
+    </message>
+    <message>
+        <source>Entropy</source>
+        <translation>Entropy</translation>
+    </message>
+    <message>
         <source>Overlay</source>
         <translation>Kaplama</translation>
     </message>
@@ -1373,8 +1560,8 @@
 <context>
     <name>HeurWidget</name>
     <message>
-        <source>Scan</source>
-        <translation>Tarama</translation>
+        <source>Type</source>
+        <translation>Tip</translation>
     </message>
     <message>
         <source>Recursive scan</source>
@@ -1401,16 +1588,16 @@
         <translation>Kaydet</translation>
     </message>
     <message>
+        <source>Scan</source>
+        <translation>Tarama</translation>
+    </message>
+    <message>
         <source>Heuristic</source>
         <translation>Sezgisel</translation>
     </message>
     <message>
         <source>Result</source>
         <translation>Sonuç</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation>Tip</translation>
     </message>
     <message>
         <source>Name</source>
@@ -2680,6 +2867,10 @@
         <translation>Maksimum</translation>
     </message>
     <message>
+        <source>Invalid signature</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>Write error</source>
         <translation>Yazma hatası</translation>
     </message>
@@ -2692,16 +2883,32 @@
         <translation>Bytes</translation>
     </message>
     <message>
+        <source>KiB</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>kB</source>
         <translation>kB</translation>
+    </message>
+    <message>
+        <source>MiB</source>
+        <translation></translation>
     </message>
     <message>
         <source>MB</source>
         <translation>MB</translation>
     </message>
     <message>
+        <source>GiB</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>GB</source>
         <translation>GB</translation>
+    </message>
+    <message>
+        <source>TiB</source>
+        <translation></translation>
     </message>
     <message>
         <source>TB</source>
@@ -3457,8 +3664,32 @@
         <translation>Biçim</translation>
     </message>
     <message>
-        <source>Hex</source>
-        <translation>altıgen</translation>
+        <source>Read only</source>
+        <translation>Sadece okuma</translation>
+    </message>
+    <message>
+        <source>Data inspector</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>İsim</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Değer</translation>
+    </message>
+    <message>
+        <source>Cursor</source>
+        <translation>Cursor</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Seçilen</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Boyut</translation>
     </message>
 </context>
 <context>
@@ -3636,6 +3867,10 @@
         <source>Symbols</source>
         <translation>Semboller</translation>
     </message>
+    <message>
+        <source>Read only</source>
+        <translation>Sadece okuma</translation>
+    </message>
 </context>
 <context>
     <name>XNE</name>
@@ -3667,6 +3902,10 @@
     </message>
     <message>
         <source>Recent files</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Code pages</source>
         <translation></translation>
     </message>
     <message>
@@ -3876,6 +4115,14 @@
     <message>
         <source>Debug</source>
         <translation>hata ayıklama</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Animate</source>
+        <translation></translation>
     </message>
     <message>
         <source>Debugger</source>

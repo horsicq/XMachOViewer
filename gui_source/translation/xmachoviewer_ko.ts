@@ -79,8 +79,48 @@
         <translation>재호출</translation>
     </message>
     <message>
+        <source>Disasm</source>
+        <translation>Disasm</translation>
+    </message>
+    <message>
+        <source>Strings</source>
+        <translation>문자열</translation>
+    </message>
+    <message>
+        <source>Memory map</source>
+        <translation>메모리 맵</translation>
+    </message>
+    <message>
+        <source>Entropy</source>
+        <translation>엔트로피</translation>
+    </message>
+    <message>
+        <source>Heuristic scan</source>
+        <translation>휴리스틱 검색</translation>
+    </message>
+    <message>
         <source>Readonly</source>
         <translation>읽기 전용</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>저장</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation>정보</translation>
+    </message>
+    <message>
+        <source>Hex</source>
+        <translation>마녀</translation>
+    </message>
+    <message>
+        <source>Hash</source>
+        <translation>해시</translation>
+    </message>
+    <message>
+        <source>Signatures</source>
+        <translation>서명</translation>
     </message>
 </context>
 <context>
@@ -146,6 +186,129 @@
     <message>
         <source>Heuristic scan</source>
         <translation>휴리스틱 검색</translation>
+    </message>
+</context>
+<context>
+    <name>DiE_Script</name>
+    <message>
+        <source>Cannot load database</source>
+        <translation>데이터베이스를 로드할 수 없습니다.</translation>
+    </message>
+    <message>
+        <source>Directory scan</source>
+        <translation>디렉터리 검색</translation>
+    </message>
+    <message>
+        <source>Archive</source>
+        <translation>아카이브</translation>
+    </message>
+    <message>
+        <source>Compiler</source>
+        <translation>컴파일러</translation>
+    </message>
+    <message>
+        <source>Cryptor</source>
+        <translation>크립터</translation>
+    </message>
+    <message>
+        <source>Certificate</source>
+        <translation>인증서</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>변환기</translation>
+    </message>
+    <message>
+        <source>Data</source>
+        <translation>데이터</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>데이터베이스</translation>
+    </message>
+    <message>
+        <source>Debug data</source>
+        <translation>디버그 데이터</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>형식</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>이미지</translation>
+    </message>
+    <message>
+        <source>Installer</source>
+        <translation>인스톨러</translation>
+    </message>
+    <message>
+        <source>Installer data</source>
+        <translation>인스톨러 데이터</translation>
+    </message>
+    <message>
+        <source>Joiner</source>
+        <translation>병합기</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>언어</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>라이브러리</translation>
+    </message>
+    <message>
+        <source>Linker</source>
+        <translation>링커</translation>
+    </message>
+    <message>
+        <source>Overlay</source>
+        <translation>오버레이</translation>
+    </message>
+    <message>
+        <source>Packer</source>
+        <translation>패커</translation>
+    </message>
+    <message>
+        <source>Player</source>
+        <translation>플레이어</translation>
+    </message>
+    <message>
+        <source>Protection</source>
+        <translation>보호</translation>
+    </message>
+    <message>
+        <source>Protector</source>
+        <translation>프로텍터</translation>
+    </message>
+    <message>
+        <source>Protector data</source>
+        <translation>프로텍터 데이터</translation>
+    </message>
+    <message>
+        <source>Source code</source>
+        <translation>소스 코드</translation>
+    </message>
+    <message>
+        <source>Stub</source>
+        <translation>스텁</translation>
+    </message>
+    <message>
+        <source>Tool</source>
+        <translation>도구</translation>
+    </message>
+    <message>
+        <source>compressor</source>
+        <translation>압축기</translation>
+    </message>
+    <message>
+        <source>obfuscator</source>
+        <translation>난독화기</translation>
+    </message>
+    <message>
+        <source>extender</source>
+        <translation>확장기</translation>
     </message>
 </context>
 <context>
@@ -1224,6 +1387,30 @@
         <translation>메모리 맵</translation>
     </message>
     <message>
+        <source>File info</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Hash</source>
+        <translation>해시</translation>
+    </message>
+    <message>
+        <source>Strings</source>
+        <translation>문자열</translation>
+    </message>
+    <message>
+        <source>Signatures</source>
+        <translation>서명</translation>
+    </message>
+    <message>
+        <source>Hex</source>
+        <translation>마녀</translation>
+    </message>
+    <message>
+        <source>Entropy</source>
+        <translation>엔트로피</translation>
+    </message>
+    <message>
         <source>Overlay</source>
         <translation>오버레이</translation>
     </message>
@@ -1373,8 +1560,8 @@
 <context>
     <name>HeurWidget</name>
     <message>
-        <source>Scan</source>
-        <translation>검색</translation>
+        <source>Type</source>
+        <translation>유형</translation>
     </message>
     <message>
         <source>Recursive scan</source>
@@ -1401,16 +1588,16 @@
         <translation>저장</translation>
     </message>
     <message>
+        <source>Scan</source>
+        <translation>검색</translation>
+    </message>
+    <message>
         <source>Heuristic</source>
         <translation>휴리스틱</translation>
     </message>
     <message>
         <source>Result</source>
         <translation>결과</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation>유형</translation>
     </message>
     <message>
         <source>Name</source>
@@ -2680,6 +2867,10 @@
         <translation>최대</translation>
     </message>
     <message>
+        <source>Invalid signature</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>Write error</source>
         <translation>쓰기 오류</translation>
     </message>
@@ -2692,16 +2883,32 @@
         <translation>Bytes</translation>
     </message>
     <message>
+        <source>KiB</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>kB</source>
         <translation>KB</translation>
+    </message>
+    <message>
+        <source>MiB</source>
+        <translation></translation>
     </message>
     <message>
         <source>MB</source>
         <translation>메가바이트</translation>
     </message>
     <message>
+        <source>GiB</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>GB</source>
         <translation>GB</translation>
+    </message>
+    <message>
+        <source>TiB</source>
+        <translation></translation>
     </message>
     <message>
         <source>TB</source>
@@ -3457,8 +3664,32 @@
         <translation>형태</translation>
     </message>
     <message>
-        <source>Hex</source>
-        <translation>마녀</translation>
+        <source>Read only</source>
+        <translation>읽기 전용</translation>
+    </message>
+    <message>
+        <source>Data inspector</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>이름</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>값</translation>
+    </message>
+    <message>
+        <source>Cursor</source>
+        <translation>커서</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>선택</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>크기</translation>
     </message>
 </context>
 <context>
@@ -3636,6 +3867,10 @@
         <source>Symbols</source>
         <translation>기호</translation>
     </message>
+    <message>
+        <source>Read only</source>
+        <translation>읽기 전용</translation>
+    </message>
 </context>
 <context>
     <name>XNE</name>
@@ -3667,6 +3902,10 @@
     </message>
     <message>
         <source>Recent files</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Code pages</source>
         <translation></translation>
     </message>
     <message>
@@ -3876,6 +4115,14 @@
     <message>
         <source>Debug</source>
         <translation>디버그</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Animate</source>
+        <translation></translation>
     </message>
     <message>
         <source>Debugger</source>

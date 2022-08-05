@@ -79,8 +79,48 @@
         <translation>Przeładuj</translation>
     </message>
     <message>
+        <source>Disasm</source>
+        <translation>Disazm</translation>
+    </message>
+    <message>
+        <source>Strings</source>
+        <translation>Smyczki</translation>
+    </message>
+    <message>
+        <source>Memory map</source>
+        <translation>Mapa pamięci</translation>
+    </message>
+    <message>
+        <source>Entropy</source>
+        <translation>Entropia</translation>
+    </message>
+    <message>
+        <source>Heuristic scan</source>
+        <translation>Skanowanie heurystyczne</translation>
+    </message>
+    <message>
         <source>Readonly</source>
         <translation>Tylko czytać</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Zapisz</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation>Informacje</translation>
+    </message>
+    <message>
+        <source>Hex</source>
+        <translation>Klątwa</translation>
+    </message>
+    <message>
+        <source>Hash</source>
+        <translation>Haszysz</translation>
+    </message>
+    <message>
+        <source>Signatures</source>
+        <translation>Sygnatury</translation>
     </message>
 </context>
 <context>
@@ -146,6 +186,129 @@
     <message>
         <source>Heuristic scan</source>
         <translation>Skanowanie heurystyczne</translation>
+    </message>
+</context>
+<context>
+    <name>DiE_Script</name>
+    <message>
+        <source>Cannot load database</source>
+        <translation>Nie można załadować bazy danych</translation>
+    </message>
+    <message>
+        <source>Directory scan</source>
+        <translation>Przetwarzanie katalogu</translation>
+    </message>
+    <message>
+        <source>Archive</source>
+        <translation>Archiwum</translation>
+    </message>
+    <message>
+        <source>Compiler</source>
+        <translation>Kompilator</translation>
+    </message>
+    <message>
+        <source>Cryptor</source>
+        <translation>Kryptor</translation>
+    </message>
+    <message>
+        <source>Certificate</source>
+        <translation>Certyfikat</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Przetwornik</translation>
+    </message>
+    <message>
+        <source>Data</source>
+        <translation>Dane</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Baza danych</translation>
+    </message>
+    <message>
+        <source>Debug data</source>
+        <translation>Dane debugowania</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Format</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>Obraz</translation>
+    </message>
+    <message>
+        <source>Installer</source>
+        <translation>Instalator</translation>
+    </message>
+    <message>
+        <source>Installer data</source>
+        <translation>Dane instalatora</translation>
+    </message>
+    <message>
+        <source>Joiner</source>
+        <translation>Stolarz</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Język</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Biblioteka</translation>
+    </message>
+    <message>
+        <source>Linker</source>
+        <translation>Linker</translation>
+    </message>
+    <message>
+        <source>Overlay</source>
+        <translation>Nakładka</translation>
+    </message>
+    <message>
+        <source>Packer</source>
+        <translation>Pakowacz</translation>
+    </message>
+    <message>
+        <source>Player</source>
+        <translation>Gracz</translation>
+    </message>
+    <message>
+        <source>Protection</source>
+        <translation>Ochrona</translation>
+    </message>
+    <message>
+        <source>Protector</source>
+        <translation>Ochraniacz</translation>
+    </message>
+    <message>
+        <source>Protector data</source>
+        <translation>Dane protektora</translation>
+    </message>
+    <message>
+        <source>Source code</source>
+        <translation>Kod źródłowy</translation>
+    </message>
+    <message>
+        <source>Stub</source>
+        <translation>Pień</translation>
+    </message>
+    <message>
+        <source>Tool</source>
+        <translation>Narzędzie</translation>
+    </message>
+    <message>
+        <source>compressor</source>
+        <translation>kompresor</translation>
+    </message>
+    <message>
+        <source>obfuscator</source>
+        <translation>zaciemniać</translation>
+    </message>
+    <message>
+        <source>extender</source>
+        <translation>wypełniacz</translation>
     </message>
 </context>
 <context>
@@ -1224,6 +1387,30 @@
         <translation>Mapa pamięci</translation>
     </message>
     <message>
+        <source>File info</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Hash</source>
+        <translation>Haszysz</translation>
+    </message>
+    <message>
+        <source>Strings</source>
+        <translation>Smyczki</translation>
+    </message>
+    <message>
+        <source>Signatures</source>
+        <translation>Sygnatury</translation>
+    </message>
+    <message>
+        <source>Hex</source>
+        <translation>Klątwa</translation>
+    </message>
+    <message>
+        <source>Entropy</source>
+        <translation>Entropia</translation>
+    </message>
+    <message>
         <source>Overlay</source>
         <translation>Nakładka</translation>
     </message>
@@ -1373,8 +1560,8 @@
 <context>
     <name>HeurWidget</name>
     <message>
-        <source>Scan</source>
-        <translation>Skanuj</translation>
+        <source>Type</source>
+        <translation>Typ</translation>
     </message>
     <message>
         <source>Recursive scan</source>
@@ -1401,16 +1588,16 @@
         <translation>Zapisz</translation>
     </message>
     <message>
+        <source>Scan</source>
+        <translation>Skanuj</translation>
+    </message>
+    <message>
         <source>Heuristic</source>
         <translation>Heurystyczny</translation>
     </message>
     <message>
         <source>Result</source>
         <translation>Wynik</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation>Typ</translation>
     </message>
     <message>
         <source>Name</source>
@@ -2680,6 +2867,10 @@
         <translation>Maksymalny</translation>
     </message>
     <message>
+        <source>Invalid signature</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>Write error</source>
         <translation>Napisz błąd</translation>
     </message>
@@ -2692,16 +2883,32 @@
         <translation>Bajty</translation>
     </message>
     <message>
+        <source>KiB</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>kB</source>
         <translation>kB</translation>
+    </message>
+    <message>
+        <source>MiB</source>
+        <translation></translation>
     </message>
     <message>
         <source>MB</source>
         <translation>MB</translation>
     </message>
     <message>
+        <source>GiB</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>GB</source>
         <translation>GB</translation>
+    </message>
+    <message>
+        <source>TiB</source>
+        <translation></translation>
     </message>
     <message>
         <source>TB</source>
@@ -3457,8 +3664,32 @@
         <translation>Formularz</translation>
     </message>
     <message>
-        <source>Hex</source>
-        <translation>Klątwa</translation>
+        <source>Read only</source>
+        <translation>Tylko czytać</translation>
+    </message>
+    <message>
+        <source>Data inspector</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nazwa</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Wartość</translation>
+    </message>
+    <message>
+        <source>Cursor</source>
+        <translation>Kursor</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Wybór</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Rozmiar</translation>
     </message>
 </context>
 <context>
@@ -3636,6 +3867,10 @@
         <source>Symbols</source>
         <translation>Symbolika</translation>
     </message>
+    <message>
+        <source>Read only</source>
+        <translation>Tylko czytać</translation>
+    </message>
 </context>
 <context>
     <name>XNE</name>
@@ -3667,6 +3902,10 @@
     </message>
     <message>
         <source>Recent files</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Code pages</source>
         <translation></translation>
     </message>
     <message>
@@ -3876,6 +4115,14 @@
     <message>
         <source>Debug</source>
         <translation>Odpluskwić</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Animate</source>
+        <translation></translation>
     </message>
     <message>
         <source>Debugger</source>

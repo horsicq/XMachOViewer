@@ -79,8 +79,48 @@
         <translation>Tải lại</translation>
     </message>
     <message>
+        <source>Disasm</source>
+        <translation>Rối loạn</translation>
+    </message>
+    <message>
+        <source>Strings</source>
+        <translation>Chuỗi</translation>
+    </message>
+    <message>
+        <source>Memory map</source>
+        <translation>Sơ đồ bộ nhớ</translation>
+    </message>
+    <message>
+        <source>Entropy</source>
+        <translation>Entropy</translation>
+    </message>
+    <message>
+        <source>Heuristic scan</source>
+        <translation>Quét phỏng đoán</translation>
+    </message>
+    <message>
         <source>Readonly</source>
         <translation>Chỉ đọc</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Lưu</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation>Thông tin</translation>
+    </message>
+    <message>
+        <source>Hex</source>
+        <translation>Hex</translation>
+    </message>
+    <message>
+        <source>Hash</source>
+        <translation>Băm</translation>
+    </message>
+    <message>
+        <source>Signatures</source>
+        <translation>Chữ ký</translation>
     </message>
 </context>
 <context>
@@ -146,6 +186,129 @@
     <message>
         <source>Heuristic scan</source>
         <translation>Quét phỏng đoán</translation>
+    </message>
+</context>
+<context>
+    <name>DiE_Script</name>
+    <message>
+        <source>Cannot load database</source>
+        <translation>Không thể tải cơ sở dữ liệu</translation>
+    </message>
+    <message>
+        <source>Directory scan</source>
+        <translation>Quét thư mục</translation>
+    </message>
+    <message>
+        <source>Archive</source>
+        <translation>Lưu trữ</translation>
+    </message>
+    <message>
+        <source>Compiler</source>
+        <translation>Trình biên dịch</translation>
+    </message>
+    <message>
+        <source>Cryptor</source>
+        <translation>Cryptor</translation>
+    </message>
+    <message>
+        <source>Certificate</source>
+        <translation>Giấy chứng nhận</translation>
+    </message>
+    <message>
+        <source>Converter</source>
+        <translation>Bộ chuyển đổi</translation>
+    </message>
+    <message>
+        <source>Data</source>
+        <translation>Dữ liệu</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Cơ sở dữ liệu</translation>
+    </message>
+    <message>
+        <source>Debug data</source>
+        <translation>Gỡ lỗi dữ liệu</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Sự sắp xếp</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>Hình ảnh</translation>
+    </message>
+    <message>
+        <source>Installer</source>
+        <translation>Trình cài đặt</translation>
+    </message>
+    <message>
+        <source>Installer data</source>
+        <translation>Dữ liệu trình cài đặt</translation>
+    </message>
+    <message>
+        <source>Joiner</source>
+        <translation>Trình kết hợp</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Ngôn ngữ</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Thư viện</translation>
+    </message>
+    <message>
+        <source>Linker</source>
+        <translation>Người liên kết</translation>
+    </message>
+    <message>
+        <source>Overlay</source>
+        <translation>Xếp chồng</translation>
+    </message>
+    <message>
+        <source>Packer</source>
+        <translation>Người đóng gói</translation>
+    </message>
+    <message>
+        <source>Player</source>
+        <translation>Người chơi</translation>
+    </message>
+    <message>
+        <source>Protection</source>
+        <translation>Sự bảo vệ</translation>
+    </message>
+    <message>
+        <source>Protector</source>
+        <translation>Người bảo vệ</translation>
+    </message>
+    <message>
+        <source>Protector data</source>
+        <translation>Dữ liệu người bảo vệ</translation>
+    </message>
+    <message>
+        <source>Source code</source>
+        <translation>Mã nguồn</translation>
+    </message>
+    <message>
+        <source>Stub</source>
+        <translation>Stub</translation>
+    </message>
+    <message>
+        <source>Tool</source>
+        <translation>Dụng cụ</translation>
+    </message>
+    <message>
+        <source>compressor</source>
+        <translation>bộ nén</translation>
+    </message>
+    <message>
+        <source>obfuscator</source>
+        <translation>trình làm rối</translation>
+    </message>
+    <message>
+        <source>extender</source>
+        <translation>bộ mở rộng</translation>
     </message>
 </context>
 <context>
@@ -1224,6 +1387,30 @@
         <translation>Sơ đồ bộ nhớ</translation>
     </message>
     <message>
+        <source>File info</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Hash</source>
+        <translation>Băm</translation>
+    </message>
+    <message>
+        <source>Strings</source>
+        <translation>Chuỗi</translation>
+    </message>
+    <message>
+        <source>Signatures</source>
+        <translation>Chữ ký</translation>
+    </message>
+    <message>
+        <source>Hex</source>
+        <translation>Hex</translation>
+    </message>
+    <message>
+        <source>Entropy</source>
+        <translation>Entropy</translation>
+    </message>
+    <message>
         <source>Overlay</source>
         <translation>Xếp chồng</translation>
     </message>
@@ -1373,8 +1560,8 @@
 <context>
     <name>HeurWidget</name>
     <message>
-        <source>Scan</source>
-        <translation>Quét</translation>
+        <source>Type</source>
+        <translation>Loại</translation>
     </message>
     <message>
         <source>Recursive scan</source>
@@ -1401,16 +1588,16 @@
         <translation>Lưu</translation>
     </message>
     <message>
+        <source>Scan</source>
+        <translation>Quét</translation>
+    </message>
+    <message>
         <source>Heuristic</source>
         <translation>Phỏng đoán</translation>
     </message>
     <message>
         <source>Result</source>
         <translation>Kết quả</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation>Loại</translation>
     </message>
     <message>
         <source>Name</source>
@@ -2680,6 +2867,10 @@
         <translation>Tối đa</translation>
     </message>
     <message>
+        <source>Invalid signature</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>Write error</source>
         <translation>Ghi lỗi</translation>
     </message>
@@ -2692,16 +2883,32 @@
         <translation>Bytes</translation>
     </message>
     <message>
+        <source>KiB</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>kB</source>
         <translation>kB</translation>
+    </message>
+    <message>
+        <source>MiB</source>
+        <translation></translation>
     </message>
     <message>
         <source>MB</source>
         <translation>MB</translation>
     </message>
     <message>
+        <source>GiB</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>GB</source>
         <translation>GB</translation>
+    </message>
+    <message>
+        <source>TiB</source>
+        <translation></translation>
     </message>
     <message>
         <source>TB</source>
@@ -3457,8 +3664,32 @@
         <translation>Mẫu đơn</translation>
     </message>
     <message>
-        <source>Hex</source>
-        <translation>Hex</translation>
+        <source>Read only</source>
+        <translation>Chỉ đọc</translation>
+    </message>
+    <message>
+        <source>Data inspector</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Tên</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Giá trị</translation>
+    </message>
+    <message>
+        <source>Cursor</source>
+        <translation>Con trỏ</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Lựa chọn</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Kích thước</translation>
     </message>
 </context>
 <context>
@@ -3636,6 +3867,10 @@
         <source>Symbols</source>
         <translation>Ký hiệu</translation>
     </message>
+    <message>
+        <source>Read only</source>
+        <translation>Chỉ đọc</translation>
+    </message>
 </context>
 <context>
     <name>XNE</name>
@@ -3667,6 +3902,10 @@
     </message>
     <message>
         <source>Recent files</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Code pages</source>
         <translation></translation>
     </message>
     <message>
@@ -3876,6 +4115,14 @@
     <message>
         <source>Debug</source>
         <translation>Gỡ lỗi</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Animate</source>
+        <translation></translation>
     </message>
     <message>
         <source>Debugger</source>
