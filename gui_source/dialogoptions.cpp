@@ -50,7 +50,7 @@ DialogOptions::DialogOptions(QWidget *pParent,XOptions *pOptions,XOptions::GROUP
     ui->widgetOptions->addPage(g_pXOnlineToolsOptionsWidget,tr("Online tools"));
     g_pXOnlineToolsOptionsWidget->setOptions(pOptions);
 
-    ui->widgetOptions->setCurrentPage(1);
+    ui->widgetOptions->setCurrentPage(groupId);
 }
 
 DialogOptions::~DialogOptions()
