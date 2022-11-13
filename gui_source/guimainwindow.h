@@ -21,37 +21,34 @@
 #ifndef GUIMAINWINDOW_H
 #define GUIMAINWINDOW_H
 
+#include <QDragEnterEvent>
+#include <QFileDialog>
 #include <QMainWindow>
+#include <QMimeData>
 
 #include "../global.h"
-#include <QMainWindow>
-#include <QFileDialog>
-#include <QDragEnterEvent>
-#include <QMimeData>
-#include "dialogoptions.h"
 #include "dialogabout.h"
-#include "dialogshortcuts.h"
-#include "machwidget.h"
-#include "machofatwidget.h"
 #include "dialogarchive.h"
+#include "dialogoptions.h"
+#include "dialogshortcuts.h"
+#include "machofatwidget.h"
+#include "machwidget.h"
 
 namespace Ui {
 class GuiMainWindow;
 }
 
-class GuiMainWindow : public QMainWindow
-{
+class GuiMainWindow : public QMainWindow {
     Q_OBJECT
 
-    enum MODE
-    {
-        MODE_UNKNOWN=0,
+    enum MODE {
+        MODE_UNKNOWN = 0,
         MODE_MACHO,
         MODE_MACHOFAT
     };
 
 public:
-    explicit GuiMainWindow(QWidget *parent=nullptr);
+    explicit GuiMainWindow(QWidget *parent = nullptr);
     ~GuiMainWindow();
 
 private slots:
@@ -82,4 +79,4 @@ private:
     MODE g_mode;
 };
 
-#endif // GUIMAINWINDOW_H
+#endif  // GUIMAINWINDOW_H

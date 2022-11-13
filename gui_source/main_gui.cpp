@@ -18,18 +18,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#include "guimainwindow.h"
 #include <QApplication>
+
+#include "guimainwindow.h"
 #include "xoptions.h"
 
-int main(int argc,char *argv[])
-{
-#if QT_VERSION >= QT_VERSION_CHECK(5,6,0)
+int main(int argc, char *argv[]) {
+#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 #endif
 #ifdef Q_OS_MAC
 #ifndef QT_DEBUG
-   QCoreApplication::setLibraryPaths(QStringList(QString(argv[0]).remove("MacOS/XMachOViewer")+"PlugIns"));
+    QCoreApplication::setLibraryPaths(QStringList(QString(argv[0]).remove("MacOS/XMachOViewer") + "PlugIns"));
 #endif
 #endif
     QCoreApplication::setOrganizationName(X_ORGANIZATIONNAME);
@@ -37,29 +37,28 @@ int main(int argc,char *argv[])
     QCoreApplication::setApplicationName(X_APPLICATIONNAME);
     QCoreApplication::setApplicationVersion(X_APPLICATIONVERSION);
 
-    if((argc==2)&&((QString(argv[1])=="--version")||(QString(argv[1])=="-v")))
-    {
-        QString sInfo=QString("%1 v%2").arg(X_APPLICATIONDISPLAYNAME,X_APPLICATIONVERSION);
-        printf("%s\n",sInfo.toUtf8().data());
+    if ((argc == 2) && ((QString(argv[1]) == "--version") || (QString(argv[1]) == "-v"))) {
+        QString sInfo = QString("%1 v%2").arg(X_APPLICATIONDISPLAYNAME, X_APPLICATIONVERSION);
+        printf("%s\n", sInfo.toUtf8().data());
 
         return 0;
     }
 
-    QApplication app(argc,argv);
+    QApplication app(argc, argv);
     QApplication::setWindowIcon(QIcon(":/pics/main.png"));
 
     XOptions xOptions;
 
     xOptions.setName(X_OPTIONSFILE);
 
-    xOptions.addID(XOptions::ID_VIEW_STYLE,"Fusion");
-    xOptions.addID(XOptions::ID_VIEW_QSS,"");
-    xOptions.addID(XOptions::ID_VIEW_LANG,"System");
-    xOptions.addID(XOptions::ID_VIEW_FONT,"");
+    xOptions.addID(XOptions::ID_VIEW_STYLE, "Fusion");
+    xOptions.addID(XOptions::ID_VIEW_QSS, "");
+    xOptions.addID(XOptions::ID_VIEW_LANG, "System");
+    xOptions.addID(XOptions::ID_VIEW_FONT, "");
 
     xOptions.load();
 
-    XOptions::adjustApplicationView(X_APPLICATIONNAME,&xOptions);
+    XOptions::adjustApplicationView(X_APPLICATIONNAME, &xOptions);
 
     GuiMainWindow w;
     w.show();
