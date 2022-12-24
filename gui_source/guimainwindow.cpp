@@ -67,6 +67,7 @@ GuiMainWindow::GuiMainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::
     g_xShortcuts.addGroup(XShortcuts::GROUPID_SIGNATURES);
     g_xShortcuts.addGroup(XShortcuts::GROUPID_HEX);
     g_xShortcuts.addGroup(XShortcuts::GROUPID_DISASM);
+    g_xShortcuts.addGroup(XShortcuts::GROUPID_FIND);
 
     g_xShortcuts.load();
 
