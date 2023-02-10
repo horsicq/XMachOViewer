@@ -19,6 +19,8 @@ MachO file viewer/editor for Windows, Linux and macOS.
 * How to build: https://github.com/horsicq/XMachOViewer/blob/master/docs/BUILD.md
 * Changelog: https://github.com/horsicq/XMachOViewer/blob/master/changelog.txt
 
+You can help with translation: https://github.com/horsicq/XTranslation
+
 ![alt text](https://github.com/horsicq/XMachOViewer/blob/master/mascots/xmachoviewer.png "Mascot")
 
 ![alt text](https://github.com/horsicq/XMachOViewer/blob/master/docs/1.png "1")
