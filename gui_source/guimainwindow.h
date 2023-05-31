@@ -33,6 +33,7 @@
 #include "dialogshortcuts.h"
 #include "machofatwidget.h"
 #include "machwidget.h"
+#include "xyara.h"
 
 namespace Ui {
 class GuiMainWindow;
