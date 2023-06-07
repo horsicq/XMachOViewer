@@ -29,6 +29,7 @@ GuiMainWindow::GuiMainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::
     XYara::initialize();
 
     g_pFile = nullptr;
+    g_pXInfo = nullptr;
     g_pTempFile = nullptr;
     g_mode = MODE_UNKNOWN;
 
@@ -54,7 +55,7 @@ GuiMainWindow::GuiMainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::
     g_xOptions.addID(XOptions::ID_FILE_CONTEXT, "*");
 #endif
 
-    NFDOptionsWidget::setDefaultValues(&g_xOptions);
+    DIEOptionsWidget::setDefaultValues(&g_xOptions);
     SearchSignaturesOptionsWidget::setDefaultValues(&g_xOptions);
     XHexViewOptionsWidget::setDefaultValues(&g_xOptions);
     XDisasmViewOptionsWidget::setDefaultValues(&g_xOptions);
@@ -202,6 +203,8 @@ void GuiMainWindow::processFile(QString sFileName)
 
         closeCurrentFile();
 
+        g_pXInfo = new XInfoDB;
+
         if (bIsFile) {
             g_pFile = new QFile;
 
@@ -283,6 +286,7 @@ void GuiMainWindow::processFile(QString sFileName)
 
         if (pOpenDevice) {
             if (XMACH::isValid(pOpenDevice)) {
+                g_pXInfo->setData(g_pFile, XBinary::FT_MACHO);
                 g_mode = MODE_MACHO;
 
                 ui->stackedWidget->setCurrentIndex(1);
@@ -291,6 +295,7 @@ void GuiMainWindow::processFile(QString sFileName)
                 g_formatOptions.nStartType = SMACH::TYPE_INFO;
                 ui->widgetMACHO->setGlobal(&g_xShortcuts, &g_xOptions);
                 ui->widgetMACHO->setData(pOpenDevice, g_formatOptions, 0, 0, 0);
+                ui->widgetMACHO->setXInfoDB(g_pXInfo);
 
                 ui->widgetMACHO->reload();
 
@@ -298,6 +303,7 @@ void GuiMainWindow::processFile(QString sFileName)
 
                 setWindowTitle(sTitle);
             } else if (XMACHOFat::isValid(pOpenDevice)) {
+                g_pXInfo->setData(g_pFile, XBinary::FT_MACHOFAT);
                 g_mode = MODE_MACHOFAT;
 
                 ui->stackedWidget->setCurrentIndex(2);
@@ -306,6 +312,7 @@ void GuiMainWindow::processFile(QString sFileName)
                 g_formatOptions.nStartType = SMACH::TYPE_INFO;
                 ui->widgetMACHOFAT->setGlobal(&g_xShortcuts, &g_xOptions);
                 ui->widgetMACHOFAT->setData(pOpenDevice, g_formatOptions, 0, 0, 0);
+                ui->widgetMACHOFAT->setXInfoDB(g_pXInfo);
 
                 ui->widgetMACHOFAT->reload();
 
@@ -326,6 +333,11 @@ void GuiMainWindow::processFile(QString sFileName)
 void GuiMainWindow::closeCurrentFile()
 {
     ui->stackedWidget->setCurrentIndex(0);
+
+    if (g_pXInfo) {
+        delete g_pXInfo;
+        g_pXInfo = nullptr;
+    }
 
     if (g_pFile) {
         g_pFile->close();

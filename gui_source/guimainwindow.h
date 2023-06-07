@@ -76,6 +76,7 @@ private:
     XShortcuts g_xShortcuts;
     FW_DEF::OPTIONS g_formatOptions;
     QFile *g_pFile;
+    XInfoDB *g_pXInfo;
     QTemporaryFile *g_pTempFile;
     MODE g_mode;
 };
