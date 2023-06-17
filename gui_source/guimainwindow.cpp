@@ -60,6 +60,7 @@ GuiMainWindow::GuiMainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::
     XHexViewOptionsWidget::setDefaultValues(&g_xOptions);
     XDisasmViewOptionsWidget::setDefaultValues(&g_xOptions);
     XOnlineToolsOptionsWidget::setDefaultValues(&g_xOptions);
+    XInfoDBOptionsWidget::setDefaultValues(&g_xOptions);
 
     g_xOptions.addID(XOptions::ID_SCAN_YARARULESPATH, "$data/yara_rules");
 
