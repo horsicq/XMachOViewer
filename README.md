@@ -3,7 +3,9 @@
 [![GitHub All Releases](https://img.shields.io/github/downloads/horsicq/XMachOViewer/total.svg)](https://github.com/horsicq/XMachOViewer/releases)
 [![gitlocalized ](https://gitlocalize.com/repo/4736/whole_project/badge.svg)](https://github.com/horsicq/XTranslation)
 
-MachO file viewer/editor for Windows, Linux and macOS.
+# MachO file viewer/editor for Windows, Linux and macOS.
+
+### Features
 
 - Heuristic scan
 - String viewer
@@ -14,12 +16,25 @@ MachO file viewer/editor for Windows, Linux and macOS.
 - Crypto search
 - Name demangling
 
-* Download: https://github.com/horsicq/XMachOViewer/releases
-* How to run: https://github.com/horsicq/XMachOViewer/blob/master/docs/RUN.md
-* How to build: https://github.com/horsicq/XMachOViewer/blob/master/docs/BUILD.md
-* Changelog: https://github.com/horsicq/XMachOViewer/blob/master/changelog.txt
+## Downloads
 
-You can help with translation: https://github.com/horsicq/XTranslation
+XMachOViewer can be downloaded from the [releases](https://github.com/horsicq/XMachOViewer/releases) page.
+
+## Building
+
+Build instructions can be found in [BUILD.md](https://github.com/horsicq/XMachOViewer/blob/master/docs/BUILD.md).
+
+## Usage
+
+Instructions to use `xmachoviewer` - The GUI version can be found in [RUN.md](https://github.com/horsicq/XMachOViewer/blob/master/docs/RUN.md).
+
+## Changelog
+
+Cahngelog can be found in [changelog.txt](https://github.com/horsicq/XMachOViewer/blob/master/changelog.txt).
+
+## You can help with translation!
+
+Follow [This](https://github.com/horsicq/XTranslation) link.
 
 ![alt text](https://github.com/horsicq/XMachOViewer/blob/master/mascots/xmachoviewer.png "Mascot")
 
