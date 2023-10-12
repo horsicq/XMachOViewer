@@ -1,8 +1,25 @@
-**xmachoviewer** - GUI version
+# Instructions to run XMachOViewer
 
-How to run portable version on Linux
-=======
+## Linux Package/Build
 
-* download an appImage file https://github.com/horsicq/XMachOViewer/releases/download/0.04/XMachOViewer-0.04-x86_64.AppImage
-* make the file executable (chmod +x XMachOViewer-0.04-x86_64.AppImage)
-* run it (./XMachOViewer-0.04-x86_64.AppImage)
+After installing from the `.dpkg` file, simply run
+
+```bash
+xmachoviewer
+```
+
+## Portable Version on Linux
+
+Download an [appImage file](https://github.com/horsicq/XMachOViewer/releases/download/0.04/XMachOViewer-0.04-x86_64.AppImage)
+
+Make the file executable
+
+```bash
+chmod +x XMachOViewer-0.04-x86_64.AppImage
+```
+
+Run it
+
+```bash
+./XMachOViewer-0.04-x86_64.AppImage
+```
