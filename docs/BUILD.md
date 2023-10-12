@@ -1,45 +1,81 @@
-How to build on Docker
-=======
-git clone --recursive https://github.com/horsicq/XMachOViewer.git
+# Instructions to build XMachOViewer
 
+## Docker
+
+```bash
+git clone https://github.com/horsicq/XMachOViewer.git
 cd XMachOViewer
-
 docker build .
+```
 
-How to build on Linux(Debian package, tested on Ubuntu 14.04-20.04)
-=======
+## How to build on Linux
 
-Install packages:
+- Install prerequisite packages:
 
-- sudo apt-get install --quiet --assume-yes git
-- sudo apt-get install --quiet --assume-yes build-essential
-- sudo apt-get install --quiet --assume-yes qt5-default qtbase5-dev qttools5-dev-tools
+For Ubuntu 14.04-20.04
 
+```bash
+sudo apt-get install --quiet --assume-yes git build-essential qt5-default qtbase5-dev qttools5-dev-tools libqt5svg5-dev qtscript5-dev
+```
+
+For Ubuntu 22.04
+
+```bash
+sudo apt-get install --quiet --assume-yes git build-essential qtbase5-dev qttools5-dev-tools libqt5svg5-dev qtscript5-dev
+```
+
+- Clone this repo recursively:
+
+```bash
 git clone --recursive https://github.com/horsicq/XMachOViewer.git
+```
 
+- Run build script:
+
+```bash
 cd XMachOViewer
+bash -x build_dpkg.sh
+```
 
-Run build script: bash -x build_dpkg.sh
-
-How to build on Linux(Automake)
-=======
+# How to build on Linux(Automake)
 
 Qt framework has to be installed on the system.
 
-- (Ubuntu) Install GIT: sudo apt-get install --quiet --assume-yes git
-- (Ubuntu 20.04)Install Qt Framework: sudo apt-get install --quiet --assume-yes build-essential qt5-default qtbase5-dev qttools5-dev-tools
+- For (Ubuntu) Install GIT:
 
-Clone project: git clone --recursive https://github.com/horsicq/XMachOViewer.git
+```bash
+sudo apt-get install --quiet --assume-yes git
+```
 
+- For (Ubuntu 20.04) Install Qt Framework:
+
+```bash
+sudo apt-get install --quiet --assume-yes git build-essential qt5-default qtbase5-dev qttools5-dev-tools libqt5svg5-dev qtscript5-dev
+```
+
+- For (Ubuntu 22.04) Install Qt Framework:
+
+```bash
+sudo apt-get install --quiet --assume-yes git build-essential qtbase5-dev qttools5-dev-tools libqt5svg5-dev qtscript5-dev
+```
+
+- Clone this repo recursively:
+
+```bash
+git clone --recursive https://github.com/horsicq/XMachOViewer.git
+```
+
+- Build and install
+
+```bash
 cd XMachOViewer
+chmod a+x configure
+./configure
+make
+sudo make install
+```
 
-- chmod a+x configure
-- ./configure
-- make
-- sudo make install
-
-How to build on OSX
-=======
+## How to build on OSX
 
 Install Qt 5.15.2: https://github.com/horsicq/build_tools
 
@@ -51,8 +87,7 @@ Edit build_mac.bat ( check QT_PATH variable)
 
 Run build_mac.bat
 
-How to build on Windows(XP)
-=======
+## How to build on Windows(XP)
 
 Install Visual Studio 2013: https://github.com/horsicq/build_tools
 
@@ -64,12 +99,11 @@ Clone project: git clone --recursive https://github.com/horsicq/XMachOViewer.git
 
 cd XMachOViewer
 
-Edit build_winxp.bat ( check VS_PATH,  SEVENZIP_PATH, QT_PATH variables)
+Edit build_winxp.bat ( check VS_PATH, SEVENZIP_PATH, QT_PATH variables)
 
 Run build_winxp.bat
 
-How to build on Windows(7-10)
-=======
+## How to build on Windows(7-10)
 
 Install Visual Studio 2019: https://github.com/horsicq/build_tools
 
@@ -91,12 +125,34 @@ Run build_win32.bat
 
 Run build_win64.bat
 
-How to build with CMAKE
-=======
+## How to build with CMAKE
+
+- Install prerequisite packages:
+
+For (Ubuntu 20.04) Install Qt Framework:
+
+```bash
+sudo apt-get install --quiet --assume-yes git build-essential qt5-default qtbase5-dev qttools5-dev-tools libqt5svg5-dev qtscript5-dev
+```
+
+For (Ubuntu 22.04) Install Qt Framework:
+
+```bash
+sudo apt-get install --quiet --assume-yes git build-essential qtbase5-dev qttools5-dev-tools libqt5svg5-dev qtscript5-dev
+```
+
+- Clone this repo recursively:
+
+```bash
 git clone --recursive https://github.com/horsicq/XMachOViewer.git
+```
 
+- Build with CMake:
+
+```bash
 cd XMachOViewer
-
-cmake .
-
-make
+mkdir build
+cmake . -B build
+cd build
+make -j4
+```
