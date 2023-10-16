@@ -30,7 +30,7 @@ Instructions to use `xmachoviewer` - The GUI version can be found in [RUN.md](ht
 
 ## Changelog
 
-Cahngelog can be found in [changelog.txt](https://github.com/horsicq/XMachOViewer/blob/master/changelog.txt).
+Changelog can be found in [changelog.txt](https://github.com/horsicq/XMachOViewer/blob/master/changelog.txt).
 
 ## You can help with translation!
 
