@@ -154,3 +154,6 @@
 [submodule "XScanEngine"]
 	path = XScanEngine
 	url = https://github.com/horsicq/XScanEngine
+[submodule "dep/XShortcuts"]
+	path = dep/XShortcuts
+	url = https://github.com/horsicq/XShortcuts
