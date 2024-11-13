@@ -27,8 +27,6 @@ include(${CMAKE_CURRENT_LIST_DIR}/../../dep/archive_widget/archive_widget.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/../../dep/XAboutWidget/xaboutwidget.cmake)
 
 set(TS_FILES
-    ../../res/translation/xmachoviewer_ar.ts
-    ../../res/translation/xmachoviewer_bn.ts
     ../../res/translation/xmachoviewer_de.ts
 )
 

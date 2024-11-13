@@ -71,7 +71,7 @@ DialogAbout::DialogAbout(QWidget *pParent) : QDialog(pParent), ui(new Ui::Dialog
 
     _data.sLogoPath = ":/pics/logo.png";
     _data.sUpdatesLink = "https://github.com/horsicq/XMachOViewer/releases";
-    _data.sThanksLink = "https://github.com/horsicq/XMachOViewer/blob/master/THANKS.md";
+    _data.sThanksLink = "https://github.com/horsicq/XMachOViewer/blob/master/doc/THANKS.md";
 
     ui->widgetAbout->setData(_data);
 }
