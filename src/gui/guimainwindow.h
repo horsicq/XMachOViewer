@@ -51,7 +51,7 @@ class GuiMainWindow : public QMainWindow {
     };
 
 public:
-    explicit GuiMainWindow(QWidget *parent = nullptr);
+    explicit GuiMainWindow(QWidget *pParent = nullptr);
     ~GuiMainWindow();
 
 private slots:
