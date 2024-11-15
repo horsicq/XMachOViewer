@@ -25,7 +25,7 @@
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap resource="rsrc.qrc">:/pics/logo.png</pixmap>
+           <pixmap>:/pics/logo.png</pixmap>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -46,7 +46,7 @@
      <x>0</x>
      <y>0</y>
      <width>1320</width>
-     <height>23</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
@@ -65,8 +65,6 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="rsrc.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
