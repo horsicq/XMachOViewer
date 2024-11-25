@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-include(../../_mylibs/build_tools/cmake/deploy.cmake)
+include(../dep/build_tools/cmake/deploy.cmake)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
 
@@ -27,8 +27,8 @@ endif()
 
 deploy_init()
 
-add_subdirectory(../../_mylibs/XCppfilt XCppfilt)
-add_subdirectory(../../_mylibs/XCapstone XCapstone)
-add_subdirectory(../../_mylibs/XArchive XArchive)
-add_subdirectory(../../_mylibs/XYara XYara)
+add_subdirectory(../dep/XCppfilt XCppfilt)
+add_subdirectory(../dep/XCapstone XCapstone)
+add_subdirectory(../dep/XArchive XArchive)
+add_subdirectory(../dep/XYara XYara)
 add_subdirectory(gui xmachoviewer)
