@@ -11,14 +11,20 @@ XMachOViewer is a Mach-O viewer for Windows, Linux, and macOS.
 
 ## Features
 
-- Heuristic scan
-- String viewer
-- Hex viewer
-- Disasm viewer (x86/64, ARM, PPC, m68k)
-- Entropy viewer
-- Hash viewer
-- Crypto search
-- Name demangling
+- **Heuristic Scan**: Automatically detect various characteristics and anomalies in Mach-O files.
+- **String Viewer**: Display all readable strings within the Mach-O file.
+- **Hex Viewer**: Inspect the raw hexadecimal content of the file.
+- **Disassembly Viewer**: View disassembled code for multiple architectures including x86/64, ARM, PPC, and m68k.
+- **Entropy Viewer**: Analyze the entropy to detect packed or encrypted sections.
+- **Hash Viewer**: Compute and display various hashes (MD5, SHA1, SHA256) of the file content.
+- **Crypto Search**: Search for common cryptographic signatures.
+- **Name Demangling**: Convert mangled symbol names back to their original form.
+- **Section Viewer**: Inspect and analyze different sections within the Mach-O file.
+- **Header Viewer**: Detailed view of Mach-O headers and load commands.
+- **Symbol Table Viewer**: Display and analyze the symbol table.
+- **Dynamic Library Viewer**: List dynamic libraries linked to the Mach-O file.
+- **File Format Detection**: Automatically detect the file format and type.
+- **Cross-Platform**: Available for Windows, Linux, and macOS.
 
 ## Downloads
 
