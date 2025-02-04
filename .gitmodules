@@ -46,9 +46,6 @@
 [submodule "dep/XHashWidget"]
 	path = dep/XHashWidget
 	url = https://github.com/horsicq/XHashWidget.git
-[submodule "dep/XDisasm"]
-	path = dep/XDisasm
-	url = https://github.com/horsicq/XDisasm.git
 [submodule "dep/XCapstone"]
 	path = dep/XCapstone
 	url = https://github.com/horsicq/XCapstone.git
