@@ -292,7 +292,6 @@ void GuiMainWindow::processFile(QString sFileName)
 
         if (pOpenDevice) {
             if (XMACH::isValid(pOpenDevice)) {
-                g_pXInfo->setData(g_pFile, XBinary::FT_MACHO);
                 g_mode = MODE_MACHO;
 
                 ui->stackedWidget->setCurrentIndex(1);
@@ -309,7 +308,6 @@ void GuiMainWindow::processFile(QString sFileName)
 
                 setWindowTitle(sTitle);
             } else if (XMACHOFat::isValid(pOpenDevice)) {
-                g_pXInfo->setData(g_pFile, XBinary::FT_MACHOFAT);
                 g_mode = MODE_MACHOFAT;
 
                 ui->stackedWidget->setCurrentIndex(2);
