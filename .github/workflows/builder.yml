@@ -1,0 +1,200 @@
+name: builder
+on:
+  workflow_dispatch:
+  release:
+    types: [created]
+  schedule:
+    - cron: '0 0 * * MON'
+
+env:
+  SRC_PATH: ${{ github.workspace }}/src
+
+jobs:
+  build-ubuntu-20_04:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+        path: ${{ env.SRC_PATH }}
+  
+    - name: Install Qt (Ubuntu)
+      run: |
+        sudo apt-get update
+        sudo apt-get install cmake qtbase5-dev qtscript5-dev qttools5-dev qttools5-dev-tools libqt5svg5-dev qtchooser qt5-qmake build-essential -y
+
+    - name: Build
+      working-directory: ${{ env.SRC_PATH }}
+      run: |
+        mkdir tmp_build
+        cd tmp_build
+        cmake -DCMAKE_BUILD_TYPE=MinSizeRel -DCMAKE_PREFIX_PATH="/usr/lib/x86_64-linux-gnu/cmake/Qt5" ..
+        make
+        cpack -G DEB
+
+    - name: Upload Release as Download
+      uses: softprops/action-gh-release@v2
+      env:
+        RELEASE_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+      with:
+        tag_name: Beta
+        draft: false
+        prerelease: true
+        files: |
+          ${{ env.SRC_PATH }}/tmp_build/packages/*.deb
+
+  build-ubuntu-22_04:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+        path: ${{ env.SRC_PATH }}
+  
+    - name: Install Qt (Ubuntu)
+      run: |
+        sudo apt-get update
+        sudo apt-get install cmake qtbase5-dev qtscript5-dev qttools5-dev qttools5-dev-tools libqt5svg5-dev qtchooser qt5-qmake build-essential -y
+
+    - name: Build
+      working-directory: ${{ env.SRC_PATH }}
+      run: |
+        mkdir tmp_build
+        cd tmp_build
+        cmake -DCMAKE_BUILD_TYPE=MinSizeRel -DCMAKE_PREFIX_PATH="/usr/lib/x86_64-linux-gnu/cmake/Qt5" ..
+        make
+        cpack -G DEB
+
+    - name: Upload Release as Download
+      uses: softprops/action-gh-release@v2
+      env:
+        RELEASE_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+      with:
+        tag_name: Beta
+        draft: false
+        prerelease: true
+        files: |
+          ${{ env.SRC_PATH }}/tmp_build/packages/*.deb
+
+  build-ubuntu-24_04:
+    runs-on: ubuntu-24.04
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+        path: ${{ env.SRC_PATH }}
+  
+    - name: Install Qt (Ubuntu)
+      run: |
+        sudo apt-get update
+        sudo apt-get install cmake qtbase5-dev qtscript5-dev qttools5-dev qttools5-dev-tools libqt5svg5-dev qtchooser qt5-qmake build-essential -y
+
+    - name: Build
+      working-directory: ${{ env.SRC_PATH }}
+      run: |
+        mkdir tmp_build
+        cd tmp_build
+        cmake -DCMAKE_BUILD_TYPE=MinSizeRel -DCMAKE_PREFIX_PATH="/usr/lib/x86_64-linux-gnu/cmake/Qt5" ..
+        make
+        cpack -G DEB
+
+    - name: Upload Release as Download
+      uses: softprops/action-gh-release@v2
+      env:
+        RELEASE_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+      with:
+        tag_name: Beta
+        draft: false
+        prerelease: true
+        files: |
+          ${{ env.SRC_PATH }}/tmp_build/packages/*.deb
+
+  build-windows-32:
+    runs-on: windows-2019
+    steps:
+      - uses: actions/checkout@v4
+        with:
+         submodules: 'recursive'
+         path: ${{ env.SRC_PATH }}
+         
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+        with:
+          msbuild-architecture: x86
+          vs-version: '[16.0,17.0)'
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '5.15.2'
+          host: 'windows'
+          target: 'desktop'
+          arch: 'win32_msvc2019'
+          dir: ${{ github.workspace }}
+          modules: qtscript
+
+      - name: Build
+        shell: cmd
+        working-directory: ${{ env.SRC_PATH }}
+        run: |
+          call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x86
+          mkdir tmp_build
+          cd tmp_build
+          cmake -DCMAKE_BUILD_TYPE=MinSizeRel -DCMAKE_PREFIX_PATH="${{ github.workspace }}\Qt\5.15.2\msvc2019" -G "NMake Makefiles" ..
+          nmake
+          cpack -G ZIP
+      - name: Upload Release as Download
+        uses: softprops/action-gh-release@v2
+        env:
+          RELEASE_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+        with:
+          tag_name: Beta
+          draft: false
+          prerelease: true
+          files: |
+            ${{ env.SRC_PATH }}/tmp_build/packages/*.zip
+
+  build-windows-64:
+    runs-on: windows-2019
+    steps:
+      - uses: actions/checkout@v4
+        with:
+         submodules: 'recursive'
+         path: ${{ env.SRC_PATH }}
+         
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+        with:
+          msbuild-architecture: x64
+          vs-version: '[16.0,17.0)'
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '5.15.2'
+          host: 'windows'
+          target: 'desktop'
+          arch: 'win64_msvc2019_64'
+          dir: ${{ github.workspace }}
+          modules: qtscript
+
+      - name: Build
+        shell: cmd
+        working-directory: ${{ env.SRC_PATH }}
+        run: |
+          call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64
+          mkdir tmp_build
+          cd tmp_build
+          cmake -DCMAKE_BUILD_TYPE=MinSizeRel -DCMAKE_PREFIX_PATH="${{ github.workspace }}\Qt\5.15.2\msvc2019_64" -G "NMake Makefiles" ..
+          nmake
+          cpack -G ZIP
+      - name: Upload Release as Download
+        uses: softprops/action-gh-release@v2
+        env:
+          RELEASE_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+        with:
+          tag_name: Beta
+          draft: false
+          prerelease: true
+          files: |
+            ${{ env.SRC_PATH }}/tmp_build/packages/*.zip
