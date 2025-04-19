@@ -21,11 +21,9 @@ set(X_DESCRIPTION "XMachOViewer is a MACH-O viewer")
 set(X_HOMEPAGE "https://horsicq.github.io/")
 set(X_ORIGINAL_FILENAME "xmachoviewer")
 
-if(${QT_VERSION} VERSION_LESS 6.1.0)
-  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.xmachoviewer)
-endif()
+set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.xmachoviewer)
 
-deploy_init()
+include(../dep/build_tools/cmake/deploy_init.cmake)
 
 add_subdirectory(../dep/XCppfilt XCppfilt)
 add_subdirectory(../dep/XCapstone XCapstone)
