@@ -21,7 +21,6 @@ include(${CMAKE_CURRENT_LIST_DIR}/../../dep/archive_widget/archive_widget.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/../../dep/XAboutWidget/xaboutwidget.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/../../dep/XStyles/xstyles.cmake)
 
-
 set(PROJECT_SOURCES
         ${ARCHIVE_WIDGET_SOURCES}
         ${XABOUTWIDGET_SOURCES}
