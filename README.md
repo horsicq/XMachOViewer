@@ -36,7 +36,7 @@ Build instructions can be found in [BUILD.md](https://github.com/horsicq/XMachOV
 
 ## Usage
 
-Instructions to use `xmachoviewer` - The GUI version can be found in [RUN.md](https://github.com/horsicq/XMachOViewer/blob/master/docs/RUN.md).
+Instructions to use `xmachoviewer` - The GUI version can be found in [RUN.md](https://github.com/horsicq/XMachOViewer/blob/master/doc/RUN.md).
 
 ## Changelog
 
