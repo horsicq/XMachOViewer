@@ -48,15 +48,15 @@ You can help with translation! Follow [this link](https://github.com/horsicq/XTr
 
 ## Screenshots
 
-![Mascot](https://github.com/horsicq/XMachOViewer/blob/master/mascots/xmachoviewer.png "Mascot")
-![1](https://github.com/horsicq/XMachOViewer/blob/master/docs/1.png "1")
-![2](https://github.com/horsicq/XMachOViewer/blob/master/docs/2.png "2")
-![3](https://github.com/horsicq/XMachOViewer/blob/master/docs/3.png "3")
-![4](https://github.com/horsicq/XMachOViewer/blob/master/docs/4.png "4")
-![5](https://github.com/horsicq/XMachOViewer/blob/master/docs/5.png "5")
-![6](https://github.com/horsicq/XMachOViewer/blob/master/docs/6.png "6")
-![7](https://github.com/horsicq/XMachOViewer/blob/master/docs/7.png "7")
-![8](https://github.com/horsicq/XMachOViewer/blob/master/docs/8.png "8")
+![Mascot](https://github.com/horsicq/XMachOViewer/blob/master/doc/xmachoviewer.png "Mascot")
+![1](https://github.com/horsicq/XMachOViewer/blob/master/doc/1.png "1")
+![2](https://github.com/horsicq/XMachOViewer/blob/master/doc/2.png "2")
+![3](https://github.com/horsicq/XMachOViewer/blob/master/doc/3.png "3")
+![4](https://github.com/horsicq/XMachOViewer/blob/master/doc/4.png "4")
+![5](https://github.com/horsicq/XMachOViewer/blob/master/doc/5.png "5")
+![6](https://github.com/horsicq/XMachOViewer/blob/master/doc/6.png "6")
+![7](https://github.com/horsicq/XMachOViewer/blob/master/doc/7.png "7")
+![8](https://github.com/horsicq/XMachOViewer/blob/master/doc/8.png "8")
 
 ## Special Thanks
 
