@@ -32,11 +32,11 @@ XMachOViewer can be downloaded from the [releases](https://github.com/horsicq/XM
 
 ## Building
 
-Build instructions can be found in [BUILD.md](https://github.com/horsicq/XMachOViewer/blob/master/docs/BUILD.md).
+Build instructions can be found in [BUILD.md](https://github.com/horsicq/XMachOViewer/blob/master/doc/BUILD.md).
 
 ## Usage
 
-Instructions to use `xmachoviewer` - The GUI version can be found in [RUN.md](https://github.com/horsicq/XMachOViewer/blob/master/docs/RUN.md).
+Instructions to use `xmachoviewer` - The GUI version can be found in [RUN.md](https://github.com/horsicq/XMachOViewer/blob/master/doc/RUN.md).
 
 ## Changelog
 
