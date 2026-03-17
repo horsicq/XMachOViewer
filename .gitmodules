@@ -160,3 +160,6 @@
 [submodule "dep/XStaticUnpacker"]
 	path = dep/XStaticUnpacker
 	url = https://github.com/horsicq/XStaticUnpacker
+[submodule "dep/XPEID"]
+	path = dep/XPEID
+	url = https://github.com/horsicq/XPEID
