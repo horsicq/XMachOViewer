@@ -1,10 +1,14 @@
-name: builder
+name: Build XMachOViewer
+
 on:
   workflow_dispatch:
   release:
     types: [created]
   schedule:
     - cron: '0 0 * * MON'
+
+permissions:
+  contents: read
 
 env:
   SRC_PATH: ${{ github.workspace }}/src
@@ -13,48 +17,48 @@ jobs:
   build-ubuntu:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v4
       with:
         submodules: recursive
         path: ${{ env.SRC_PATH }}
-  
+
     - name: Install Qt (Ubuntu)
       run: |
         sudo apt-get update
-        sudo apt-get install cmake qtbase5-dev qtscript5-dev qttools5-dev qttools5-dev-tools libqt5svg5-dev qtchooser qt5-qmake build-essential -y
+        sudo apt-get install cmake qtbase5-dev qtscript5-dev qttools5-dev qttools5-dev-tools libqt5svg5-dev libqt5opengl5-dev qtchooser qt5-qmake build-essential -y
 
     - name: Build
       working-directory: ${{ env.SRC_PATH }}
       run: |
+        set -euo pipefail
+        rm -rf tmp_build
         mkdir tmp_build
         cd tmp_build
         cmake -DCMAKE_BUILD_TYPE=MinSizeRel -DCMAKE_PREFIX_PATH="/usr/lib/x86_64-linux-gnu/cmake/Qt5" ..
-        make
+        cmake --build . --config MinSizeRel --parallel 2
         cpack -G DEB
+        test -n "$(find packages -maxdepth 1 -name '*.deb' -print -quit)"
 
-    - name: Upload Release as Download
-      uses: softprops/action-gh-release@v3
-      env:
-        RELEASE_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+    - name: Upload Build Artifact
+      uses: actions/upload-artifact@v4
       with:
-        tag_name: Beta
-        draft: false
-        prerelease: true
-        files: |
+        name: xmachoviewer-ubuntu
+        path: |
           ${{ env.SRC_PATH }}/tmp_build/packages/*.deb
+        if-no-files-found: error
 
   build-windows-32:
     runs-on: windows-2022
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
         with:
-         submodules: 'recursive'
-         path: ${{ env.SRC_PATH }}
-         
+          submodules: 'recursive'
+          path: ${{ env.SRC_PATH }}
+
       - name: Setup MSVC
         uses: ilammy/msvc-dev-cmd@v1
         with:
-         arch: x86
+          arch: x86
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
@@ -70,35 +74,40 @@ jobs:
         shell: cmd
         working-directory: ${{ env.SRC_PATH }}
         run: |
-          call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x86
-          mkdir tmp_build
+          if exist tmp_build rmdir /s /q tmp_build
+          cmake -S . -B tmp_build -G "Visual Studio 17 2022" -A Win32 -DCMAKE_PREFIX_PATH="${{ github.workspace }}\Qt\5.15.2\msvc2019"
+          if errorlevel 1 exit /b 1
+          cmake --build tmp_build --config MinSizeRel --parallel
+          if errorlevel 1 exit /b 1
           cd tmp_build
-          cmake -DCMAKE_BUILD_TYPE=MinSizeRel -DCMAKE_PREFIX_PATH="${{ github.workspace }}\Qt\5.15.2\msvc2019" -G "NMake Makefiles" ..
-          nmake
-          cpack -G ZIP
-      - name: Upload Release as Download
-        uses: softprops/action-gh-release@v3
-        env:
-          RELEASE_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+          cpack -G ZIP -C MinSizeRel
+          if errorlevel 1 exit /b 1
+          dir packages\*.zip >nul 2>nul
+          if errorlevel 1 (
+            echo ZIP package was not produced
+            exit /b 1
+          )
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
         with:
-          tag_name: Beta
-          draft: false
-          prerelease: true
-          files: |
+          name: xmachoviewer-windows-x86
+          path: |
             ${{ env.SRC_PATH }}/tmp_build/packages/*.zip
+          if-no-files-found: error
 
   build-windows-64:
     runs-on: windows-2022
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
         with:
-         submodules: 'recursive'
-         path: ${{ env.SRC_PATH }}
-         
+          submodules: 'recursive'
+          path: ${{ env.SRC_PATH }}
+
       - name: Setup MSVC
         uses: ilammy/msvc-dev-cmd@v1
         with:
-         arch: x64
+          arch: x64
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
@@ -114,19 +123,51 @@ jobs:
         shell: cmd
         working-directory: ${{ env.SRC_PATH }}
         run: |
-          call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64
-          mkdir tmp_build
+          if exist tmp_build rmdir /s /q tmp_build
+          cmake -S . -B tmp_build -G "Visual Studio 17 2022" -A x64 -DCMAKE_PREFIX_PATH="${{ github.workspace }}\Qt\5.15.2\msvc2019_64"
+          if errorlevel 1 exit /b 1
+          cmake --build tmp_build --config MinSizeRel --parallel
+          if errorlevel 1 exit /b 1
           cd tmp_build
-          cmake -DCMAKE_BUILD_TYPE=MinSizeRel -DCMAKE_PREFIX_PATH="${{ github.workspace }}\Qt\5.15.2\msvc2019_64" -G "NMake Makefiles" ..
-          nmake
-          cpack -G ZIP
-      - name: Upload Release as Download
-        uses: softprops/action-gh-release@v3
-        env:
-          RELEASE_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+          cpack -G ZIP -C MinSizeRel
+          if errorlevel 1 exit /b 1
+          dir packages\*.zip >nul 2>nul
+          if errorlevel 1 (
+            echo ZIP package was not produced
+            exit /b 1
+          )
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
         with:
+          name: xmachoviewer-windows-x64
+          path: |
+            ${{ env.SRC_PATH }}/tmp_build/packages/*.zip
+          if-no-files-found: error
+
+  publish-release:
+    runs-on: ubuntu-latest
+    needs:
+      - build-ubuntu
+      - build-windows-32
+      - build-windows-64
+    permissions:
+      contents: write
+    steps:
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: release-assets
+          merge-multiple: true
+
+      - name: Upload Release as Download
+        uses: softprops/action-gh-release@v2
+        with:
+          token: ${{ secrets.RELEASE_TOKEN || github.token }}
           tag_name: Beta
+          target_commitish: ${{ github.sha }}
           draft: false
           prerelease: true
+          fail_on_unmatched_files: true
           files: |
-            ${{ env.SRC_PATH }}/tmp_build/packages/*.zip
+            release-assets/*
