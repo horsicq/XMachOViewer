@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=XMachOViewer
+Comment=Mach-O file viewer and analyzer
+TryExec=xmachoviewer
+Exec=xmachoviewer %f
+Icon=xmachoviewer
+Terminal=false
+Categories=Development;Utility;
