@@ -25,7 +25,7 @@
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap>:/pics/logo.png</pixmap>
+           <pixmap>:/images/logo.png</pixmap>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>

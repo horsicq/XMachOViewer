@@ -164,10 +164,10 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           token: ${{ secrets.RELEASE_TOKEN || github.token }}
-          tag_name: Beta
+          tag_name: ${{ github.event_name == 'release' && github.event.release.tag_name || 'Beta' }}
           target_commitish: ${{ github.sha }}
           draft: false
-          prerelease: true
+          prerelease: ${{ github.event_name != 'release' || github.event.release.prerelease }}
           fail_on_unmatched_files: true
           files: |
             release-assets/*

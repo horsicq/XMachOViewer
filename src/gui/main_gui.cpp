@@ -19,6 +19,8 @@
  * SOFTWARE.
  */
 #include <QApplication>
+#include <QIcon>
+#include <cstdio>
 
 #include "guimainwindow.h"
 #include "xoptions.h"
@@ -30,7 +32,9 @@ int main(int argc, char *argv[])
 #endif
 #ifdef Q_OS_MAC
 #ifndef QT_DEBUG
-    QCoreApplication::setLibraryPaths(QStringList(QString(argv[0]).remove("MacOS/XMachOViewer") + "PlugIns"));
+    QString libraryPath = QString::fromLocal8Bit(argv[0]);
+    libraryPath = libraryPath.remove(QStringLiteral("MacOS/") + QStringLiteral(X_APPLICATIONNAME)) + QStringLiteral("PlugIns");
+    QCoreApplication::setLibraryPaths(QStringList(libraryPath));
 #endif
 #endif
     QCoreApplication::setOrganizationName(X_ORGANIZATIONNAME);
@@ -38,15 +42,21 @@ int main(int argc, char *argv[])
     QCoreApplication::setApplicationName(X_APPLICATIONNAME);
     QCoreApplication::setApplicationVersion(X_APPLICATIONVERSION);
 
-    if ((argc == 2) && ((QString(argv[1]) == "--version") || (QString(argv[1]) == "-v"))) {
-        QString sInfo = QString("%1 v%2").arg(X_APPLICATIONDISPLAYNAME, X_APPLICATIONVERSION);
-        printf("%s\n", sInfo.toUtf8().data());
+    if ((argc == 2) && ((QString::fromLocal8Bit(argv[1]) == QStringLiteral("--version")) || (QString::fromLocal8Bit(argv[1]) == QStringLiteral("-v")))) {
+        const QString sInfo = QStringLiteral("%1 v%2").arg(QStringLiteral(X_APPLICATIONDISPLAYNAME), QStringLiteral(X_APPLICATIONVERSION));
+        std::printf("%s\n", sInfo.toUtf8().constData());
 
         return 0;
     }
 
     QApplication app(argc, argv);
-    QApplication::setWindowIcon(QIcon(":/pics/main.png"));
+    QApplication::setWindowIcon(QIcon(QStringLiteral(":/main.png")));
+
+#ifdef Q_OS_LINUX
+#if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
+    app.setDesktopFileName(QStringLiteral(X_APPLICATIONNAME));
+#endif
+#endif
 
     XOptions xOptions;
 

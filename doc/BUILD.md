@@ -1,100 +1,82 @@
-# Build Instructions for XMachOViewer
+# Building and packaging XMachOViewer
 
-## Prerequisites
+Clone the repository with its submodules:
 
-Before you start building XMachOViewer, ensure you have the following tools installed:
+```sh
+git clone --recursive https://github.com/horsicq/XMachOViewer.git
+cd XMachOViewer
+```
 
-- **CMake**: Version 3.10 or higher
-- **Qt**: Qt5 or higher
-- **Compiler**: GCC, Clang, or MSVC
+The recursive checkout populates the repository's `dep/` submodules, which are
+used automatically. A combined development workspace may instead provide a
+sibling `_mylibs/` tree:
 
-## Building on Linux
+```text
+qt5/
+  _mylibs/
+  xmachoviewer_source/
+```
 
-1. **Install dependencies**:
-   ```bash
-   sudo apt-get update
-   sudo apt-get install cmake qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools build-essential
-   ```
+You can select another dependency tree explicitly with
+`-DXMACHOVIEWER_DEP_ROOT=/path/to/dependencies`.
 
-2. **Clone the repository**:
-   ```bash
-   git clone https://github.com/horsicq/XMachOViewer.git
-   cd XMachOViewer
-   ```
+XMachOViewer requires CMake 3.19 or newer, a C++ toolchain, and Qt 5 or Qt 6.
+Qt 5 builds also require Script and ScriptTools; Qt 6 builds require Qml.
 
-3. **Create a build directory**:
-   ```bash
-   mkdir build
-   cd build
-   ```
+## Direct CMake build
 
-4. **Generate Makefiles using CMake**:
-   ```bash
-   cmake ..
-   ```
+```sh
+cmake -S . -B tmp_build -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/path/to/Qt
+cmake --build tmp_build --config Release --parallel
+```
 
-5. **Build the project**:
-   ```bash
-   make
-   ```
+To install into a staging directory:
 
-## Building on Windows
+```sh
+cmake --install tmp_build --config Release --prefix /path/to/staging
+```
 
-1. **Install dependencies**:
-   - Download and install [CMake](https://cmake.org/download/).
-   - Download and install [Qt](https://www.qt.io/download).
-   - Install a C++ compiler (Visual Studio is recommended).
+## Windows portable packages
 
-2. **Clone the repository**:
-   ```sh
-   git clone https://github.com/horsicq/XMachOViewer.git
-   cd XMachOViewer
-   ```
+The wrappers use the standard Qt 5.15.2 MSVC locations:
 
-3. **Create a build directory**:
-   ```sh
-   mkdir build
-   cd build
-   ```
+```bat
+packaging\windows\build_portable_win32.bat
+packaging\windows\build_portable_win64.bat
+```
 
-4. **Generate Visual Studio project files using CMake**:
-   ```sh
-   cmake .. -G "Visual Studio 16 2019"
-   ```
+For a different Qt installation, invoke the common script directly:
 
-5. **Build the project**:
-   Open the generated `.sln` file in Visual Studio and build the solution.
+```bat
+packaging\windows\build_portable_windows.cmd C:\Qt\5.15.2\msvc2019_64 x64 win64
+```
 
-## Building on macOS
+Set `CMAKE_GENERATOR_NAME` to override the default `Visual Studio 17 2022`
+generator. The scripts create both an installed portable folder and a CPack ZIP
+under `release\`.
 
-1. **Install dependencies**:
-   ```sh
-   brew install cmake qt
-   ```
+## Linux packages
 
-2. **Clone the repository**:
-   ```sh
-   git clone https://github.com/horsicq/XMachOViewer.git
-   cd XMachOViewer
-   ```
+Install the Qt development packages supplied by your distribution, including
+Qt Widgets, Concurrent, Network, PrintSupport, OpenGL, SVG, SQL, Script, and
+Qt Tools. Then run either:
 
-3. **Create a build directory**:
-   ```sh
-   mkdir build
-   cd build
-   ```
+```sh
+bash packaging/linux/build_linux.sh [/optional/qt/prefix]
+bash packaging/debian/build_dpkg.sh [/optional/qt/prefix]
+```
 
-4. **Generate Makefiles using CMake**:
-   ```sh
-   cmake ..
-   ```
+The first command creates a portable `.tar.gz`; the second creates a `.deb`.
 
-5. **Build the project**:
-   ```sh
-   make
-   ```
+## macOS packages
 
-## Additional Notes
+```sh
+bash packaging/macos/build_mac.sh [/optional/qt/prefix]
+```
 
-- Ensure that the Qt installation path is correctly set in your environment variables.
-- For any issues encountered during the build process, refer to the [GitHub Issues](https://github.com/horsicq/XMachOViewer/issues) page for troubleshooting and support.
+The script creates a ZIP and a `productbuild` PKG. Architecture, deployment
+target, signing, and notarization can be configured through the environment
+variables printed by `packaging/macos/build_mac.sh --help`.
+
+All working build trees and CPack staging directories are created under the
+system temporary directory. Only finished artifacts are copied to `release/`.
