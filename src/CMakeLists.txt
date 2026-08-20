@@ -35,6 +35,7 @@ endif()
 
 file(STRINGS "${CMAKE_CURRENT_LIST_DIR}/../release_version.txt" X_PROJECT_VERSION)
 project(XMachOViewer VERSION ${X_PROJECT_VERSION} LANGUAGES CXX)
+option(USE_DIE "Enable Detect It Easy integration" ON)
 
 # The root intentionally delegates project() to this directory. Set the CPack
 # components explicitly so they cannot inherit CMake's implicit 0.1.1 project.
