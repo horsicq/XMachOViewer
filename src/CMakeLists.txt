@@ -80,13 +80,23 @@ if(NOT DEFINED MACOSX_BUNDLE_GUI_IDENTIFIER OR "${MACOSX_BUNDLE_GUI_IDENTIFIER}"
 endif()
 set(BUNDLE_ID_OPTION "${MACOSX_BUNDLE_GUI_IDENTIFIER}")
 
-if(WIN32 OR XMACHOVIEWER_PORTABLE_LAYOUT)
+# The data root comes from the shared rule, which mirrors the hardcoded search
+# order in XOptions::convertPathName(). This block used to compute it by hand and
+# got the Linux case wrong: CMAKE_INSTALL_LIBDIR is the multiarch
+# lib/x86_64-linux-gnu on Debian/Ubuntu, which is not searched. Because it also
+# pre-empted cpp_standart_setup.cmake's `if(NOT DEFINED X_RESOURCES)`, every
+# _mylibs helper that installs to ${X_RESOURCES} inherited the wrong root too.
+include(${CMAKE_CURRENT_LIST_DIR}/../dep/build_tools/cmake/x_data_destination.cmake)
+
+if(XMACHOVIEWER_PORTABLE_LAYOUT)
+    # Portable build: everything next to the executable, on every platform.
     set(X_RESOURCES ".")
-elseif(APPLE)
-    set(X_RESOURCES "${X_ORIGINAL_FILENAME}.app/Contents/Resources")
 else()
+    x_data_install_destination(X_RESOURCES)
+endif()
+
+if(UNIX AND NOT APPLE)
     include(GNUInstallDirs)
-    set(X_RESOURCES "${CMAKE_INSTALL_LIBDIR}/${X_ORIGINAL_FILENAME}")
     set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
     if(XMACHOVIEWER_QT_MAJOR EQUAL 5)
         list(APPEND X_DEBIAN_PACKAGE_DEPENDS "libqt5sql5-sqlite")
@@ -146,17 +156,13 @@ if(EXISTS "${XMACHOVIEWER_TRANSLATION_HELPER}")
         "${CMAKE_CURRENT_LIST_DIR}/../translations/xmachoviewer_zh_TW.ts"
     )
 
-    set(XMACHOVIEWER_TRANSLATION_DESTINATION "${X_RESOURCES}/lang")
-    if(X_RESOURCES STREQUAL ".")
-        set(XMACHOVIEWER_TRANSLATION_DESTINATION "lang")
-    endif()
-
+    # The plain leaf, like every other project: the resolver prepends X_RESOURCES.
     deploy_add_translations(
         TARGET_NAME xmachoviewer_translations
         ADD_TO_ALL
         SOURCE_DIRS "${CMAKE_CURRENT_LIST_DIR}"
         TS_FILES ${XMACHOVIEWER_TS_FILES}
-        INSTALL_DESTINATION "${XMACHOVIEWER_TRANSLATION_DESTINATION}"
+        INSTALL_DESTINATION lang
     )
 endif()
 
