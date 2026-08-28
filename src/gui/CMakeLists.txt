@@ -64,7 +64,6 @@ target_link_libraries(${XMACHOVIEWER_GUI_TARGET} PRIVATE
     lzma
     zlib
     ppmd
-    xarchive_7zip
     capstone
     cppfilt
     yara
