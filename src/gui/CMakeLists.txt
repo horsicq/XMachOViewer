@@ -1,7 +1,5 @@
 include("${XMACHOVIEWER_DEP_ROOT}/build_tools/cmake/cpp_standart_setup.cmake")
 
-add_definitions(-DUSE_DEX)
-add_definitions(-DUSE_PDF)
 add_definitions(-DUSE_ARCHIVE)
 add_definitions(-DUSE_YARA)
 
