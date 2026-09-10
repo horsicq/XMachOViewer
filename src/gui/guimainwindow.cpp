@@ -201,6 +201,7 @@ void GuiMainWindow::processFile(QString sFileName)
     bool bIsDirectory = XBinary::isDirectoryExists(sFileName);
 
     QString sTitle = sFileName;
+    QString sOpenError;
 
     if ((sFileName != "") && (bIsFile || bIsDirectory)) {
         QIODevice *pOpenDevice = nullptr;
@@ -218,6 +219,10 @@ void GuiMainWindow::processFile(QString sFileName)
 
             if (!g_pFile->open(QIODevice::ReadWrite)) {
                 if (!g_pFile->open(QIODevice::ReadOnly)) {
+                    // closeCurrentFile() deletes g_pFile, so keep the reason first:
+                    // on macOS this is usually a TCC denial, which is not obvious
+                    // from a bare "Cannot open file".
+                    sOpenError = g_pFile->errorString();
                     closeCurrentFile();
                 }
             }
@@ -327,7 +332,7 @@ void GuiMainWindow::processFile(QString sFileName)
                 QMessageBox::critical(this, tr("Error"), tr("It is not a valid file"));
             }
         } else {
-            QMessageBox::critical(this, tr("Error"), tr("Cannot open file"));
+            QMessageBox::critical(this, tr("Error"), sOpenError.isEmpty() ? tr("Cannot open file") : QString("%1: %2").arg(tr("Cannot open file"), sOpenError));
         }
     } else {
         QMessageBox::critical(this, tr("Error"), tr("Cannot open file"));
