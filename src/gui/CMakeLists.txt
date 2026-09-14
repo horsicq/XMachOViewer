@@ -57,10 +57,6 @@ endif()
 target_include_directories(${XMACHOVIEWER_GUI_TARGET} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
 target_link_libraries(${XMACHOVIEWER_GUI_TARGET} PRIVATE
-    bzip2
-    lzma
-    zlib
-    ppmd
     capstone
     cppfilt
     yara
